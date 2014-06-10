@@ -1,0 +1,22 @@
+#{form @Meals.create(), enctype:'multipart/form-data', role:'form'}
+    <div class="form-group">
+    <label for="name">Name:</label>
+    <input class="form-control"  type="text" name="name" value="" />
+  </div>
+   <div class="form-group">
+    <label for="ingredients">Ingredients:</label>
+    <input class="form-control"  type="text" name="ingredients" value="" />
+  </div>
+  <div class="form-group">
+    <label for="category">Category:</label>
+    #{select 'category', items:_categories, valueProperty:'name', labelProperty:'name', class:'form-control' /}
+  </div> 
+    <div class="form-group">
+    <label for="image">Image:</label>
+    <input class="form-control" type="file" name="image" />
+    <br>
+  </div>
+    <div class="form-group">
+    <input type="submit" class="btn btn-default" value="save" />
+  </div>
+#{/form}
