@@ -3,16 +3,22 @@
 <html>
     <head>
         <title>#{get 'title' /}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="${_response_encoding}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
         #{get 'moreStyles' /}
-        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script type="text/javascript" src="@{'/public/javascripts/ejohn-templating.js'}"></script>
+        <script type="text/javascript" src="@{'/public/javascripts/jquery.formatCurrency-1.2.0.min.js'}"></script>
+        <script type="text/javascript" src="@{'/public/javascripts/i18n/jquery.formatCurrency.en-GB.js'}"></script>
         #{get 'moreScripts' /}
     </head>
     <body>
+    	<div class="header">
+    		<span class="headerOutputText">&{'title'}</span>
+    	</div>
         #{doLayout /}
     </body>
 </html>

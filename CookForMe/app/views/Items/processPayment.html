@@ -1,0 +1,9 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+<p />
+<h2>&{'conf_txt_heading'}</h2>
+<div id="processPayment">
+	#{form @restartShopping()}
+		<input type="submit" value="&{'btn_continue'}" />
+	#{/form}
+</div>

@@ -1,0 +1,14 @@
+Item(item1):
+ name: Butter Chicken
+ description: Chicken in Tomato Curry mixed with spices
+ price: 10
+ 
+Item(item2):
+ name: Mutton Curry
+ description: Mutton in finest Indian curry
+ price: 12
+ 
+Item(item3):
+ name: Dal Makhani
+ description: Pulses in typical Indian style
+ price: 7
