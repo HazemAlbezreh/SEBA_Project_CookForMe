@@ -29,6 +29,7 @@ public class BasketItem extends Model {
 		this.basket = basket;
 		this.item = item;
 		this.quantity = quantity;
+		System.out.println("InBasketItem:"+quantity);
 		this.price = price;
 		item.addBasketItem(this);
 	}
@@ -45,5 +46,13 @@ public class BasketItem extends Model {
 	
 	private void calcPrice() {
 		price = item.price * quantity;		
+	}
+	
+	public double getPrice() {
+		return price*quantity;
+	}
+	
+	public Item getItem(){
+		return item;
 	}
 }

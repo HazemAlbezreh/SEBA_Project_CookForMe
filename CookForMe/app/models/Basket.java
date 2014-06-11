@@ -40,12 +40,29 @@ public class Basket extends Model {
 			}
 		}
 		if (!itemExists) {
-			System.out.println("basket item does not exist addding another basket item");
+			System.out.println("basket item does not exist adding another basket item");
 			BasketItem basketItem = new BasketItem(this, item, 1, item.price);
 			basketItems.add(basketItem);
 		}
 	}
 
+	public void addItem(Item item, int quantity) {
+		boolean itemExists = false;
+		for (BasketItem basketItem : basketItems) {
+			if (basketItem.item.getId().equals(item.getId())) {
+				for(int i=0;i<quantity;i++){
+					basketItem.increaseQuantity();
+				}
+				itemExists = true;
+			}
+		}
+		if (!itemExists) {
+			System.out.println("basket item does not exist adding another basket item");
+			BasketItem basketItem = new BasketItem(this, item, quantity, item.price);
+			basketItems.add(basketItem);
+		}
+	}
+	
 	public void removeItem(Item item) {
 		for (Iterator<BasketItem> it = basketItems.iterator(); it.hasNext();) {
 			BasketItem basketItem = (BasketItem) it.next();
@@ -67,6 +84,31 @@ public class Basket extends Model {
 	public int getItemCount() {
 		return basketItems.size();
 	}
+	
+	public boolean checkForItemInBasket(Item item){
+		boolean itemExists = false;
+		for (BasketItem basketItem : basketItems) {
+			if (basketItem.item.getId().equals(item.getId())){
+				itemExists = true;
+			}
+		}
+		return itemExists;
+
+	}
+	
+	public List<BasketItem> getBasketItem(){
+		return basketItems;
+	}
+	
+	public int getTotalBasketPrice(){
+		int total = 0;
+		for (BasketItem basketItem : basketItems) {
+			System.out.println("InBasket:"+basketItem.price);
+			total+=basketItem.getPrice();
+		}
+		return total;
+	}
+	
 	
 	public static Basket findByUserid(String userid) {
 		return find("userid", userid).first();

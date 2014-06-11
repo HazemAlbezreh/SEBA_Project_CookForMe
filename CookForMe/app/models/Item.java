@@ -40,5 +40,8 @@ public class Item extends Model {
 		basketItems.add(basketItem);
 		
 	}
+	public static List<Item> findByName(String name) {
+        return find("byNameLike", "%" + name + "%").fetch();
+    }
 	
 }

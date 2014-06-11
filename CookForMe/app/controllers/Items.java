@@ -33,8 +33,8 @@ public class Items extends Controller {
 		return session.get("username");
 	}
 	
-	public static void index() {
-		List<Item> items = Item.find("order by name").from(1).fetch(100);
+	public static void index() {		
+        List<Item> items = Item.findAll();
 		
 		Logger.debug("In index()"+items.size());
 		for(Item item:items){
@@ -63,7 +63,6 @@ public class Items extends Controller {
 		}
 		
 		renderXml(basket.basketItems);
-		
 
 	}
 
@@ -95,6 +94,14 @@ public class Items extends Controller {
 	public static void processPayment() {
 		Logger.debug("In processPayment");
 		if (params.get("_pay") != null) {
+			Basket basket = Basket.findByUserid(getUsername());
+
+			Logger.debug("basket = "+basket.basketItems);
+			
+			for(BasketItem bItem:basket.basketItems){
+				Logger.debug(bItem.item.name+",");
+			}
+						
 			render();
 		} else if (params.get("_cancel") != null) {
 			Basket basket = Basket.findByUserid(getUsername());
@@ -109,4 +116,11 @@ public class Items extends Controller {
 		basket.delete();
 		index();
 	}
+	
+	//will be used for searching food items later
+	public static void find(String name) {
+        List<Item> found = Item.findByName(name);
+        renderJSON(found);
+    }
+	
 }
