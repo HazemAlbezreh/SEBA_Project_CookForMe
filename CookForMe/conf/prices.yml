@@ -1,0 +1,11 @@
+PriceCategory(15€):
+ name: 15€
+ 
+PriceCategory(10€):
+ name: 10€
+ 
+PriceCategory(7€):
+ name: 7€
+ 
+PriceCategory(5€):
+ name: 5€

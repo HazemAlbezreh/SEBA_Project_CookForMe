@@ -1,6 +1,7 @@
 
 import models.Category;
 import models.Meal;
+import models.PriceCategory;
 import models.User;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
@@ -15,6 +16,9 @@ public class Bootstrap extends Job {
 
     public void doJob() {
         try {
+        	if (PriceCategory.count() == 0) {
+                Fixtures.loadModels("prices.yml");
+            }
         	if (Category.count() == 0) {
                 Fixtures.loadModels("categories.yml");
             }

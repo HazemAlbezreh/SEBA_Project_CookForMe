@@ -23,6 +23,10 @@ public class Meal extends Model {
     @ManyToOne( cascade= CascadeType.ALL)
     public Category category;
     
+    @ManyToOne( cascade= CascadeType.ALL)
+    public PriceCategory priceCategory;
+    
+    
     public String comment;
     public Blob image;
     public String imagePath;
@@ -37,7 +41,7 @@ public class Meal extends Model {
         this.image = image;
     }
     
-    public Meal(String name, String ingredients,Category category,String fromDate,String tillDate) {
+    public Meal(String name, String ingredients,Category category,PriceCategory price,String fromDate,String tillDate) {
     	SimpleDateFormat temp = new SimpleDateFormat("yyyy/MM/dd");
     	try {
 			this.fromDate=temp.parse(fromDate);
@@ -49,6 +53,7 @@ public class Meal extends Model {
         this.name = name;
         this.ingredients = ingredients;
         this.category = category;
+        this.priceCategory = price;
     }
     
     public Meal(String name, String ingredients) {

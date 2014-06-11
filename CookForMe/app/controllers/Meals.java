@@ -31,7 +31,8 @@ public class Meals extends Controller {
     public static void index() {
         List<Meal> meals = Meal.findAll();
         List<Category> categories = Category.findAll();
-        render(meals,categories);
+        List<PriceCategory> prices = PriceCategory.findAll();
+        render(meals,categories,prices);
     }
 
     public static void delete(long MealId) {
@@ -40,10 +41,10 @@ public class Meals extends Controller {
         index();
     }
 
-    public static void create(String name,String ingredients,String category,String fromDate,String tillDate,File image)
+    public static void create(String name,String ingredients,String category,String price,String fromDate,String tillDate,File image)
             throws FileNotFoundException {
     	
-        Meal meal = new Meal(name,ingredients,Categories.find(category),fromDate,tillDate);
+        Meal meal = new Meal(name,ingredients,Categories.find(category),Prices.find(price),fromDate,tillDate);
 
         if (image != null) {
             meal.image = new Blob();
