@@ -3,11 +3,14 @@ Meal(Pizza):
  ingredients: sd,df,a,dfa,aaa
  imagePath: 1.jpg
  category: Spanish
+ fromDate: 2014-5-1
+ tillDate: 2014-6-30
  
 Meal(Doner):
  name: Durum
  ingredients: afds, sdf, das,dsf 
  imagePath: 2.jpg
  category: Spanish
-
+ fromDate: 2014-4-1
+ tillDate: 2014-12-31
  

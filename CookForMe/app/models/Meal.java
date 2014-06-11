@@ -1,5 +1,6 @@
 package models;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,6 +9,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.swing.text.DateFormatter;
 
 import play.db.jpa.Blob;
 import play.db.jpa.Model;
@@ -69,9 +71,27 @@ public class Meal extends Model {
         return find("byIngredientsLike", "%" + ing + "%").fetch();
     }
     
-    public static List<Meal> findMeals(String name, String category, String ing) {
+    public static List<Meal> findMeals(String name, String category, String ing, String from, String till) {
+    	SimpleDateFormat temp = new SimpleDateFormat("yyyy/MM/dd");
+    	Date fromDate = new Date(), tillDate = new Date();
+    	try {
+    		if (from.isEmpty())
+    			fromDate = temp.parse("1970/1/1");
+    		else 
+    			fromDate = temp.parse(from);
+    		if (till.isEmpty())
+    			tillDate = temp.parse("9999/12/31");
+    		else
+    			tillDate = temp.parse(till);
+    		
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+    	
         return find("SELECT m FROM Meal m "+
-        		    "WHERE LOWER(m.name) LIKE ? AND LOWER(m.category.name) LIKE ? AND LOWER(m.ingredients) LIKE ?",
-        		    "%"+name.toLowerCase()+"%", "%"+category.toLowerCase()+"%", "%"+ing.toLowerCase()+"%").fetch();
+        		    "WHERE LOWER(m.name) LIKE ? AND LOWER(m.category.name) LIKE ? AND LOWER(m.ingredients) LIKE ? " +
+        		    "AND m.fromDate >= ? AND m.tillDate <= ?",
+        		    "%"+name.toLowerCase()+"%", "%"+category.toLowerCase()+"%", "%"+ing.toLowerCase()+"%", 
+        		    fromDate, tillDate).fetch();
     }
 }
