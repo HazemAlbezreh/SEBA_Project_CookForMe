@@ -1,32 +1,6 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<script type="text/javascript">
-	function find() {
-		// we coul
-		var findAction = #{jsRoute @Meals.find(':name') /}
-		// new line because the jsRoute tag does not put one and the 
-		// interpretation fails
-
-		var searchToken = $("#searchToken").val()
-
-		$.ajax({
-			url: findAction.url({name: searchToken}),
-			type: findAction.method,
-			success: function(meals) {
-				var html = ""
-				meals.forEach(function(meal) {
-					html += 
-					"<tr>" +
-						"<td>" + meal.name + "</td>" +
-					"</tr>"
-				})
-				$("#mealTable").html(html)				
-			}
-	   })
-	}
-</script>
-
 <div class="container">
 	<div class='row'>
 		<h2>Meals for: ${user.email}</h2>
@@ -36,11 +10,15 @@
 
 	<div class='row'>
 		<div class="col-md-3 pull-right input-group">
-			<input id="searchToken" type="search" class="form-control">
-			<span class="input-group-btn">
-				<button class="btn btn-default" onClick="find()" type="button">Go!</button>
-			</span>
-		</div>
+			#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
+				<div class="form-group">
+					<input name="searchToken" type="text" class="form-control">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">Go!</button>
+					</span>
+				</div>
+			#{/form}
+		</div>  
 	</div>
 
     <div >

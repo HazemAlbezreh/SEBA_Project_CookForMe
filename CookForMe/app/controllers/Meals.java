@@ -76,4 +76,14 @@ public class Meals extends Controller {
         List<Meal> found = Meal.findByName(name);
         renderJSON(found);
     }
+    
+    public static void search(String searchToken, String category, String ingredients) {
+    	if (category == null)  category = "";
+    	if (ingredients == null)  ingredients = "";
+    	
+    	List<Meal> meals = Meal.findMeals(searchToken, category, ingredients);
+    	List<Category> categories = Category.findAll();
+    	categories.add(0, new Category(""));
+        render(searchToken, meals, categories, category, ingredients);
+    }
 }

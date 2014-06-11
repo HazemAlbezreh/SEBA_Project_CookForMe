@@ -55,4 +55,10 @@ public class Meal extends Model {
     public static List<Meal> findByIngredients(String ing) {
         return find("byIngredientsLike", "%" + ing + "%").fetch();
     }
+    
+    public static List<Meal> findMeals(String name, String category, String ing) {
+        return find("SELECT m FROM Meal m "+
+        		    "WHERE m.name LIKE ? AND m.category.name LIKE ? AND m.ingredients LIKE ?",
+        		    "%"+name+"%", "%"+category+"%", "%"+ing+"%").fetch();
+    }
 }
