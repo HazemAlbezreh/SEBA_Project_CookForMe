@@ -1,0 +1,8 @@
+User(john):
+ email: john@home.com
+ password: john
+
+User(marry):
+ email: marry@home.com
+ password: marry
+ 

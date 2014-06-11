@@ -14,4 +14,7 @@ public class ApplicationTest extends FunctionalTest {
         assertCharset(play.Play.defaultWebEncoding, response);
     }
     
+    
+    
+    
 }
