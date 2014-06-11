@@ -71,7 +71,7 @@ public class Meal extends Model {
     
     public static List<Meal> findMeals(String name, String category, String ing) {
         return find("SELECT m FROM Meal m "+
-        		    "WHERE m.name LIKE ? AND m.category.name LIKE ? AND m.ingredients LIKE ?",
-        		    "%"+name+"%", "%"+category+"%", "%"+ing+"%").fetch();
+        		    "WHERE LOWER(m.name) LIKE ? AND LOWER(m.category.name) LIKE ? AND LOWER(m.ingredients) LIKE ?",
+        		    "%"+name.toLowerCase()+"%", "%"+category.toLowerCase()+"%", "%"+ing.toLowerCase()+"%").fetch();
     }
 }
