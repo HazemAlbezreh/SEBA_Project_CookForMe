@@ -6,7 +6,6 @@ Meal(Pizza):
  priceCategory: 7€
  fromDate: 2014-5-1
  tillDate: 2014-6-30
-
  
 Meal(Doner):
  name: Durum
