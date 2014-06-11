@@ -4,6 +4,9 @@ Meal(Pizza):
  imagePath: 1.jpg
  category: Spanish
  priceCategory: 7€
+ fromDate: 2014-5-1
+ tillDate: 2014-6-30
+
  
 Meal(Doner):
  name: Durum
@@ -11,5 +14,7 @@ Meal(Doner):
  imagePath: 2.jpg
  category: Spanish
  priceCategory: 7€
+ fromDate: 2014-4-1
+ tillDate: 2014-12-31
 
  

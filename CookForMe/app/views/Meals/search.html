@@ -19,30 +19,61 @@
 						<button class="btn btn-default" type="submit">Go!</button>
 					</span>
 				</div>
-<!-- 				<div class="header"> -->
-<!-- 					<span>Expand</span> -->
-<!-- 				</div> -->
-<!-- 				<div class="content"> -->
-					<h4>Search Filters:</h4>
-					<div class="form-group">
-					    <label for="category">Category:</label>
-					    #{if !category.isEmpty()}
-					    	#{select 'category', items:categories, valueProperty:'name', labelProperty:'name', value:category, class:'form-control' /}
-					    #{/if}
-					    #{else}
-					    	#{select 'category', items:categories, valueProperty:'name', labelProperty:'name', value:'', class:'form-control' /}
-					    #{/else}
-					</div>
-					<div class="form-group">
-						<label for="ingredients" style="margin-top: 10px;">Ingredients:</label>
-					    #{if !ingredients.isEmpty()}
-					    	<input class="form-control" type="text" name="ingredients" value="${ingredients}" />
-					    #{/if}
-					    #{else}
-					    	<input class="form-control" type="text" name="ingredients" value="" />
-					    #{/else}
-					</div>
-<!-- 				</div> -->
+
+				<h4>Search Filters:</h4>
+				<div class="form-group">
+				    <label for="category">Category:</label>
+				    #{if !category.isEmpty()}
+				    	#{select 'category', items:categories, valueProperty:'name', labelProperty:'name', value:category, class:'form-control' /}
+				    #{/if}
+				    #{else}
+				    	#{select 'category', items:categories, valueProperty:'name', labelProperty:'name', value:'', class:'form-control' /}
+				    #{/else}
+				</div>
+				<div class="form-group">
+					<label for="ingredients" style="margin-top: 10px;">Ingredients:</label>
+				    #{if !ingredients.isEmpty()}
+				    	<input class="form-control" type="text" name="ingredients" value="${ingredients}" />
+				    #{/if}
+				    #{else}
+				    	<input class="form-control" type="text" name="ingredients" value="" />
+				    #{/else}
+				</div>
+				<div class="form-group">
+					<label for="fromDate">From Date:</label>
+			        <div class="input-group date">
+			        #{if !fromDate.isEmpty()}
+			            <input name="fromDate" type="text" class="form-control" value="${fromDate}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+			        #{/if}
+				    #{else}
+				    	<input name="fromDate" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+				    #{/else}
+			        </div>
+			        
+			        <label for="tillDate">Till Date:</label>
+			        <div class="input-group date">
+			        #{if !tillDate.isEmpty()}
+			            <input name="tillDate" type="text" class="form-control" value="${tillDate}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+			        #{/if}
+				    #{else}
+				    	<input name="tillDate" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+				    #{/else}
+			        </div>
+
+					<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+				    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+				    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+				    <script>
+					    $('.input-group.date').datepicker({
+					    format: "yyyy/mm/dd",
+					    startDate: "2012-01-01",
+					    endDate: "2015-01-01",
+					    todayBtn: "linked",
+					    autoclose: true,
+					    todayHighlight: true
+					    });
+				    </script>
+				</div>
 			#{/form}
 		</div>
 		<h4 style="margin-top: 30px;">Results:</h4>  
