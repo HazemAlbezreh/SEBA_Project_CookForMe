@@ -1,5 +1,8 @@
 package models;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -23,6 +26,8 @@ public class Meal extends Model {
     public String comment;
     public Blob image;
     public String imagePath;
+    public Date fromDate;
+    public Date tillDate;
 
     public Meal(String name, String ingredients,Category category,String comment, Blob image) {
         this.name = name;
@@ -32,7 +37,15 @@ public class Meal extends Model {
         this.image = image;
     }
     
-    public Meal(String name, String ingredients,Category category) {
+    public Meal(String name, String ingredients,Category category,String fromDate,String tillDate) {
+    	SimpleDateFormat temp = new SimpleDateFormat("yyyy/MM/dd");
+    	try {
+			this.fromDate=temp.parse(fromDate);
+			this.tillDate=temp.parse(tillDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         this.name = name;
         this.ingredients = ingredients;
         this.category = category;

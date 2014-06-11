@@ -40,10 +40,10 @@ public class Meals extends Controller {
         index();
     }
 
-    public static void create(String name,String ingredients,String category,File image)
+    public static void create(String name,String ingredients,String category,String fromDate,String tillDate,File image)
             throws FileNotFoundException {
     	
-        Meal meal = new Meal(name,ingredients,Categories.find(category));
+        Meal meal = new Meal(name,ingredients,Categories.find(category),fromDate,tillDate);
 
         if (image != null) {
             meal.image = new Blob();
@@ -54,7 +54,8 @@ public class Meals extends Controller {
         meal.save();
         index();
     }
-
+    
+    
     public static void renderImage(long mealId) {
         Meal meal = Meal.findById(mealId);
 
