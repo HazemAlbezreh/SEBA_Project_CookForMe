@@ -12,3 +12,8 @@ Item(item3):
  name: Dal Makhani
  description: Pulses in typical Indian style
  price: 7
+ 
+Item(item4):
+ name: Chicken Kadhai Masala
+ description: Chicken blended in thick gravy with spices
+ price: 8

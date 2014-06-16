@@ -5,91 +5,50 @@
 <div class="basketItems" id="items">
 	<table class="table table-hover text-center">
 		<thead>
-			<tr class="dataTableHeader">
-				<th class="dataTableCol1 text-center">&{'items_txt_name_col_header'}</th>
-				<th class="dataTableCol1 text-center">&{'items_txt_description_col_header'}</th>
-				<th class="dataTableCol1 text-center">&{'items_txt_price_col_header'}</th>
-				<th class="dataTableCol1"></th>
+			<tr >
+				<th class="text-center">&{'items_txt_name_col_header'}</th>
+				<th class="text-center" >&{'items_txt_description_col_header'}</th>
+				<th class="text-center">&{'items_txt_price_col_header'}</th>
+				<th class="text-center"></th>
 			</tr>
 		</thead>
 		<tbody>
 		#{list items:items, as:'item'}
-			<tr class="dataTableRow1">
-				<td class="dataTableCol1">${item.name}</td>
-				<td class="dataTableCol1">${item.description}</td>
-				<td class="dataTableCol1">&pound;${item.price.format('0.00')}</td>
-				<td class="dataTableCol1">
+			<tr>
+				<td >${item.name}</td>
+				<td >${item.description}</td>
+				<td>&euro;${item.price.format('0.00')}</td>
+				<td>
 					<a href="" onclick="return addItem(${item.id});">&{'items_lnk_buy'}</a>
 				</td>
 			</tr>
 		#{/list}
 		</tbody>
 	</table>
-</div>
-
-
-<p/>
-<div id="BasketItemsTemplateOutput">
-<script id="basketItems_tmpl" type="text/html">
-<h2>&{'items_txt_basket'}</h2>
-
-<div>
-	<table id="basketTbl" class="dataTable">
-        <thead>
-            <tr class="dataTableHeader">
-                <th class="dataTableCol1">&{'items_txt_basket_item_col_header'}</th>
-				<th class="dataTableCol1">&{'items_txt_basket_quantity_col_header'}</th>
-				<th class="dataTableCol1">&{'items_txt_basket_price_col_header'}</th>
-				<th class="dataTableCol1"></th>
-            </tr>
-        </thead>
-		
-		<tbody>
-		#{list items: basketItems, as:'basketItem'}
-			<tr class="dataTableRow1">
-				<td class="dataTableCol1">${basketItem.item.name}</td>
-				<td class="dataTableCol1">${basketItem.quantity}</td>
-				<td class="dataTableCol1">${basketItem.price}</td>
-			</tr>
-		#{/list}
-		</tbody>
-
 	
-        <tbody>
-        <%
-            for(var i=0; i < basketItems.length; i++)     
-            {      
-               var basketItem = basketItems[i]; 
-        %>
-                <tr class="dataTableRow1">
-                   <td class="dataTableCol1" id="BasketItemRow_<%= i.toString() %>">
-                        <%= basketItem.item.name %> 
-                   </td>
-                   <td class="dataTableCol1">
-                        <%= basketItem.quantity %>
-                   </td>
-                   <td id="priceCell" class="dataTableCol1">
-					  <%= basketItem.price %>
-                   </td>
-					<td class="dataTableCol1">
-					   <a href="" onclick="return removeItem(<%= basketItem.item.id %>);">&{'items_lnk_remove'}</a>
-					</td>
-                </tr>
-        <% 
-            }
-        %>
-        </tbody>
-    </table>
-    <br />
-    <%= basketItems.length %> records shown
-	<p />
-	
-	#{form @checkout()}
-		<input type="submit" value="&{'btn_checkout'}" />
+	<div id="BasketItemsTemplateOutput">
+<script id="basketItems_tmpl" type="text/javascript">
+
+	 #{form @checkout()}
+	 	<input class="button secondary checkout-submit button-block" type="submit" value="Proceed to Basket">
 	#{/form}
-</div>
+			
 </script>
 </div>
+	
+</div>
+<script type="text/JavaScript">   
+	function checkout() {	
+		console.log('checkout was clicked');
+		//items.checkout();
+		//#items.checkout();
+ 		$(Items.checkout());
+
+		return false;
+		
+	}
+</script> 
+
 <script type="text/JavaScript">   
 	function addItem(itemid) {	
 		console.log('additem was clicked'+itemid);

@@ -5,6 +5,7 @@ import java.util.List;
 import models.Basket;
 import models.BasketItem;
 import models.Item;
+import models.Order;
 import play.Logger;
 import play.mvc.Before;
 import play.mvc.Controller;
@@ -25,7 +26,7 @@ public class Items extends Controller {
 	@Before
 	static void initUser() throws Throwable {
 		if (!session.contains("username")) {
-			session.put("username", "bob");
+			session.put("username", "Akshit");
 		}
 	}
 
@@ -36,10 +37,18 @@ public class Items extends Controller {
 	public static void index() {		
         List<Item> items = Item.findAll();
 		
-		Logger.debug("In index()"+items.size());
-		for(Item item:items){
-			Logger.debug(item.name+",");
+		Logger.debug("In index()="+items.size());
+		
+		Basket basket = Basket.findByUserid(getUsername());
+		
+		if(basket!=null){
+			List<BasketItem> basketItems = basket.basketItems;
+
+			for (BasketItem basketItem : basketItems) {
+				Logger.debug("In index: + basketItem.item.name="+basketItem.item.name);
+			}
 		}
+		
 		render(items);
 	}
 
@@ -86,28 +95,31 @@ public class Items extends Controller {
 		List<BasketItem> basketItems = basket.basketItems;
 		double total = 0;
 		for (BasketItem basketItem : basketItems) {
-			total = total + basketItem.price;
+			Logger.debug("In checkout: + basketItem.price="+basketItem.basketItemPrice);
+			total = total + basketItem.basketItemPrice;
 		}
+		Logger.debug("In checkout:Total="+total);
 		render(basketItems, total);
 	}
 
-	public static void processPayment() {
-		Logger.debug("In processPayment");
-		if (params.get("_pay") != null) {
-			Basket basket = Basket.findByUserid(getUsername());
+	public static void confirmPayment() {
+		Logger.debug("In confirmPayment");
+		
+		Basket basket = Basket.findByUserid(getUsername());
 
-			Logger.debug("basket = "+basket.basketItems);
-			
-			for(BasketItem bItem:basket.basketItems){
-				Logger.debug(bItem.item.name+",");
-			}
-						
-			render();
-		} else if (params.get("_cancel") != null) {
-			Basket basket = Basket.findByUserid(getUsername());
-			basket.delete();
-			index();
-		}
+		Logger.debug("basket = "+basket.basketItems);
+		
+		List<BasketItem> basketItems = basket.basketItems;
+
+		Order order = new Order(basketItems, basket.getTotalBasketPrice(), "");
+		
+		order.processOrder();
+		
+					
+		String user = getUsername();
+		render(user, basketItems);
+		
+		//render();
 	}
 
 	public static void restartShopping() {
@@ -115,6 +127,31 @@ public class Items extends Controller {
 		Basket basket = Basket.findByUserid(getUsername());
 		basket.delete();
 		index();
+	}
+	
+	public static void reviewOrder(){
+		if (params.get("_pay") != null) {
+			Basket basket = Basket.findByUserid(getUsername());
+
+			Logger.debug("basket = "+basket.basketItems);
+			
+			List<BasketItem> basketItems = basket.basketItems;
+			
+			double total = basket.getTotalBasketPrice();
+			
+			for(BasketItem bItem:basket.basketItems){
+				Logger.debug(bItem.item.name+",");
+			}
+			
+			
+			render(basketItems, total);
+		} else if (params.get("_cancel") != null) {
+			Basket basket = Basket.findByUserid(getUsername());
+			basket.delete();
+			index();
+		}
+		
+		
 	}
 	
 	//will be used for searching food items later

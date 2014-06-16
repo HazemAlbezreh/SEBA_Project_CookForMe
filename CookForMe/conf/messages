@@ -15,7 +15,7 @@ btn_pay=process payment
 btn_continue=continue
 
 # -- items page --
-items_txt_heading=My Basket
+items_txt_heading=Items for Today
 items_txt_name_col_header=Name
 items_txt_description_col_header=Description
 items_txt_price_col_header=Price

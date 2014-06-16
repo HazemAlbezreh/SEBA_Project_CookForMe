@@ -8,6 +8,9 @@ POST   /dome/{id}                        		Items.dome
 GET     /                                       Items.index
 POST    /items/add/{id}           	            Items.addItemToBasket
 POST    /items/remove/{id}           	        Items.removeItemFromBasket
+POST    /items/processPayment			        Items.processPayment
+POST 	/checkout/review						Items.reviewOrder
+POST    /checkout/confirmPayment				Items.confirmPayment
 
 GET     /tests                                  Items.tests
 

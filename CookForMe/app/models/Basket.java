@@ -24,9 +24,12 @@ public class Basket extends Model {
 	@Column(name = "userid", nullable = false)
 	public String userid;
 	@OneToMany(mappedBy = "basket", cascade = CascadeType.ALL)
-
 	public List<BasketItem> basketItems = new ArrayList<BasketItem>(0);
 
+	
+	public double totalBasketPrice;
+	
+	
 	public Basket(String userid) {
 		this.userid = userid;
 	}
@@ -103,9 +106,10 @@ public class Basket extends Model {
 	public int getTotalBasketPrice(){
 		int total = 0;
 		for (BasketItem basketItem : basketItems) {
-			System.out.println("InBasket:"+basketItem.price);
+			System.out.println("InBasket:"+basketItem.basketItemPrice);
 			total+=basketItem.getPrice();
 		}
+		totalBasketPrice = total;
 		return total;
 	}
 	

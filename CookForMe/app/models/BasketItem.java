@@ -23,14 +23,14 @@ public class BasketItem extends Model {
 	@Column(name = "quantity", nullable = false)
 	public int quantity;
 	@Column(name = "price", nullable = false, precision = 22, scale = 0)
-	public double price;
+	public double basketItemPrice;
 
 	public BasketItem(Basket basket, Item item, int quantity, double price) {
 		this.basket = basket;
 		this.item = item;
 		this.quantity = quantity;
 		System.out.println("InBasketItem:"+quantity);
-		this.price = price;
+		this.basketItemPrice = price;
 		item.addBasketItem(this);
 	}
 	
@@ -45,11 +45,11 @@ public class BasketItem extends Model {
 	}
 	
 	private void calcPrice() {
-		price = item.price * quantity;		
+		basketItemPrice = item.price * quantity;		
 	}
 	
 	public double getPrice() {
-		return price*quantity;
+		return basketItemPrice;
 	}
 	
 	public Item getItem(){

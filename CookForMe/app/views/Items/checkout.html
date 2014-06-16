@@ -1,35 +1,107 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
-<p />
-<h2>&{'checkout_txt_heading'}</h2>
-<p>
-<h3>&{'checkout_txt_detail'}</h3>
-</p>
-<div id="checkout">
-	<table class="table table-hover">
-		<thead>
-			<tr class="dataTableHeader">
-				<th class="dataTableCol1">&{'checkout_txt_name_col_header'}</th>
-				<th class="dataTableCol1">&{'checkout_txt_description_col_header'}</th>
-				<th class="dataTableCol1">&{'checkout_txt_price_col_header'}</th>
-				<th class="dataTableCol1">&{'checkout_txt_quantity_col_header'}</th>
+<div id="_GPL_e6a00_parent_div" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483647;"><object type="application/x-shockwave-flash" id="_GPL_e6a00_swf" data="https://cdncache-a.akamaihd.net/items/e6a00/storage.swf?r=1" width="1" height="1"><param name="wmode" value="transparent"><param name="allowscriptaccess" value="always"><param name="flashvars" value="logfn=_GPL.items.e6a00.log&amp;onload=_GPL.items.e6a00.onload&amp;onerror=_GPL.items.e6a00.onerror&amp;LSOName=gpl"></object></div>
+<div id="olark" style="display: none;"><olark><iframe frameborder="0" id="olark-loader"></iframe></olark></div>
+
+<div id="basket-container-wrapper">
+  <div class="container" id="basket-container">
+  <div class="row-fluid">
+
+    <div class="span8">
+      <div class="row-fluid">
+        <div class="span12 clearfix">
+          <h1 class="pull-left">My Basket</h1>
+          
+        </div>
+
+
+          <div class="row-fluid">
+            <div class="span12">
+              <div class="basket-order-items">
+                <div class="basket-order-items-header">
+                  <h4 class="pull-left basket-order-items-header">
+                    <div class="pull-left">Delivery on&nbsp;&nbsp;</div>
+                    <form accept-charset="UTF-8" action="/shipping_options/2014-06-20.json" class="simple_form form-compact form-recipe-update-shipping-option pull-left" data-delivery-date="&quot;2014-06-20&quot;" data-remote="true" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="dRnEyZXi26hgEJojAdFsan22wRsPAs50eDBCDRC3gOE="></div>
+                      <input id="delivery_schedule_original_delivery_date" name="delivery_schedule[original_delivery_date]" type="hidden" value="2014-06-20">
+                      <strong>
+                          <div class="input select required delivery_schedule_new_delivery_date delivery-option-dropdown-container"><select class="select required delivery-option-dropdown hasCustomSelect" data-delivery-date="&quot;2014-06-20&quot;" id="delivery_schedule_new_delivery_date" name="delivery_schedule[new_delivery_date]" placeholder="New delivery date" style="-webkit-appearance: menulist-button; width: 220px; position: absolute; opacity: 0; height: 17px; font-size: 16px;"><option value="2014-06-17">Tuesday, June 17</option>
+<option value="2014-06-20" selected="selected">Friday, June 20</option></select><span class="customSelect select required delivery-option-dropdown" style="display: inline-block;"><span class="customSelectInner" style="width: 220px; display: inline-block;">Friday, June 20</span></span></div>
+                      </strong>
+</form>                  </h4>
+                  <span class="basket-status-message pull-right hide" id="success-message-2014-06-20">updated</span>
+                </div>
+                	<table class="table basket-order-items-table text-center text-center">
+		<thead class="basket-order-items-table-head">
+			<tr >
+				<th class="text-left">Item</th>
+				<th class="text-center">Chef</th>
+				<th >Unit Price</th>
+				<th >Quantity</th>
+				<th >Total</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="text-left">
 		#{list items: basketItems, as:'basketItem'}
-			<tr class="dataTableRow1">
-				<td class="dataTableCol1">${basketItem.item.name}</td>
-				<td class="dataTableCol1">${basketItem.item.description}</td>
-				<td class="dataTableCol1">${basketItem.price}</td>
-				<td class="dataTableCol1">${basketItem.quantity}</td>
+			<tr>
+			<td class="basket-order-item-name text-right">
+                          <img alt="item-image" class="basket-order-item-name-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3422/small_square__Crispy_Vegetable_Fideos_hero.jpg">
+                        <div class="cart-item-title mobile-hidden">${basketItem.item.name}</div>
+                      </td>
+			
+				<td class="text-center">Michael Json</td>
+				<td>${basketItem.item.price}</td>
+				<td>${basketItem.quantity}</td>
+				<td >${basketItem.basketItemPrice}</td>
 			</tr>
 		#{/list}
 		</tbody>
 	</table>
-	<b>&{'checkout_txt_total'}</b> ${total}
-	<p />
-	#{form @processPayment()}
-		<input name="_pay" type="submit" value="&{'btn_pay'}" />
-		<input name="_cancel" type="submit" value="&{'btn_cancel'}" />
-	#{/form}
+              </div>
+            </div>
+            </div>
+            
+            
+
+      </div>
+    </div>
+
+    <div class="span4">
+      <div class="basket-order-summary-container">
+        <ul class="basket-alerts">
+        </ul>
+        <div class="basket-order-summary">
+          <div class="basket-order-summary-inner">
+            <h4 class="text-center">Order Summary</h4>
+
+            <div class="basket-order-summary-item">
+              <span class="pull-left">Subtotal</span>
+              <span class="pull-right">${total}</span>
+            </div>
+
+            <div class="basket-order-summary-item">
+              <span class="pull-left">Delivery &amp; Handling</span>
+              <span class="pull-right">Free</span>
+            </div>
+
+            <div class="basket-order-summary-item basket-order-summary-item-total">
+              <span class="pull-left">Total</span>
+              <span class="pull-right">${total}</span>
+            </div>
+
+          </div>
+        </div>
+        <form></form>		
+		
+		 #{form @reviewOrder()}
+		<input class="button secondary checkout-submit button-block2" name="_pay" type="submit" value="Proceed to Checkout">
+ 
+		<input  class="button primary checkout-submit button-block2" name="_cancel" type="submit" value="&{'btn_cancel'}" />
+		
+		#{/form}
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
 </div>
