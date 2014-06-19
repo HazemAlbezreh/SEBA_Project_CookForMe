@@ -162,7 +162,7 @@ body {
 a, .link-text {
     color: #80a827;
     text-decoration: none;
-    border-bottom: 1px solid
+
 }
 
 a:hover, a:focus, .link-text:hover, .link-text:focus {
