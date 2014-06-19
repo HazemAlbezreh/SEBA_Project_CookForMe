@@ -354,9 +354,7 @@ body{
 .prev {
 	background: url(../images/prevnext.png) 0 bottom no-repeat;
 	display: block;
-	position: absolute;
-	right: 42px;
-	top: 9px;
+	float:right;
 	width: 32px;
 	z-index: 20;
 	height: 30px;
@@ -370,9 +368,7 @@ body{
 	background: url(../images/prevnext.png) right bottom no-repeat;
 	display: block;
 	z-index: 20;
-	position: absolute;
-	right: 10px;
-	top: 9px;
+	float:right;
 	width: 32px;
 	height: 30px;
 }
@@ -383,7 +379,7 @@ body{
 .container_12 {
   margin-left: auto;
   margin-right: auto;
-  width: 960px;
+  width: auto;
 }
 
 
@@ -392,8 +388,6 @@ body{
 }
 
 .grid_12 {
-  display: inline;
-  float: left;
   margin-left: 10px;
   margin-right: 10px;
 }
