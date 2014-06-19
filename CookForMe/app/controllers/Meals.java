@@ -83,15 +83,13 @@ public class Meals extends Controller {
         renderJSON(found);
     }
     
-    public static void search(String searchToken, String category, String ingredients, String fromDate, String tillDate) {
+    public static void search(String searchToken, String category, String ingredients) {
     	if (category == null)  category = "";
     	if (ingredients == null)  ingredients = "";
-    	if (fromDate == null) fromDate = "";
-    	if (tillDate == null) tillDate = "";
     	
-    	List<Meal> meals = Meal.findMeals(searchToken, category, ingredients, fromDate, tillDate);
+    	List<Meal> meals = Meal.findMeals(searchToken, category, ingredients);
     	List<Category> categories = Category.findAll();
     	categories.add(0, new Category(""));
-        render(searchToken, meals, categories, category, ingredients, fromDate, tillDate);
+        render(searchToken, meals, categories, category, ingredients);
     }
 }
