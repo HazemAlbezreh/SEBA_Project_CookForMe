@@ -30,6 +30,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script src="js/superfish.js"></script>
 		<script src="js/jquery.easing.1.3.js"></script>
 		<script src="js/sForm.js"></script>
+		 <script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+	     <script>
+	     $(window).load (
+		    function(){$('.carousel2').carouFredSel({auto: false,prev: '.prev1',next: '.next1', width: 410, items: {
+		      visible : {min: 1, max: 1},
+			  height: 'auto',
+			   width: 410,
+		    }, responsive: false, 
+		    scroll: 1, 
+		    mousewheel: false,
+		    swipe: {onMouse: false, onTouch: false}});
+		    });      
+	     </script>
 		
 		
 		<script type="text/javascript">
@@ -231,42 +244,59 @@ height: 'auto',
 				</div>
 			</div>
 			<!--- //End-top-services-grids---->
+			
 			<!---start-process---->
 			<div class="process-grids" id="process">
 				<div class="wrap">
-					<div class="process-top-grid">
-						<div class="process-top-grid-left">
-							<h3>What We Do</h3>
-							<p>Design equidem tibique id duo, movet definiebas at has. Ne duo autem utamur utroque, nusquam dissentias cum ut. In pri putant civibus, nec in homero accusamus. Eam perfecto. Reque scaevola ponderum laudem numquam, audire impedit percipitur.</p>
-							<p>Dico omnis graeco eum cu, patrioque vix ludus . Labitur abhorreant. Luptatum iudicabit his. Quidam semper omittam.</p>
-							<p>Dico omnis graeco eum cu, patrioque vix ludus. Labitur abhorreant. Luptatum iudicabit his. Quidam semper omittam. Reque scaevola ponderum laudem.</p>
-						</div>
-						<div class="process-top-grid-right">
-							<a herf="#"><img src="images/divices.png" title="divices" /></a>
-						</div>
-						<div class="clear"> </div>
-					</div>
-					<div class="process-bottom-grid">
-						<div class="process-bottom-grid-left">
-							<img src="images/video.jpg" title="video-name" />
-						</div>
-						<div class="process-bottom-grid-right">
-							<h3>TEMPLATE STRUCTURE</h3>
-							<p>Design equidem tibique id duo, movet definiebas at has. Ne duo autem utamur utroque, nusquam dissentias cum ut. In pri putant civibus, nec in homero accusamus. Eam perfecto. Reque scaevola ponderum laudem numquam, audire impedit percipitur.</p>
-							<p>Dico omnis graeco eum cu, patrioque vix ludus . Labitur abhorreant. Luptatum iudicabit his. Quidam semper omittam.</p>
-							<p>Eam perfecto. Reque scaevola ponderum laudem numquam, audire impedit percipitur.</p>
-							<ul class="process-btns">
-								<li><a class="apple" href="#"><span> </span> App Store</a></li>
-								<li><a class="googleplay" href="#"><span> </span>Google Play</a></li>
-								<li><a class="download" href="#">Download Now</a></li>
-							</ul>
-						</div>
-						<div class="clear"> </div>
-					</div>
+					<div class="grid_5 prefix_3 process-bottom-grid-right">
+				      <h3>What we do</h3>
+				      <img src="images/page2_img1.jpg" alt="" class="img_inner">
+				      <p class="col1">Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget. </p>
+				      <p>Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget.  </p>
+				      <p>Donec eu felis purus, iaculis fringilla ipsum. Integer non. nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus.</p>       <br>
+				      <a href="#" class="btn m1">More</a>
+				    </div>
+				    
+					<div class="grid_5 prefix_2 process-bottom-grid-right">
+				      <h3>Testimonials</h3>
+				      <ul class="carousel2">
+				        <li>
+				          <blockquote>
+				            <img src="images/page2_img2.png" alt="">
+				            <div class="extra_wrapper">
+				              <div class="title">Sara &amp; Kevin <br> Jonson</div>
+				            </div>
+				            <div class="clear"></div>
+				            <p class="col1">Euismod pellentesque in dui. Semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod.</p>
+				            <p>Curabitur felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio.  Aliquam consectetur. Fringilla ipsum.           </p>
+				            <p>
+				Ringilla ipsum. Donec et nibh non turpis pellentesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop pelle ntesque suscipit eget consectetur.</p>
+				          </blockquote>
+				        </li>
+				        <li>
+				          <blockquote>
+				            <img src="images/page2_img2-1.png" alt="">
+				            <div class="extra_wrapper">
+				              <div class="title">Moira &amp; Brett<br>
+				       Clark</div>
+				            </div>
+				            <div class="clear"></div>
+				            <p class="col1">Pellentesque in dui euismod. Aliquam semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod nibh suscipi. </p>
+				            <p>Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio.  Aliquam consectetur. Ghfgop Maecnas cursus frin.</p>
+				            <p>Curabitur in turpisju massa. Donec et nibh non turpis pellen tesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis.</p>
+				          </blockquote>
+				        </li>
+				      </ul>
+				     
+				      <a href="#" class="next1"></a>
+				      <a href="#" class="prev1"></a>
+				    </div>
 				</div>
 			</div>
 			<!---//End-process---->
+			
 			<!---start-portfolioi--->
+			<div class="clear"></div>
 			<div class="portfolio" id="portfolio">
 				<div class="recent-works" id="portfolio">
 				<div class="recent-works-head">
