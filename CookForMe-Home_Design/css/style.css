@@ -226,7 +226,7 @@ body{
 	margin-top: 1em;
 }
 .process-bottom-grid-right{
-	float: left;
+	float: right;
 	width: 62%;
 	margin-left: 3%;
 }
@@ -296,11 +296,6 @@ body{
 }
 <<<<<<< HEAD
 /*---best-choices-----*/
-.clear {
-	float: none !important;
-	clear: both;
-}
-
 
 .car_wrap {
 	position: relative;
@@ -364,7 +359,7 @@ body{
 	right: 42px;
 	top: 9px;
 	width: 32px;
-	z-index: 999;
+	z-index: 20;
 	height: 30px;
 }
 
@@ -375,7 +370,7 @@ body{
 .next {
 	background: url(../images/prevnext.png) right bottom no-repeat;
 	display: block;
-	z-index: 999;
+	z-index: 20;
 	position: absolute;
 	right: 10px;
 	top: 9px;
