@@ -3,3 +3,12 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+.form-control {
+	box-sizing: border-box;	
+}
+
+.form-control[type="file"] {
+	box-sizing: content-box;	
+	width: 560px;
+}
