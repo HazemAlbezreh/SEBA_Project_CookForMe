@@ -1,4 +1,336 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
+	<style>
+		#page-content{
+			padding: 0px;
+		}
+	</style>
+			<!----start-homepage-header--->
+			<div class="header">
+			<div class="wrap">
+					<!---start-logo---->
+					<div class="logo">
+						<a href="index.html"><img src="@{'/public/images/logo.png'}" title="CookForMe" /></a>
+					</div>
+					<!---start-top-nav---->
+					<div class="top-nav" id="menu-left">
+						<ul>
+							<li class="active"><a href="#home">Home</a></li>
+							<li><a href="#services">Our Services</a></li>
+							<li><a href="#process">What We Do & User Stories</a></li>
+							<li><a href="#portfolio">Popular Dishes</a></li>
+							<li><a href="#price">About us</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li class="nav-icon"><a href="#"><span> </span></a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+					<!---//End-top-nav---->
+					<div class="clear"> </div>
+				</div>
+			</div>
+			<!----//End-homepage-header--->
+			
+			<!---- start Image Slider --->
+			 <div class="slider-relative">
+			    <div class="slider-block">
+			      <div class="slider">
+			        <ul class="items">
+			          <li><img src="@{'/public/images/slide.jpg'}" alt=""></li>
+			          <li><img src="@{'/public/images/slide1.jpg'}" alt=""></li>
+			          <li class="mb0"><img src="@{'/public/images/slide2.jpg'}" alt=""></li>
+					  <li class="mb0"><img src="@{'/public/images/slide2.jpg'}" alt=""></li>
+					  <li class="mb0"><img src="@{'/public/images/slide2.jpg'}" alt=""></li>
+			        </ul>
+			      </div>
+			    </div>
+			 </div>
+			 <!---- end Image Slider --->
+			<div class="clear"> </div>
+			
+	
+			<!----start-content--->
+			<div class="content">
+				<!--- start-top-services-grids---->
+				<div class="top-grids" id="services">
+					<div class="wrap">
+						<div class="top-grid">
+							<a class="icon monitor" href="#"> </a>
+							<a href="#">Browse our meals</a>
+							<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
+						</div>
+						<div class="top-grid">
+							<a class="icon target" href="#"> </a>
+							<a href="#">Offer a meal</a>
+							<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
+						</div>
+						<div class="top-grid">
+							<a class="icon photo" href="#"> </a>
+							<a href="#">Search for meals</a>
+							<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
+						</div>
+	<!-- 					<div class="top-grid top-grid1"> -->
+	<!-- 						<label> </label> -->
+	<!-- 						<a class="icon colors" href="#"> </a> -->
+	<!-- 						<a href="#">Upload</a> -->
+	<!-- 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p> -->
+	<!-- 					</div> -->
+	<!-- 					<div class="top-grid top-grid1"> -->
+	<!-- 						<label> </label> -->
+	<!-- 						<a class="icon man" href="#"> </a> -->
+	<!-- 						<a href="#">Launch</a> -->
+	<!-- 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p> -->
+	<!-- 					</div> -->
+	<!-- 					<div class="top-grid top-grid1"> -->
+	<!-- 						<label> </label> -->
+	<!-- 						<a class="icon spare" href="#"> </a> -->
+	<!-- 						<a href="#">Website</a> -->
+	<!-- 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p> -->
+	<!-- 					</div> -->
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<!--- //End-top-services-grids---->
+				
+				<!---start user stories ---->
+				<div class="process-grids" id="process">
+					<div class="wrap">
+						<div class="grid_5 prefix_3 process-bottom-grid-right">
+					      <h3>What we do</h3>
+					      <img src="@{'/public/images/page2_img1.jpg'}" alt="" class="img_inner">
+					      <p class="col1">Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget. </p>
+					      <p>Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget.  </p>
+					      <p>Donec eu felis purus, iaculis fringilla ipsum. Integer non. nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus.</p>       <br>
+					      <a href="#" class="btn m1">More</a>
+					    </div>
+					    
+						<div class="grid_5 prefix_2 process-bottom-grid-right">
+					      <h3>Testimonials</h3>
+					      <ul class="carousel2">
+					        <li>
+					          <blockquote>
+					            <img src="@{'/public/images/page2_img2.png'}" alt="">
+					            <div class="extra_wrapper">
+					              <div class="title">Sara &amp; Kevin <br> Jonson</div>
+					            </div>
+					            <div class="clear"></div>
+					            <p class="col1">Euismod pellentesque in dui. Semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod.</p>
+					            <p>Curabitur felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio.  Aliquam consectetur. Fringilla ipsum.           </p>
+					            <p>Ringilla ipsum. Donec et nibh non turpis pellentesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop pelle ntesque suscipit eget consectetur.</p>
+					          </blockquote>
+					        </li>
+					        <li>
+					          <blockquote>
+					            <img src="@{'/public/images/page2_img2-1.png'}" alt="">
+					            <div class="extra_wrapper">
+					              <div class="title">Moira &amp; Brett<br>Clark</div>
+					            </div>
+					            <div class="clear"></div>
+					            <p class="col1">Pellentesque in dui euismod. Aliquam semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod nibh suscipi. </p>
+					            <p>Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio.  Aliquam consectetur. Ghfgop Maecnas cursus frin.</p>
+					            <p>Curabitur in turpisju massa. Donec et nibh non turpis pellen tesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis.</p>
+					          </blockquote>
+					        </li>
+					      </ul>
+					     
+					      <a href="#" class="next1"></a>
+					      <a href="#" class="prev1"></a>
+					    </div>
+					</div>
+				</div>
+				<div class="clear"> </div>
+				<!---end user stories ---->
+			
+				<!---start popular dishes--->
+				<div class="portfolio" id="portfolio">
+				<div class="wrap">
+					<div class="grid_12">
+					<div class="hor_separator"></div>
+					</div>
+		  
+				  <div class="grid_12">
+					<div class="car_wrap">
+					<h3>Best Choice</h3>
+					<ul class="carousel1">
+					  <li><div><img src="@{'/public/images/page1_img1.jpg'}" alt="">
+					  <div class="col1 upp"> <a href="#">Lorem ipsum doamet consectet</a></div>
+					  <span> Dorem ipsum dolor amet consectetur</span>
+					  <div class="price">45$</div></div>
+					  </li>
+					  <li><div><img src="@{'/public/images/page1_img2.jpg'}" alt="">
+					  <div class="col1 upp"> <a href="#">Lorem ipsum doamet consectet</a></div>
+					  <span> Dorem ipsum dolor amet consectetur</span>
+					  <div class="price">45$</div></div>
+					  </li>
+					  <li><div><img src="@{'/public/images/page1_img3.jpg'}" alt="">
+					  <div class="col1 upp"> <a href="#">Lorem ipsum doamet consectet</a></div>
+					  <span> Dorem ipsum dolor amet consectetur</span>
+					  <div class="price">45$</div></div>
+					  </li>
+					  <li><div><img src="@{'/public/images/page1_img4.jpg'}" alt="">
+					  <div class="col1 upp"> <a href="#">Lorem ipsum doamet consectet</a></div>
+					  <span> Dorem ipsum dolor amet consectetur</span>
+					  <div class="price">45$</div></div>
+					  </li>
+					  <li><div><img src="@{'/public/images/page1_img3.jpg'}" alt="">
+					  <div class="col1 upp"> <a href="#">Lorem ipsum doamet consectet</a></div>
+					  <span> Dorem ipsum dolor amet consectetur</span>
+					  <div class="price">45$</div></div>
+					  </li>
+					</ul>
+				  </div>
+				  <a href="#" class="next"></a>
+				  <a href="#" class="prev"></a>
+				</div>
+				</div>
+				</div>
+				<!---end popular dishes--->
+				
+				
+				<!---start about us ---->
+				<div class="pricing-plans" id="price"> </div>
+				<div class="clear"> </div>
+				<!---//End-priceing-tabels!-->
+	
+				
+				<!---start-aboutus-images!-->
+				<div id="aboutusDIV_1" style=" height:1402px;">
+				<div id="aboutusDIV_2">
+				<!-- Header -->
+				<header id="aboutusHEADER_3">
+					<h4 id="aboutusH4_4">
+						About
+					</h4>
+					<h1 id="aboutusH1_5">
+						Meet The Team
+					</h1>
+					<div id="aboutusDIV_6">
+						<div id="aboutusDIV_7">
+							<p id="aboutusP_8">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+						</div>
+					</div>
+				</header>
+				<!-- End Header -->
+	
+			<!-- Article -->
+			<article id="aboutusARTICLE_9">
+				<!-- List of people and description with their contact details which are visable on hover -->
+				<ul id="aboutusUL_10">
+					<li id="aboutusLI_11">
+						<div id="aboutusDIV_12">
+							<!-- Team member image -->
+							<img src="@{'/public/images/about/team01.jpg'}" alt="Treble" id="aboutusIMG_13" />
+							<!-- Team memeber details, activated on hover -->
+	
+							<div id="aboutusDIV_14">
+								<div id="aboutusDIV_15">
+									 <a href="#" id="aboutusA_16"><i id="aboutusI_17">Facebook</i></a> <a href="#" id="aboutusA_18"><i id="aboutusI_19">Twitter</i></a> <a href="#" id="aboutusA_20"><i id="aboutusI_21">LinkedIn</i></a> <a href="#" id="aboutusA_22"><i id="aboutusI_23">Youtube</i></a> <a href="#" id="aboutusA_24"><i id="aboutusI_25">Pinterest</i></a>
+								</div>
+							</div>
+						</div>
+						<!-- Team member name and function -->
+	
+						<h5 id="aboutusH5_26">
+							Joanna doe<br id="aboutusBR_27" /> <small id="aboutusSMALL_28">Creative director</small>
+						</h5>
+						<!-- Team member short info -->
+	
+						<p id="aboutusP_29">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+						</p>
+					</li>
+					<li id="aboutusLI_30">
+						<div id="aboutusDIV_31">
+							<img src="@{'/public/images/about/team01.jpg'}" alt="Treble" id="aboutusIMG_32" />
+							<div id="aboutusDIV_33">
+								<div id="aboutusDIV_34">
+									 <a href="#" id="aboutusA_35"><i id="aboutusI_36">Facebook</i></a> <a href="#" id="aboutusA_37"><i id="aboutusI_38">Twitter</i></a> <a href="#" id="aboutusA_39"><i id="aboutusI_40">LinkedIn</i></a> <a href="#" id="aboutusA_41"><i id="aboutusI_42">Youtube</i></a> <a href="#" id="aboutusA_43"><i id="aboutusI_44">Pinterest</i></a>
+								</div>
+							</div>
+						</div>
+						<h5 id="aboutusH5_45">
+							Joanna doe<br id="aboutusBR_46" /> <small id="aboutusSMALL_47">Creative director</small>
+						</h5>
+						<p id="aboutusP_48">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+						</p>
+					</li>
+					<li id="aboutusLI_49">
+						<div id="aboutusDIV_50">
+							<img src="@{'/public/images/about/team01.jpg'}" alt="Treble" id="aboutusIMG_51" />
+							<div id="aboutusDIV_52">
+								<div id="aboutusDIV_53">
+									 <a href="#" id="aboutusA_54"><i id="aboutusI_55">Facebook</i></a> <a href="#" id="aboutusA_56"><i id="aboutusI_57">Twitter</i></a> <a href="#" id="aboutusA_58"><i id="aboutusI_59">LinkedIn</i></a> <a href="#" id="aboutusA_60"><i id="aboutusI_61">Youtube</i></a> <a href="#" id="aboutusA_62"><i id="aboutusI_63">Pinterest</i></a>
+								</div>
+							</div>
+						</div>
+						<h5 id="aboutusH5_64">
+							Joanna doe<br id="aboutusBR_65" /> <small id="aboutusSMALL_66">Creative director</small>
+						</h5>
+						<p id="aboutusP_67">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+						</p>
+					</li>
+					<li id="aboutusLI_68">
+						<div id="aboutusDIV_69">
+							<img src="@{'/public/images/about/team01.jpg'}" alt="Treble" id="aboutusIMG_70" />
+							<div id="aboutusDIV_71">
+								<div id="aboutusDIV_72">
+									 <a href="#" id="aboutusA_73"><i id="aboutusI_74">Facebook</i></a> <a href="#" id="aboutusA_75"><i id="aboutusI_76">Twitter</i></a> <a href="#" id="aboutusA_77"><i id="aboutusI_78">LinkedIn</i></a> <a href="#" id="aboutusA_79"><i id="aboutusI_80">Youtube</i></a> <a href="#" id="aboutusA_81"><i id="aboutusI_82">Pinterest</i></a>
+								</div>
+							</div>
+						</div>
+						<h5 id="aboutusH5_83">
+							Joanna doe<br id="aboutusBR_84" /> <small id="aboutusSMALL_85">Creative director</small>
+						</h5>
+						<p id="aboutusP_86">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+						</p>
+					</li>
+					<li id="aboutusLI_87">
+						<div id="aboutusDIV_88">
+							<img src="@{'/public/images/about/team01.jpg'}" alt="Treble" id="aboutusIMG_89" />
+							<div id="aboutusDIV_90">
+								<div id="aboutusDIV_91">
+									 <a href="#" id="aboutusA_92"><i id="aboutusI_93">Facebook</i></a> <a href="#" id="aboutusA_94"><i id="aboutusI_95">Twitter</i></a> <a href="#" id="aboutusA_96"><i id="aboutusI_97">LinkedIn</i></a> <a href="#" id="aboutusA_98"><i id="aboutusI_99">Youtube</i></a> <a href="#" id="aboutusA_100"><i id="aboutusI_101">Pinterest</i></a>
+								</div>
+							</div>
+						</div>
+						<h5 id="aboutusH5_102">
+							Joanna doe<br id="aboutusBR_103" /> <small id="aboutusSMALL_104">Creative director</small>
+						</h5>
+						<p id="aboutusP_105">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+						</p>
+					</li>
+					<li id="aboutusLI_106">
+						<div id="aboutusDIV_107">
+							<img src="@{'/public/images/about/team01.jpg'}" alt="Treble" id="aboutusIMG_108" />
+							<div id="aboutusDIV_109">
+								<div id="aboutusDIV_110">
+									 <a href="#" id="aboutusA_111"><i id="aboutusI_112">Facebook</i></a> <a href="#" id="aboutusA_113"><i id="aboutusI_114">Twitter</i></a> <a href="#" id="aboutusA_115"><i id="aboutusI_116">LinkedIn</i></a> <a href="#" id="aboutusA_117"><i id="aboutusI_118">Youtube</i></a> <a href="#" id="aboutusA_119"><i id="aboutusI_120">Pinterest</i></a>
+								</div>
+							</div>
+						</div>
+						<h5 id="aboutusH5_121">
+							Joanna doe<br id="aboutusBR_122" /> <small id="aboutusSMALL_123">Creative director</small>
+						</h5>
+						<p id="aboutusP_124">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+						</p>
+					</li>
+				</ul>
+			</article>
+			<!-- End Article -->
+	
+			</div>
+		</div>
+		<!---end-aboutus-images!-->
 
-#{welcome /}
+	</div>
+	<!----//End-content--->
+	<!----//End-wrap---->
+	
+

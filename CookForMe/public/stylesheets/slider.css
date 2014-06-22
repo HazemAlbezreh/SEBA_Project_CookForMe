@@ -80,7 +80,7 @@ z-index: 999;
 .pagination  li a{
 	width: 24px;
 	display: block;
-		transition: 0s ease;
+	transition: 0s ease;
 	-o-transition: 0s ease;
 	-webkit-transition: 0s ease;
 	height: 23px;
