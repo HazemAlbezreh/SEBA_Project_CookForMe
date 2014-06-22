@@ -2,32 +2,31 @@
 <html>
 	<head>
 		<title>CookForMe</title>
+		
+		<!-- css external sheets -->
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="css/slider.css">
 		<link rel="stylesheet" href="css/footer.css">
 		<link rel="stylesheet" href="css/aboutus.css">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		</script>
-		<!----webfonts---->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-		<!----//webfonts---->
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- js scripts & external files -->
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
 		<script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
 		<script src="js/tms-0.4.1.js"></script>
-		
-		
-		
+		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
 		<script src="js/jquery-migrate-1.1.1.js"></script>
 		<script src="js/superfish.js"></script>
 		<script src="js/jquery.easing.1.3.js"></script>
 		<script src="js/sForm.js"></script>
-		 <script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
-	     <script>
+		<script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	    <script>
 	     	$(window).load (
 			    function(){$('.carousel2').carouFredSel({auto: false,prev: '.prev1',next: '.next1', width: 410, items: {
 			      visible : {min: 1, max: 1},
@@ -37,106 +36,123 @@
 			    scroll: 1, 
 			    mousewheel: false,
 			    swipe: {onMouse: false, onTouch: false}});
-		    });      
-	     </script>
+		    });     
+	     	
+			$(function() {
+			  $('a[href*=#]:not([href=#])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 		
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html,body').animate({
+			          scrollTop: target.offset().top
+			        }, 1000);
+			        return false;
+			      }
+			    }
+			  });
+			});
 		
-		<script type="text/javascript">
-		
-				$(function() {
-				  $('a[href*=#]:not([href=#])').click(function() {
-				    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			
-				      var target = $(this.hash);
-				      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				      if (target.length) {
-				        $('html,body').animate({
-				          scrollTop: target.offset().top
-				        }, 1000);
-				        return false;
-				      }
-				    }
-				  });
+			$(window).load(function(){
+				$('div.description').each(function(){
+					$(this).css('display', 'block');
 				});
-		</script>
-		
-		
-		<!--768px-menu-->
-		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-		   <script type="text/javascript">
-				$(window).load(function(){
-					$('div.description').each(function(){
-						$(this).css('display', 'block');
-					});
-					
-					$('div.content-top-grid').hover(function(){
-						$(this).children('.description').stop().fadeTo(500, 1);
-					},function(){
-						$(this).children('.description').stop().fadeTo(500, 0);
-					});
-					
+				
+				$('div.content-top-grid').hover(function(){
+					$(this).children('.description').stop().fadeTo(500, 1);
+				},function(){
+					$(this).children('.description').stop().fadeTo(500, 0);
 				});
-		</script>
-		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
-			<script type="text/javascript">
-				//	The menu on the left
-				$(function() {
-					$('nav#menu-left').mmenu();
-				});
-		</script>
+				
+			});
 		
-		<script>
-      $(window).load(function(){
-      $('.slider')._TMS({
-              show:0,
-              pauseOnHover:false,
-              prevBu:'.prev',
-              nextBu:'.next',
-              playBu:false,
-              duration:800,
-              preset:'fade', 
-              pagination:true,//'.pagination',true,'<ul></ul>'
-              pagNums:false,
-              slideshow:8000,
-              numStatus:false,
-              banners:false,
-          waitBannerAnimation:false,
-        progressBar:false
-      })  
-      });
+			$(function() {
+				$('nav#menu-left').mmenu();
+			});
+
+			$(window).load(function(){
+			 $('.slider')._TMS({
+			         show:0,
+			         pauseOnHover:false,
+			         prevBu:'.prev',
+			         nextBu:'.next',
+			         playBu:false,
+			         duration:800,
+			         preset:'fade', 
+			         pagination:true,//'.pagination',true,'<ul></ul>'
+			         pagNums:false,
+			         slideshow:8000,
+			         numStatus:false,
+			         banners:false,
+			      waitBannerAnimation:false,
+			      progressBar:false
+			 })  
+			});
       
-     $(window).load (
-    function(){$('.carousel1').carouFredSel({auto: false,prev: '.prev',next: '.next', width: 960, items: {
-      visible : {min: 1,
-       max: 4
-},
-height: 'auto',
- width: 240,
-
-    }, responsive: false, 
-    
-    scroll: 1, 
-    
-    mousewheel: false,
-    
-    swipe: {onMouse: false, onTouch: false}});
-    
-    
-    });      
-
-     </script>
-		<!-----//768px-menu----->
+		    $(window).load (
+			    function(){$('.carousel1').carouFredSel({auto: false,prev: '.prev',next: '.next', width: 960, items: {
+			      visible : {min: 1,
+			       max: 4
+					},
+					height: 'auto',
+					 width: 240,
+				    }, responsive: false,     
+				    scroll: 1, 
+				    mousewheel: false,
+				    swipe: {onMouse: false, onTouch: false}});
+			});      
+    </script>
 	</head>
+	
+	
 	<body>
-		<!------start-768px-menu---->
-			<!----start-header--->
-			<div class="header">
-				<div class="wrap">
+		<div class="header2">
+			<div class="wrap">
 				<!---start-logo---->
 				<div class="logo">
 					<a href="index.html"><img src="images/logo.png" title="CookForMe" /></a>
 				</div>
 				<!---//End-logo---->
+				<!---start-top-nav---->
+				<div class="top-nav" id="menu-left">
+					<ul>
+						<li><a href="#">Home Page</a></li>
+						<li><a href="#">Offer Meal</a></li>
+						<li><a href="#">Browse Meals</a></li>
+						<li><a href="#">Lorem</a></li>
+						<li><a href="#">ipsum</a></li>
+						<li><a href="#">Dorem</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div> 
+				<!---//End-top-nav---->
+				<div class="clear"> </div>
+			</div>
+		</div>
+		<!----//End-header--->
+		
+		<!----start-header--->
+		<div class="header">
+			<div class="wrap">
+				<!---start-logo---->
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" title="CookForMe" /></a>
+				</div>
+				<!---//End-logo---->
+				<!---start-top-nav---->
+				<!-- <div class="top-nav" id="menu-left">
+					<ul>
+						<li class="active"><a href="#">Home Page</a></li>
+						<li><a href="#">Offer Meal</a></li>
+						<li><a href="#">Browse Meals</a></li>
+						<li><a href="#">Lorem</a></li>
+						<li><a href="#">ipsum</a></li>
+						<li><a href="#">Dorem</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>  -->
+				<!---//End-top-nav---->
 				<!---start-top-nav---->
 				<div class="top-nav" id="menu-left">
 					<ul>
@@ -153,29 +169,29 @@ height: 'auto',
 				<!---//End-top-nav---->
 				<div class="clear"> </div>
 			</div>
-			<!----//End-header--->
 		</div>
+		<!----//End-header--->
 		
-		
-						 <div class="slider-relative">
-    <div class="slider-block">
-      <div class="slider">
-        <ul class="items">
-          <li><img src="images/slide.jpg" alt=""></li>
-          <li><img src="images/slide1.jpg" alt=""></li>
-          <li class="mb0"><img src="images/slide2.jpg" alt=""></li>
-		  <li class="mb0"><img src="images/slide2.jpg" alt=""></li>
-		  <li class="mb0"><img src="images/slide2.jpg" alt=""></li>
-        </ul>
-      </div>
-    </div>
- </div>
+		<!---- start Image Slider --->
+		 <div class="slider-relative">
+		    <div class="slider-block">
+		      <div class="slider">
+		        <ul class="items">
+		          <li><img src="images/slide.jpg" alt=""></li>
+		          <li><img src="images/slide1.jpg" alt=""></li>
+		          <li class="mb0"><img src="images/slide2.jpg" alt=""></li>
+				  <li class="mb0"><img src="images/slide2.jpg" alt=""></li>
+				  <li class="mb0"><img src="images/slide2.jpg" alt=""></li>
+		        </ul>
+		      </div>
+		    </div>
+		 </div>
+		 <!---- end Image Slider --->
 		
 		
 		<div class="clear"> </div>
 		
-		<div class="clear"> </div>
-		<!----//End-image-slider---->
+
 		<!----start-content--->
 		<div class="content">
 			<!--- start-top-services-grids---->
@@ -183,43 +199,43 @@ height: 'auto',
 				<div class="wrap">
 					<div class="top-grid">
 						<a class="icon monitor" href="#"> </a>
-						<a href="#">Email Address</a>
+						<a href="#">Browse our meals</a>
 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
 					</div>
 					<div class="top-grid">
 						<a class="icon target" href="#"> </a>
-						<a href="#">Business Ideas</a>
+						<a href="#">Offer a meal</a>
 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
 					</div>
 					<div class="top-grid">
 						<a class="icon photo" href="#"> </a>
-						<a href="#">Locate</a>
+						<a href="#">Search for meals</a>
 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
 					</div>
-					<div class="top-grid top-grid1">
-						<label> </label>
-						<a class="icon colors" href="#"> </a>
-						<a href="#">Upload</a>
-						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
-					</div>
-					<div class="top-grid top-grid1">
-						<label> </label>
-						<a class="icon man" href="#"> </a>
-						<a href="#">Launch</a>
-						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
-					</div>
-					<div class="top-grid top-grid1">
-						<label> </label>
-						<a class="icon spare" href="#"> </a>
-						<a href="#">Website</a>
-						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
-					</div>
+<!-- 					<div class="top-grid top-grid1"> -->
+<!-- 						<label> </label> -->
+<!-- 						<a class="icon colors" href="#"> </a> -->
+<!-- 						<a href="#">Upload</a> -->
+<!-- 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="top-grid top-grid1"> -->
+<!-- 						<label> </label> -->
+<!-- 						<a class="icon man" href="#"> </a> -->
+<!-- 						<a href="#">Launch</a> -->
+<!-- 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="top-grid top-grid1"> -->
+<!-- 						<label> </label> -->
+<!-- 						<a class="icon spare" href="#"> </a> -->
+<!-- 						<a href="#">Website</a> -->
+<!-- 						<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p> -->
+<!-- 					</div> -->
 					<div class="clear"> </div>
 				</div>
 			</div>
 			<!--- //End-top-services-grids---->
 			
-			<!---start-process---->
+			<!---start user stories ---->
 			<div class="process-grids" id="process">
 				<div class="wrap">
 					<div class="grid_5 prefix_3 process-bottom-grid-right">
@@ -243,16 +259,14 @@ height: 'auto',
 				            <div class="clear"></div>
 				            <p class="col1">Euismod pellentesque in dui. Semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod.</p>
 				            <p>Curabitur felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio.  Aliquam consectetur. Fringilla ipsum.           </p>
-				            <p>
-				Ringilla ipsum. Donec et nibh non turpis pellentesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop pelle ntesque suscipit eget consectetur.</p>
+				            <p>Ringilla ipsum. Donec et nibh non turpis pellentesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop pelle ntesque suscipit eget consectetur.</p>
 				          </blockquote>
 				        </li>
 				        <li>
 				          <blockquote>
 				            <img src="images/page2_img2-1.png" alt="">
 				            <div class="extra_wrapper">
-				              <div class="title">Moira &amp; Brett<br>
-				       Clark</div>
+				              <div class="title">Moira &amp; Brett<br>Clark</div>
 				            </div>
 				            <div class="clear"></div>
 				            <p class="col1">Pellentesque in dui euismod. Aliquam semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod nibh suscipi. </p>
@@ -268,10 +282,9 @@ height: 'auto',
 				</div>
 			</div>
 			<div class="clear"> </div>
-			<!---//End-process---->
+			<!---end user stories ---->
 		
-			<!---start-portfolioi--->
-			<div class="clear"></div>
+			<!---start popular dishes--->
 			<div class="portfolio" id="portfolio">
 			<div class="wrap">
 				<div class="grid_12">
@@ -313,43 +326,39 @@ height: 'auto',
 			  <a href="#" class="prev"></a>
 			</div>
 			</div>
-			<!---//End-portfolioi--->
-			<!---start-priceing-tabels---->
-			<div class="pricing-plans" id="price">
-	
-			</div>
+			<!---end popular dishes--->
+			
+			
+			<!---start about us ---->
+			<div class="pricing-plans" id="price"> </div>
 			<div class="clear"> </div>
 			<!---//End-priceing-tabels!-->
 
 			
 			<!---start-aboutus-images!-->
-		
-		<div id="aboutusDIV_1" style=" height:1402px;">
-		<div id="aboutusDIV_2">
-		<!-- Header -->
-
-		<header id="aboutusHEADER_3">
-			<h4 id="aboutusH4_4">
-				About
-			</h4>
-			<h1 id="aboutusH1_5">
-				Meet The Team
-			</h1>
-			<div id="aboutusDIV_6">
-				<div id="aboutusDIV_7">
-					<p id="aboutusP_8">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					</p>
+			<div id="aboutusDIV_1" style=" height:1402px;">
+			<div id="aboutusDIV_2">
+			<!-- Header -->
+			<header id="aboutusHEADER_3">
+				<h4 id="aboutusH4_4">
+					About
+				</h4>
+				<h1 id="aboutusH1_5">
+					Meet The Team
+				</h1>
+				<div id="aboutusDIV_6">
+					<div id="aboutusDIV_7">
+						<p id="aboutusP_8">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+					</div>
 				</div>
-			</div>
-		</header>
-		<!-- End Header -->
+			</header>
+			<!-- End Header -->
 
 		<!-- Article -->
-
 		<article id="aboutusARTICLE_9">
 			<!-- List of people and description with their contact details which are visable on hover -->
-
 			<ul id="aboutusUL_10">
 				<li id="aboutusLI_11">
 					<div id="aboutusDIV_12">
@@ -463,146 +472,142 @@ height: 'auto',
 		<!---end-aboutus-images!-->
 
 
-		<!---start-contact---->
+		<!---start-footer---->
 		<div class="contact" id="contact">
-			
-			<footer id="FOOTER_1">
-	<div id="DIV_2">
-		<div id="DIV_3">
-			<div id="DIV_4">
-				<div id="DIV_5">
-					<h3 id="H3_6">
-						Sign up for updates
-					</h3>
-					<div id="DIV_7">
-						<form action="/prospects.js" method="post" id="FORM_8">
-							<div id="DIV_9">
-								<input name="utf8" type="hidden" value="✓" id="INPUT_10" />
-								<input name="authenticity_token" type="hidden" value="BzqTD7T5SRLjZjDONEk9+e7+bwMIA2kGhWFaBQ8WIhE=" id="INPUT_11" />
+		<footer id="FOOTER_1">
+			<div id="DIV_2">
+				<div id="DIV_3">
+					<div id="DIV_4">
+						<div id="DIV_5">
+							<h3 id="H3_6">
+								Sign up for updates
+							</h3>
+							<div id="DIV_7">
+								<form action="/prospects.js" method="post" id="FORM_8">
+									<div id="DIV_9">
+										<input name="utf8" type="hidden" value="✓" id="INPUT_10" />
+										<input name="authenticity_token" type="hidden" value="BzqTD7T5SRLjZjDONEk9+e7+bwMIA2kGhWFaBQ8WIhE=" id="INPUT_11" />
+									</div>
+									<input id="INPUT_12" name="error_selector" type="hidden" value="newsletter-errors-footer" />
+									<div id="DIV_13">
+										<input id="INPUT_14" name="marketing_prospect[email]" placeholder="Enter email address" size="25" type="email" />
+									</div>
+									<div id="DIV_15">
+										<input id="INPUT_16" name="marketing_prospect[zip_code]" placeholder="Zip code" size="8" type="text" />
+									</div>
+									<input name="commit" type="submit" value="Sign Up" id="INPUT_17" />
+									<div id="DIV_18">
+									</div>
+								</form>
 							</div>
-							<input id="INPUT_12" name="error_selector" type="hidden" value="newsletter-errors-footer" />
-							<div id="DIV_13">
-								<input id="INPUT_14" name="marketing_prospect[email]" placeholder="Enter email address" size="25" type="email" />
-							</div>
-							<div id="DIV_15">
-								<input id="INPUT_16" name="marketing_prospect[zip_code]" placeholder="Zip code" size="8" type="text" />
-							</div>
-							<input name="commit" type="submit" value="Sign Up" id="INPUT_17" />
-							<div id="DIV_18">
-							</div>
-						</form>
+						</div>
+						<div id="DIV_19">
+							<h3 id="H3_20">
+								Connect with us!
+							</h3>
+							<ul id="UL_21">
+								<li id="LI_22">
+									<a href="https://www.facebook.com/cookforme" id="A_23">Facebook</a>
+								</li>
+								<li id="LI_24">
+									<a href="http://instagram.com/cookforme" id="A_25">Intagram</a>
+								</li>
+								<li id="LI_26">
+									<a href="https://twitter.com/cookforme" id="A_27">Twitter</a>
+								</li>
+								<li id="LI_28">
+									<a href="http://www.pinterest.com/cookforme" id="A_29">Pinterest</a>
+								</li>
+								<li id="LI_30">
+									<a href="http://www.youtube.com/user/cookforme" id="A_31">YouTube</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="DIV_32">
+						<div id="DIV_33">
+							<h4 id="H4_34">
+								Things to Explore
+							</h4>
+							<ul id="UL_35">
+								<li id="LI_36">
+									<a href="/how-it-works" id="A_37">How it Works</a>
+								</li>
+								<li id="LI_38">
+									<a href="/order" id="A_39">Order a Meal</a>
+								</li>
+								<li id="LI_40">
+									<a href="/offer" id="A_41">Cook for Others</a>
+								</li>
+								<li id="LI_42">
+									<a href="/Delivery" id="A_41">Delivery</a>
+								</li>
+							</ul>
+						</div>
+						<div id="DIV_42">
+							<h4 id="H4_43">
+								Get To Know Us
+							</h4>
+							<ul id="UL_44">
+								<li id="LI_45">
+									<a href="/about?content=our-mission" id="A_46">Our Story</a>
+								</li>
+								<li id="LI_47">
+									<a href="/press" id="A_48">Press</a>
+								</li>
+								<li id="LI_49">
+									<a href="/about?content=careers-page" id="A_50">Careers</a>
+								</li>
+								<li id="LI_51">
+									<a href="http://thedish.cookforme.com" id="A_52">Blog</a>
+								</li>
+							</ul>
+						</div>
+						<div id="DIV_53">
+							<h4 id="H4_54">
+								How can we help?
+							</h4>
+							<ul id="UL_55">
+								<li id="LI_56">
+									 <a href="https://cookforme.zendesk.com" id="A_57">FAQs</a>
+								</li>
+								<li id="LI_58">
+									Call 855-525-2399
+								</li>
+								<li id="LI_59">
+									Email help@cookForMe.com
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<div id="DIV_19">
-					<h3 id="H3_20">
-						Connect with us!
-					</h3>
-					<ul id="UL_21">
-						<li id="LI_22">
-							<a href="https://www.facebook.com/cookforme" id="A_23">Facebook</a>
-						</li>
-						<li id="LI_24">
-							<a href="http://instagram.com/cookforme" id="A_25">Intagram</a>
-						</li>
-						<li id="LI_26">
-							<a href="https://twitter.com/cookforme" id="A_27">Twitter</a>
-						</li>
-						<li id="LI_28">
-							<a href="http://www.pinterest.com/cookforme" id="A_29">Pinterest</a>
-						</li>
-						<li id="LI_30">
-							<a href="http://www.youtube.com/user/cookforme" id="A_31">YouTube</a>
-						</li>
-					</ul>
+			</div>
+			<div id="DIV_62">
+				<div id="DIV_63">
+					<div id="DIV_64">
+						<div id="DIV_65">
+							<ul id="UL_66">
+								<li id="LI_67">
+									<a href="/" id="A_68">CookForMe Home</a>
+								</li>
+								<li id="LI_69">CookForMe</li>
+								<li id="LI_70">
+									<a href="/terms" id="A_71">Terms</a>
+								</li>
+								<li id="LI_72">
+									<a href="/privacy" id="A_73">Privacy</a>
+								</li>
+								<li id="LI_74">Made with <i id="I_75"></i> in Munich</li>
+							</ul>
+						</div>
+						<div id="DIV_76">
+						</div>
+					</div>
 				</div>
 			</div>
-			<div id="DIV_32">
-				<div id="DIV_33">
-					<h4 id="H4_34">
-						Things to Explore
-					</h4>
-					<ul id="UL_35">
-						<li id="LI_36">
-							<a href="/how-it-works" id="A_37">How it Works</a>
-						</li>
-						<li id="LI_38">
-							<a href="/order" id="A_39">Order a Meal</a>
-						</li>
-						<li id="LI_40">
-							<a href="/offer" id="A_41">Cook for Others</a>
-						</li>
-						<li id="LI_42">
-							<a href="/Delivery" id="A_41">Delivery</a>
-						</li>
-					</ul>
-				</div>
-				<div id="DIV_42">
-					<h4 id="H4_43">
-						Get To Know Us
-					</h4>
-					<ul id="UL_44">
-						<li id="LI_45">
-							<a href="/about?content=our-mission" id="A_46">Our Story</a>
-						</li>
-						<li id="LI_47">
-							<a href="/press" id="A_48">Press</a>
-						</li>
-						<li id="LI_49">
-							<a href="/about?content=careers-page" id="A_50">Careers</a>
-						</li>
-						<li id="LI_51">
-							<a href="http://thedish.cookforme.com" id="A_52">Blog</a>
-						</li>
-					</ul>
-				</div>
-				<div id="DIV_53">
-					<h4 id="H4_54">
-						How can we help?
-					</h4>
-					<ul id="UL_55">
-						<li id="LI_56">
-							 <a href="https://cookforme.zendesk.com" id="A_57">FAQs</a>
-						</li>
-						<li id="LI_58">
-							Call 855-525-2399
-						</li>
-						<li id="LI_59">
-							Email help@cookForMe.com
-						</li>
-					</ul>
-				</div>
-			</div>
+		</footer>
 		</div>
-	</div>
-	<div id="DIV_62">
-		<div id="DIV_63">
-			<div id="DIV_64">
-				<div id="DIV_65">
-					<ul id="UL_66">
-						<li id="LI_67">
-							<a href="/" id="A_68">CookForMe Home</a>
-						</li>
-						<li id="LI_69">CookForMe</li>
-						<li id="LI_70">
-							<a href="/terms" id="A_71">Terms</a>
-						</li>
-						<li id="LI_72">
-							<a href="/privacy" id="A_73">Privacy</a>
-						</li>
-						<li id="LI_74">Made with <i id="I_75"></i> in Munich</li>
-					</ul>
-				</div>
-				<div id="DIV_76">
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-
-
-
-			</div>
-			<!---//End-contact---->
+		<!---//End-footer---->
 			
 		</div>
 		<!----//End-content--->
