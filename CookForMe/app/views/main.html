@@ -129,9 +129,9 @@
 				<!---start-top-nav---->
 				<div class="top-nav" id="menu-left">
 					<ul>
-						<li><a href="#">Home Page</a></li>
-						<li><a href="#">Offer Meal</a></li>
-						<li><a href="#">Browse Meals</a></li>
+						<li><a href="/">Home Page</a></li>
+						<li><a href="/Meals/offer">Offer Meal</a></li>
+						<li><a href="/Meals/browse">Browse Meals</a></li>
 						<li><a href="#">Lorem</a></li>
 						<li><a href="#">ipsum</a></li>
 						<li><a href="#">Dorem</a></li>
@@ -139,15 +139,39 @@
 					</ul>
 				</div> 
 				<!---//End-top-nav---->
+				
+				<div class='row'>
+					<div class="col-md-3 pull-right input-group">
+						#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
+							<div class="form-group">
+								<input name="searchToken" type="text" class="form-control">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="submit">Go!</button>
+								</span>
+							</div>
+						#{/form}
+					</div>  
+				</div>
 				<div class="clear"> </div>
+				
+				<div class='row pull-right' id="user-info">
+
+					#{if user != null}
+						<h2>Meals for: ${user.email} &nbsp;&nbsp;&nbsp;&nbsp;<a href="/Users/logout" class="btn btn-warning " type="button">Logout</a> </h2>
+					#{/if}
+					#{else}
+						<a href="/Users/login" class="btn btn-warning " type="button">Login</a>
+					#{/else}			
+				</div>
 			</div>
 		</div>
 		<!----//End-header--->
 		
 		<div id="page-content">
-        #{doLayout /}
+        	#{doLayout /}
         </div>
         
+        <!----Start-footer--->
         <div class="contact" id="contact">
 		<footer id="FOOTER_1">
 			<div id="DIV_2">

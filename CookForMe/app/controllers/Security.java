@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.ArrayList;
+
 import play.mvc.Before;
 import play.mvc.Controller;
 import models.User;
@@ -15,7 +17,9 @@ public class Security extends Controller {
      */
     @Before
     static void setConnectedUser() {
-        if (!isConnected()) {
+    	ArrayList<String> requireLogin = new ArrayList<String>();
+    	requireLogin.add("Meals.offer");
+        if (!isConnected() && requireLogin.contains(request.action)) {
             Users.login(null);
         }
     }

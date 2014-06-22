@@ -30,7 +30,7 @@ public class Users extends Controller {
         User found = User.findByEmailAndPassword(user.email, user.password);
         if (found != null) {
             Security.setConnected(found.email);
-            Meals.index();
+            Application.index();
         } else {
             render();
         }

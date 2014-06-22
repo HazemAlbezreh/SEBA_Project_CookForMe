@@ -1,18 +1,11 @@
 #{extends 'main.html' /}
 #{set title:'Search Meals' /}
-<script type="text/javascript">
-	
-</script>  
 
 <div class="container">
-	<div class='row'>
-		<h2>Meals for: ${user.email}</h2>
-		<a href="/Users/logout" class="btn btn-warning " type="button">Logout</a>
-	</div>
-
 	<div class='row' style="margin-top: 25px; margin-left: 10px;">
 		<div class="col-md-4 input-group">
 			#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
+				<label for="searchToken">Meal name:</label>
 				<div class="form-group">
 					<input name="searchToken" value="${searchToken}" type="text" class="form-control">
 					<span class="input-group-btn">
@@ -23,28 +16,30 @@
 				<h4>Search Filters:</h4>
 				<div class="form-group">
 				    <label for="category">Category:</label>
-				    #{if !category.isEmpty()}
+				    #{if category != null}
 				    	#{select 'category', items:categories, valueProperty:'name', labelProperty:'name', value:category, class:'form-control' /}
 				    #{/if}
 				    #{else}
 				    	#{select 'category', items:categories, valueProperty:'name', labelProperty:'name', value:'', class:'form-control' /}
 				    #{/else}
 				</div>
+				
 				<div class="form-group">
 					<label for="ingredients" style="margin-top: 10px;">Ingredients:</label>
-				    #{if !ingredients.isEmpty()}
-				    	<input class="form-control" type="text" name="ingredients" value="${ingredients}" />
-				    #{/if}
+					#{if ingredients != null}					    
+						<input class="form-control" type="text" name="ingredients" value="${ingredients}" />
+					#{/if}
 				    #{else}
 				    	<input class="form-control" type="text" name="ingredients" value="" />
 				    #{/else}
 				</div>
+				
 				<div class="form-group">
 					<label for="fromDate">From Date:</label>
 			        <div class="input-group date">
-			        #{if !fromDate.isEmpty()}
-			            <input name="fromDate" type="text" class="form-control" value="${fromDate}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-			        #{/if}
+			        #{if fromDate != null}
+						<input name="fromDate" type="text" class="form-control" value="${fromDate}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+				    #{/if}
 				    #{else}
 				    	<input name="fromDate" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 				    #{/else}
@@ -52,8 +47,8 @@
 			        
 			        <label for="tillDate">Till Date:</label>
 			        <div class="input-group date">
-			        #{if !tillDate.isEmpty()}
-			            <input name="tillDate" type="text" class="form-control" value="${tillDate}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+			        #{if tillDate != null}
+						<input name="tillDate" type="text" class="form-control" value="${tillDate}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 			        #{/if}
 				    #{else}
 				    	<input name="tillDate" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>

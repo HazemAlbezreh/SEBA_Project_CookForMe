@@ -27,8 +27,15 @@ public class Meals extends Controller {
             renderArgs.put("user", user);
         }
     }
+    
+    public static void browse() {
+        List<Meal> meals = Meal.findAll();
+        List<Category> categories = Category.findAll();
+        List<PriceCategory> prices = PriceCategory.findAll();
+        render(meals,categories,prices);
+    }
 
-    public static void index() {
+    public static void offer() {
         List<Meal> meals = Meal.findAll();
         List<Category> categories = Category.findAll();
         List<PriceCategory> prices = PriceCategory.findAll();
@@ -38,7 +45,7 @@ public class Meals extends Controller {
     public static void delete(long MealId) {
         Meal meal = Meal.findById(MealId);
         meal.delete();
-        index();
+        browse();
     }
 
     public static void create(String name,String ingredients,String category,String price,String fromDate,String tillDate,File image)
@@ -57,7 +64,7 @@ public class Meals extends Controller {
         }
         meal.create();
         meal.save();
-        index();
+        browse();
     }
     
     

@@ -26,6 +26,28 @@
 						</ul>
 					</div>
 					<!---//End-top-nav---->
+					
+					<div class='row'>
+						<div class="col-md-3 pull-right input-group">
+							#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
+								<div class="form-group">
+									<input name="searchToken" type="text" class="form-control">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="submit">Go!</button>
+									</span>
+								</div>
+							#{/form}
+						</div>  
+					</div>
+					<div class="clear"> </div>
+					<div class='row pull-right' id="user-info">
+						#{if user !=null}
+							<h2>Meals for: ${user.email} &nbsp;&nbsp;&nbsp;&nbsp;<a href="/Users/logout" class="btn btn-warning " type="button">Logout</a> </h2>
+						#{/if}
+						#{else}
+							<a href="/Users/login" class="btn btn-warning " type="button">Login</a>
+						#{/else}			
+					</div>
 					<div class="clear"> </div>
 				</div>
 			</div>
@@ -56,17 +78,17 @@
 					<div class="wrap">
 						<div class="top-grid">
 							<a class="icon monitor" href="#"> </a>
-							<a href="#">Browse our meals</a>
+							<a href="/Meals/browse">Browse our meals</a>
 							<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
 						</div>
 						<div class="top-grid">
 							<a class="icon target" href="#"> </a>
-							<a href="#">Offer a meal</a>
+							<a href="/Meals/offer">Offer a meal</a>
 							<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
 						</div>
 						<div class="top-grid">
 							<a class="icon photo" href="#"> </a>
-							<a href="#">Search for meals</a>
+							<a href="/Meals/search">Search for meals</a>
 							<p>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
 						</div>
 	<!-- 					<div class="top-grid top-grid1"> -->
