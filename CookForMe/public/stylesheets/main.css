@@ -12,3 +12,7 @@
 	box-sizing: content-box;	
 	width: 560px;
 }
+
+#page-content{
+	padding-top: 150px;
+}
