@@ -1,0 +1,182 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<div id="MyBasketDIV_135">
+	<div id="MyBasketDIV_1">
+		<div id="MyBasketDIV_2">
+			<div id="MyBasketDIV_3">
+				<div id="MyBasketDIV_4">
+					<div id="MyBasketDIV_5">
+						<h1 id="MyBasketH1_6">
+							My Basket
+						</h1>
+					</div>
+					<div id="MyBasketDIV_29">
+						<div id="MyBasketDIV_30">
+							<div id="MyBasketDIV_31">
+								<div id="MyBasketDIV_32">
+									<h4 id="MyBasketH4_33">
+										<div id="MyBasketDIV_34">
+											Delivery on
+										</div>
+										<form action="/shipping_options/2014-07-01.json" method="post" id="MyBasketFORM_35">
+											<div id="MyBasketDIV_36">
+												<input name="utf8" type="hidden" value="���" id="MyBasketINPUT_37" />
+												<input name="_method" type="hidden" value="put" id="MyBasketINPUT_38" />
+												<input name="authenticity_token" type="hidden" value="BzqTD7T5SRLjZjDONEk9+e7+bwMIA2kGhWFaBQ8WIhE=" id="MyBasketINPUT_39" />
+											</div>
+											<input id="MyBasketINPUT_40" name="delivery_schedule[original_delivery_date]" type="hidden" value="2014-07-01" /><strong id="MyBasketSTRONG_41"></strong>
+											<div id="MyBasketDIV_42">
+												<select id="MyBasketSELECT_43" name="delivery_schedule[new_delivery_date]">
+													<option value="2014-07-01" selected="selected" id="MyBasketOPTION_44">
+														Tuesday, July 1
+													</option> 
+													<option value="2014-07-03" id="MyBasketOPTION_45">
+														Thursday, July 3
+													</option>
+												</select><span id="MyBasketSPAN_46"><span id="MyBasketSPAN_47">Tuesday, July 1</span></span>
+											</div>
+										</form>
+									</h4> <span id="MyBasketSPAN_48">updated</span>
+								</div>
+
+								
+								
+								<table id="MyBasketTABLE_49">
+									<thead id="MyBasketTHEAD_50">
+										<tr id="MyBasketTR_51">
+											<th  id="MyBasketTH_52">Item</th>
+											<th id="MyBasketTH_53">Unit Price</th>
+											<th id="MyBasketTH_54">Quantity</th>
+											<th id="MyBasketTH_55">Total</th>
+										</tr>
+									</thead>
+									<tbody id="MyBasketTBODY_56">
+										#{list items: basketItems, as:'basketItem'}
+										<tr id="MyBasketTR_57">
+											<td colspan="4" id="MyBasketTD_58">
+											<img
+												alt="item-image"
+												src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3422/small_square__Crispy_Vegetable_Fideos_hero.jpg"
+											/>
+												<div id="MyBasketDIV_59">${basketItem.item.name}</div>
+											</td>
+										</tr>
+										<!-- <tr id="MyBasketTR_60">
+											<td id="MyBasketTD_61">Michael Json</td>
+											<td>${basketItem.item.price}</td>
+											<td>${basketItem.quantity}</td>
+											<td>${basketItem.basketItemPrice}</td>
+										</tr> -->
+										
+										<tr id="MyBasketTR_60">
+											<td id="MyBasketTD_61">
+												<img alt="Haloumi Bell Pepper Kebabs" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3702/small_square__Haloumi_and_Bell_Pepper_Skewers_with_Pesto_and_Tomato_Rice_final.jpg" id="MyBasketIMG_62" />
+												<div id="MyBasketDIV_63">
+													${basketItem.item.name}
+												</div>
+												<div id="MyBasketDIV_63" >
+												<i>
+													Chef:
+												</i>
+												
+													Michael Json
+												
+												</div>
+												<div id="MyBasketDIV_64">
+													 <a href="#" id="MyBasketA_65">remove</a>
+												</div>
+											</td>
+											<td id="MyBasketTD_66">
+												${basketItem.item.price}
+											</td>
+											<!-- <td id="MyBasketTD_67">
+											
+											 <form action="/carts/4652359.json" method="post" id="MyBasketFORM_68">
+													<div id="MyBasketDIV_69">
+														<input name="utf8" type="hidden" value="���" id="MyBasketINPUT_70" />
+														<input name="_method" type="hidden" value="put" id="MyBasketINPUT_71" />
+														<input name="authenticity_token" type="hidden" value="BzqTD7T5SRLjZjDONEk9+e7+bwMIA2kGhWFaBQ8WIhE=" id="MyBasketINPUT_72" />
+													</div>
+													<input id="MyBasketINPUT_73" name="item[type]" type="hidden" value="recipe" />
+													<div id="MyBasketDIV_74">
+														<select id="MyBasketSELECT_75" name="item[quantity]">
+															<option value="2" id="MyBasketOPTION_76">
+																2
+															</option> 
+															<option value="4" selected="selected" id="MyBasketOPTION_77">
+																4
+															</option> 
+															<option value="6" id="MyBasketOPTION_78">
+																6
+															</option>
+														</select><span id="MyBasketSPAN_79"><span id="MyBasketSPAN_80">4</span></span>
+													</div>
+												</form> 
+											</td> -->
+											<td id="MyBasketTD_81">
+												${basketItem.quantity}
+											</td>
+											
+											<td id="MyBasketTD_81">
+												${basketItem.item.price}
+											</td>
+										</tr>
+										
+										
+										#{/list}
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+	<div id="orderSummaryDIV_20">
+	<div id="orderSummaryDIV_21">
+		<div id="orderSummaryDIV_22">
+			<div id="orderSummaryDIV_1">
+				<div id="orderSummaryDIV_2">
+					<ul id="orderSummaryUL_3">
+					</ul>
+					<div id="orderSummaryDIV_4">
+						<div id="orderSummaryDIV_5">
+							<h4 id="orderSummaryH4_6">
+								Order Summary
+							</h4>
+							<div id="orderSummaryDIV_7">
+								 <span id="orderSummarySPAN_8">Subtotal</span> 
+								 <span id="orderSummarySPAN_9">${total}</span>
+							</div>
+							<div id="orderSummaryDIV_10">
+								 <span id="orderSummarySPAN_11">Delivery &amp; Handling</span> 
+								 <span id="orderSummarySPAN_12">Free</span>
+							</div>
+							<div id="orderSummaryDIV_13">
+								 <span id="orderSummarySPAN_14">Total</span> 
+								 <span id="orderSummarySPAN_15">${total}</span>
+							</div>
+						</div>
+					</div>
+					<form action="/checkout/review" method="post" enctype="application/x-www-form-urlencoded" id="orderSummaryFORM_16">
+						<input type="hidden" name="authenticityToken" value="0847a7dc135bf9ae8918019b2c593c82f57d5661" id="orderSummaryINPUT_17" />
+						<input name="_pay" type="submit" value="Proceed to Checkout" id="orderSummaryINPUT_18" />
+						<input name="_cancel" type="submit" value="cancel" id="orderSummaryINPUT_19" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>

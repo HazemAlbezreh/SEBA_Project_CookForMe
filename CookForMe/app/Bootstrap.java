@@ -3,6 +3,7 @@ import models.Category;
 import models.Meal;
 import models.PriceCategory;
 import models.User;
+import models.Item;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
 import play.test.Fixtures;
@@ -28,6 +29,10 @@ public class Bootstrap extends Job {
             if (User.count() == 0) {
                 Fixtures.loadModels("users.yml");
             }
+			if(Item.count() == 0) {
+            	Fixtures.loadModels("initial-data.yml");
+        	}	
+			
         } catch (Throwable e) {
             // :(
         }

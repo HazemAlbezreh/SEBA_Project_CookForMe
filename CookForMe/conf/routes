@@ -5,6 +5,19 @@
 # Home page
 GET     /                                       Application.index
 
+# Order Meal routes: Akshit
+GET     /items                                  Items.index
+POST    /items/add/{id}           	        	Items.addItemToBasket
+POST 	/items/count							Items.getTotalCartCount
+POST    /items/remove/{id}           	        Items.removeItemFromBasket
+POST    /items/processPayment					Items.processPayment
+POST 	/items/checkout							Items.checkout
+POST 	/checkout/review						Items.reviewOrder
+POST    /checkout/confirmPayment				Items.confirmPayment
+POST    /checkout/review/shipping				Items.reviewShipping
+POST    /checkout/review/billing				Items.reviewBilling
+
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

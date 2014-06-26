@@ -16,6 +16,9 @@
 		<link rel="stylesheet" href="@{'/public/stylesheets/slider.css'}">
 		<link rel="stylesheet" href="@{'/public/stylesheets/footer.css'}">
 		<link rel="stylesheet" href="@{'/public/stylesheets/aboutus.css'}">
+		<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/basketCart.css'}">  
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/checkout.css'}">
+		
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' >
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' >
 		<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/jquery.mmenu.all.css'}" />
@@ -25,6 +28,13 @@
         <!-- <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script> -->
 		<script src="@{'/public/javascripts/jquery.min.js'}"></script>
+		<script src="@{'/public/javascripts/basketCart.js'}" type="text/javascript" 
+		charset="${_response_encoding}"></script>
+		
+		 <script type="text/javascript" src="@{'/public/javascripts/ejohn-templating.js'}"></script>
+        <script type="text/javascript" src="@{'/public/javascripts/jquery.formatCurrency-1.2.0.min.js'}"></script>
+        <script type="text/javascript" src="@{'/public/javascripts/i18n/jquery.formatCurrency.en-GB.js'}"></script>
+		
 		<script type="text/javascript" src="@{'/public/javascripts/move-top.js'}"></script>
 		<script type="text/javascript" src="@{'/public/javascripts/easing.js'}"></script>
 		<script src="@{'/public/javascripts/jquery.carouFredSel-6.1.0-packed.js'}"></script>
@@ -117,7 +127,7 @@
         #{get 'moreScripts' /}
     </head>
     
-    <body>
+    <body onload="return getTotalItemCount();">
     	<!----//start-header--->
     	<div class="header2">
 			<div class="wrap">
@@ -132,7 +142,9 @@
 						<li><a href="/">Home Page</a></li>
 						<li><a href="/Meals/offer">Offer Meal</a></li>
 						<li><a href="/Meals/browse">Browse Meals</a></li>
-						<li><a href="#">Lorem</a></li>
+						<li>
+						<a href="/items/checkout">Basket</a>
+						</li>
 						<li><a href="#">ipsum</a></li>
 						<li><a href="#">Dorem</a></li>
 						<div class="clear"></div>

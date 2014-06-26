@@ -1,8 +1,12 @@
-User(john):
- email: john@home.com
- password: john
+User(akshit):
+ email: akshit@cookforme.com
+ password: akshit
 
-User(marry):
- email: marry@home.com
- password: marry
+User(hazem):
+ email: hazem@cookforme.com
+ password: hazem
+ 
+User(aiham):
+ email: aiham@cookforme.com
+ password: aiham
  

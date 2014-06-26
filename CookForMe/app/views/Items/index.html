@@ -1,0 +1,183 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<div id="basketCartDIV_1">
+	<div id="basketCartDIV_2">
+		<div id="basketCartDIV_3">
+			<div id="basketCartDIV_4">	 
+				#{if user != null}
+					<h4>Welcome,</h4>
+				#{/if}
+				#{else}
+					<a href="/Users/login" >Login</a>
+				#{/else}
+				
+				<a href="/account" id="basketCartA_5">
+				#{if user != null}
+					<h4>${user.email}</h4>
+				#{/if}</a>
+			</div>
+			<div id="basketCartDIV_6">
+				<a href="/account" id="basketCartA_7">Account</a>
+			</div>
+		</div>
+		<div id="basketCartDIV_8">
+			<a href="" onClick="return openBasketCart();" id="basketCartA_9"><i id="basketCartI_10"></i>
+				Basket <span id="basketCartSPAN_11"></span></a>
+		</div>
+	</div>
+	<div id="basketCartDIV_12">
+		<div id="basketCartDIV_13">
+			<div id="basketCartDIV_14">
+				<a href="#" id="basketCartA_15">��</a>
+				<h3 id="basketCartH3_16">My Basket</h3>
+				<ul id="basketCartUL_17">
+					<li id="basketCartLI_18">
+						<div id="basketCartDIV_19">
+							<i id="basketCartI_20"></i>
+							<p id="basketCartP_21">You need a minimum of 4 plates for
+								each delivery date to continue.</p>
+						</div>
+					</li>
+					<!-- Placeholder for delivery on date: 2013-11-11 -->
+
+					<li id="basketCartLI_22">
+						<div id="basketCartDIV_23">
+							<span id="basketCartSPAN_24">$30.00</span><img
+								src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3614/small_square__Pizza_with_Vodka_Sauce_and_Grilled_Vegetables_hero.jpg"
+								alt="Pizza with Vodka Sauce" id="basketCartIMG_25" /> <span
+								id="basketCartSPAN_26">Pizza with Vodka Sauce</span> <span
+								id="basketCartSPAN_27">QTY: 2 Plates</span> <span
+								id="basketCartSPAN_28"> <a href="#" id="basketCartA_29">remove</a></span>
+						</div>
+					</li>
+					<!-- Placeholder for delivery on date: 2013-11-11 -->
+
+					<li id="basketCartLI_30">
+						<div id="basketCartDIV_31">
+							<span id="basketCartSPAN_32">$60.00</span><img
+								src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3706/small_square__Spaghetti_with_Beet_Greens_hero.jpg"
+								alt="Spaghetti with Beet Greens" id="basketCartIMG_33" /> <span
+								id="basketCartSPAN_34">Spaghetti with Beet Greens</span> <span
+								id="basketCartSPAN_35">QTY: 4 Plates</span> <span
+								id="basketCartSPAN_36"> <a href="#" id="basketCartA_37">remove</a></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="basketCartDIV_38">
+				<div id="basketCartDIV_39">
+					<a id="basketCartA_40"><i id="basketCartI_41"></i> Add
+						Membership to Cart</a>
+				</div>
+				<span id="basketCartSPAN_42">Subtotal $90.00</span> <a
+					href="/basket" id="basketCartA_43">Checkout</a>
+			</div>
+		</div>
+	</div>
+</div>
+    
+    
+
+<h1 class="mybasket">&{'items_txt_heading'}</h1>
+<div class="basketItems" id="items">
+	<table id ="basketTable" class="table table-hover text-center">
+		<thead>
+			<tr >
+				<th class="text-center">&{'items_txt_name_col_header'}</th>
+				<th class="text-center" >&{'items_txt_description_col_header'}</th>
+				<th class="text-center">&{'items_txt_price_col_header'}</th>
+				<th class="text-center"></th>
+			</tr>
+		</thead>
+		<tbody>
+		#{list items:items, as:'item'}
+			<tr id="basketRow">
+				<td id ="itemname${item.id}">${item.name}</td>
+				<td id ="itemdesc${item.id}">${item.description}</td>
+				<td id ="itemprice${item.id}">&dollar;${item.price.format('0.00')}</td>
+				<td>
+					<a href="" onclick="addItem(${item.id}); return addItemToBasketCart(${item.id});">&{'items_lnk_buy'}</a>
+				</td>
+			</tr>
+		#{/list}
+		</tbody>
+	</table>
+	
+	<!-- <div id="BasketItemsTemplateOutput"> -->
+  	<!-- <script id="basketItems_tmpl" type="text/javascript"> -->
+	 <!-- #{form @checkout()} -->
+	 	<!-- <input id="proceedtobasket" class="button secondary checkout-submit button-block" type="submit" value="Proceed to Basket"/>
+		 -->
+
+		<div id="checkoutButtonDIV_13">
+			<form action="" id="checkoutButtonFORM_14" method="post">
+				<a href="/items/checkout" id="checkoutButtonA_1">Checkout</a>
+			</form>
+		</div>
+
+	</div>
+		
+	<!-- #{/form} -->
+	
+			
+	<!-- </script> -->
+<!-- </div> -->
+	
+</div> 
+
+<script type="text/JavaScript">   
+	function addItem(itemid) {	
+		console.log('additem was clicked'+itemid);
+
+		
+		$.ajax({
+            type: "POST",
+            url: "/items/add/"+itemid,
+            //data: {newname: newname}, 
+  		     data: {},
+  		     contentType: "text/xml",
+  		     dataType: 'xml', 
+  		     async: false,
+  		     success: function(json) {
+  		    	console.log('result='+json);
+  		    	//tmpl('basketItems_tmpl',  also put bracket at end
+  	   			$('#BasketItemsTemplateOutput').html({basketItems: json});
+	  	   		$('#basketTbl #priceCell').each(function() {
+	  	   			$(this).formatCurrency({region: 'en-GB'});
+	        	 });
+	  	   			  	   		
+	  	   		//addItemToBasketCart(itemid);
+	  	   		
+  		     },
+  		     error: function(json) {
+  	   		     alert('fail: ' + json);
+  	   			
+  		     } 
+  		 });	 
+  		 
+   	 return false; 
+  	}	
+	
+	function removeItem(basketItemId) {
+		$.ajax({
+            type: "POST",
+            url: "/items/remove/"+basketItemId,
+  		     data: {},
+  		     contentType: "application/json; charset=utf-8",
+  		     dataType: "json", 
+  		    success: function(json) {
+  	   			/* $('#BasketItemsTemplateOutput').html(tmpl('basketItems_tmpl', {basketItems: json}));
+  	   			$('#basketTbl #priceCell').each(function() {
+	  	   			$(this).formatCurrency({region: 'en-GB'});
+        	 	}); */
+  		     },
+  		     
+  		     error: function(json) {
+  	   		     alert('fail: ' + json); 
+  		     } 
+  		 });
+   	 return false; 
+  	}	
+</script> 
+

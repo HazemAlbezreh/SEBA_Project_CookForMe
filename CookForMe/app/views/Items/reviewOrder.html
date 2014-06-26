@@ -1,0 +1,286 @@
+<link rel="stylesheet" href="../public/stylesheets/revieworder.css">
+
+<!--  
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="${_response_encoding}">
+<script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" 
+		charset="${_response_encoding}"></script>
+
+<script src="@{'/public/javascripts/reviewOrderScript.js'}" type="text/javascript" 
+		charset="${_response_encoding}"></script>
+
+<div id="reviewDIV_1">
+	<header id="reviewHEADER_2">
+		<div id="reviewDIV_3"></div>
+		<span id="reviewSPAN_4">Secure Checkout</span>
+		<div id="reviewDIV_5">
+			<div id="reviewDIV_6">
+				<div id="reviewDIV_7">Need help?</div>
+				<div id="reviewDIV_8">
+					<span id="reviewSPAN_9"> <a id="reviewA_10"><i
+							id="reviewI_11"></i>Live Chat</a></span> <span id="reviewSPAN_12"> <a
+						id="reviewA_13"><i id="reviewI_14"></i>Email Us</a> <a
+						id="reviewA_15" href="mailto://help@cookforme.com"><i
+							id="reviewI_16"></i>Email Us</a></span>
+				</div>
+			</div>
+		</div>
+	</header>
+	<ol id="reviewOL_20">
+		<li id="reviewLI_21">
+			<h3 id="reviewH3_22">
+				<span id="reviewSPAN_23">Step 1</span> Shipping
+			</h3>
+			<div id="reviewDIV_24">
+				<form id="reviewFORM_25" action="" method="POST" 
+						onsubmit="return addShippingDetails();">
+					<div id="reviewDIV_30">
+						<div id="reviewDIV_31">
+							<label for="user_address_first_name"
+								wrapper_html="{:class=>&quot;span6&quot;}">Enter your
+								shipping information</label>
+
+						</div>
+						<div id="reviewDIV_33">
+							<div id="reviewDIV_34">
+								<input id="reviewINPUT_35" name="firstname"
+									placeholder="First name" size="30" type="text" value="${params.firstname}" />
+							</div>
+							<div id="reviewDIV_36">
+								<input id="reviewINPUT_37" name="lastname"
+									placeholder="Last name" size="30" type="text" value="${params.lastname}" />
+							</div>
+						</div>
+						<div id="reviewDIV_38">
+							<div id="reviewDIV_39">
+								<input id="reviewINPUT_40" name="addressline1"
+									placeholder="Address" size="30" type="text" value="${params.addressline1}" />
+							</div>
+						</div>
+						<div id="reviewDIV_41">
+							<div id="reviewDIV_42">
+								<input id="reviewINPUT_43" name="addressline2"
+									placeholder="Address" size="30" type="text" value="${params.addressline2}" />
+							</div>
+						</div>
+						<div id="reviewDIV_44">
+							<div id="reviewDIV_45">
+								<input id="reviewINPUT_46" name="city"
+									placeholder="City" size="30" type="text" value="${params.city}" />
+							</div>
+							<div id="reviewDIV_49">
+								<input id="reviewINPUT_50" name="zipcode"
+									placeholder="Zip code" size="30" type="text" value="${params.zipcode}" />
+							</div>
+						</div>
+						<div id="reviewDIV_51">
+							<div id="reviewDIV_52">
+								<input id="reviewINPUT_53" name="phonenumber"
+									placeholder="Phone number" size="30" type="tel" value="${params.phonenumber}" />
+							</div>
+						</div>
+					</div>
+					<div id="reviewDIV_63">
+						<div id="reviewDIV_64">
+							<div id="reviewDIV_65">
+								<div id="reviewDIV_66">
+									<i id="reviewI_67"></i> <label
+										for="deliveryinstructions" 
+										id="reviewLABEL_68"
+										onclick ="return addDeliveryInstructions();" >
+										Add delivery instructions </label>
+								</div>
+							</div>
+							<div id="reviewDIV_69">
+								<div id="reviewDIV_70">
+									<textarea cols="40" id="reviewTEXTAREA_71"
+										name="deliveryinstructions"
+										placeholder="Delivery instructions" rows="20">
+									</textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="reviewDIV_72">
+						<ul id="reviewUL_73">
+						</ul>
+					</div>
+					<div id="reviewDIV_74">
+						<div id="reviewDIV_75">
+							<input name="commit" type="submit" value="Next"
+								data-disable-with="Saving..."
+								id="reviewINPUT_76"/>
+						</div>
+					</div>
+				</form>
+				<div id="reviewDIV_77"></div>
+			</div>
+		</li>
+		<li id="reviewLI_78">
+			<h3 id="reviewH3_79">
+				<span id="reviewSPAN_80">Step 2</span> Billing
+			</h3>
+			<div id="reviewDIV_81">
+				<div id="reviewDIV_82">
+					<span id="reviewSPAN_83"><i id="reviewI_84"></i> Secure</span>
+				</div>
+				<form id ="reviewFORM_85" action="" method="POST" 
+						onsubmit="return addBillingDetails();">
+					<div id="reviewDIV_89">
+						<div id="reviewDIV_90">
+
+							<label for="billingfirstname" id="reviewLABEL_91">
+								Enter your billing information </label>
+						</div>
+						<div id="reviewDIV_92">
+							<div id="reviewDIV_93">
+								<input id="reviewINPUT_94" name="billingfirstname"
+									placeholder="First name" size="30" type="text" value="" />
+							</div>
+							<div id="reviewDIV_95">
+								<input id="reviewINPUT_96" name="billinglastname"
+									placeholder="Last name" size="30" type="text" value="" />
+							</div>
+						</div>
+						<div id="reviewDIV_97">
+							<div id="reviewDIV_98">
+								<i id="reviewI_99"></i>
+							</div>
+							<div id="reviewDIV_100">
+								<div id="reviewDIV_101">
+									<input id="reviewINPUT_102" name="billingccnumber"
+										placeholder="Card number" size="30" type="text" 
+										onkeypress="return isNumberKey(event)"
+										maxlength="16" />
+								</div>
+								<div id="reviewDIV_103">
+									<input id="reviewINPUT_104" maxlength="4" name="billingcvv"
+										placeholder="CVV" size="30" type="text" 
+										maxlength="4" />
+								</div>
+							</div>
+							<div id="reviewDIV_105">
+
+								<label for="billingexpirationmonth" id="reviewLABEL_106">
+									Expiration </label>
+								<div id="reviewDIV_107">
+									<select id="reviewSELECT_108" name="billingexpirationmonth"
+										onchange="expirationMonthDropDown()">
+										<option id="reviewOPTION_109"></option>
+										<option value="1" id="reviewOPTION_110">Jan</option>
+										<option value="2" id="reviewOPTION_111">Feb</option>
+										<option value="3" id="reviewOPTION_112">Mar</option>
+										<option value="4" id="reviewOPTION_113">Apr</option>
+										<option value="5" id="reviewOPTION_114">May</option>
+										<option value="6" id="reviewOPTION_115">Jun</option>
+										<option value="7" id="reviewOPTION_116">Jul</option>
+										<option value="8" id="reviewOPTION_117">Aug</option>
+										<option value="9" id="reviewOPTION_118">Sep</option>
+										<option value="10" id="reviewOPTION_119">Oct</option>
+										<option value="11" id="reviewOPTION_120">Nov</option>
+										<option value="12" id="reviewOPTION_121">Dec</option>
+									</select> 
+									<span id="reviewSPAN_122"><span id="reviewSPAN_123"></span></span>
+								</div>
+								<div id="reviewDIV_124">
+									<select id="reviewSELECT_125" name="expirationyear"
+										onchange = "expirationYearDropDown()">
+										<option id="reviewOPTION_126"></option>
+										<option value="2014" id="reviewOPTION_127">2014</option>
+										<option value="2015" id="reviewOPTION_128">2015</option>
+										<option value="2016" id="reviewOPTION_129">2016</option>
+										<option value="2017" id="reviewOPTION_130">2017</option>
+										<option value="2018" id="reviewOPTION_131">2018</option>
+										<option value="2019" id="reviewOPTION_132">2019</option>
+										<option value="2020" id="reviewOPTION_133">2020</option>
+										<option value="2021" id="reviewOPTION_134">2021</option>
+										<option value="2022" id="reviewOPTION_135">2022</option>
+										<option value="2023" id="reviewOPTION_136">2023</option>
+										<option value="2024" id="reviewOPTION_137">2024</option>
+										<option value="2025" id="reviewOPTION_138">2025</option>
+										<option value="2026" id="reviewOPTION_139">2026</option>
+									</select> 
+									<span id="reviewSPAN_140"><span id="reviewSPAN_141"></span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="reviewDIV_164">
+						<ul id="reviewUL_165">
+						</ul>
+					</div>
+					<div id="reviewDIV_166">
+						<div id="reviewDIV_167">
+							<a href=""
+								id="reviewA_168">Cancel</a> 
+							<input id="reviewINPUT_169" name="commit" type="submit"
+								value="Next" />								
+						 </div>
+					</div>
+				</form>
+			<div id="reviewDIV_180"></div>	
+ 			<span id="reviewSPAN_181"></span>
+			</div>
+		</li>
+		<li id="reviewLI_182">
+			<h3 id="reviewH3_183">
+				<span id="reviewSPAN_184">Step 3</span> Review
+			</h3>
+			<div id="reviewDIV_185">
+				<form action="/checkout/confirmPayment" id="reviewFORM_186"
+					method="post">
+					<div id="reviewDIV_187">
+						<input name="utf8" type="hidden" value="✓" id="reviewINPUT_188" />
+						<input name="authenticity_token" type="hidden"
+							value="BzqTD7T5SRLjZjDONEk9+e7+bwMIA2kGhWFaBQ8WIhE="
+							id="reviewINPUT_189" />
+					</div>
+					<div id="reviewDIV_190">
+
+						<label for="billing_Review your order" id="reviewLABEL_191">
+							Review your order </label>
+						<ul id="reviewUL_192">
+							<li id="reviewLI_193">
+								<div id="reviewDIV_194">
+									<span id="reviewSPAN_195">${total}</span><img
+										src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3706/small_square__Spaghetti_with_Beet_Greens_hero.jpg"
+										alt="Spaghetti with Beet Greens and Heirloom Cherry Tomatoes"
+										id="reviewIMG_196" /> <span id="reviewSPAN_197">${basketItems.item.name}</span> 
+										<span id="reviewSPAN_198">QTY: ${basketItems.quantity} Plates</span>
+								</div>
+							</li>
+						</ul>
+						<div id="reviewDIV_199">
+							<div id="reviewDIV_200">
+								<span id="reviewSPAN_201">Subtotal</span> <span
+									id="reviewSPAN_202">${total}</span>
+							</div>
+							<div id="reviewDIV_203">
+								<span id="reviewSPAN_204">Delivery &amp; Handling</span> <span
+									id="reviewSPAN_205">Free</span>
+							</div>
+						</div>
+						<div id="reviewDIV_206">
+							<span id="reviewSPAN_207">Total</span> <span id="reviewSPAN_208">${total}</span>
+						</div>
+					</div>
+					<div id="reviewDIV_209">
+						<ul id="reviewUL_210">
+						</ul>
+					</div>
+					<div id="reviewDIV_211">
+						<input name="commit" type="submit" value="Place Order"
+							id="reviewINPUT_212" />
+					</div>
+				</form>
+			</div>
+			<span id="reviewSPAN_213"></span>
+		</li>
+	</ol>
+</div>
