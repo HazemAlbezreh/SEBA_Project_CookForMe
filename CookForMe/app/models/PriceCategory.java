@@ -22,7 +22,7 @@ public class PriceCategory extends Model {
 
     public PriceCategory(String name) {
         this.name = name;
-
+ 
     }
     
     public static PriceCategory findByName(String name) {

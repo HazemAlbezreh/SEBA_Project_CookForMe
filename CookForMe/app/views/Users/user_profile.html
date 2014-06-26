@@ -1,0 +1,80 @@
+#{extends 'main.html' /}
+#{set title:'User Profile' /}
+
+<head>
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/user_profile.css'}">
+</head>
+
+<body>	
+	
+	<div id="content" class="clearfix">
+		<section id="left">
+			<div id="userStats" class="clearfix">
+				<div class="pic">
+					<a href="#"><img src="@{'/public/images/akshit.jpg'}" width="150" height="150" /></a>
+				</div>
+				
+				<div class="data">
+					<h1>John Doe</h1>
+					<h3>Best Cook you've seen!</h3>
+					<div class="socialMediaLinks">
+						<a href="http://twitter.com/jakerocheleau" rel="me" target="_blank"><img src="@{'/public/images/twitter.png'}" alt="@jakerocheleau" /></a>	
+					</div>
+					<div class="sep"></div>
+					<ul class="numbers clearfix">
+						<li>Rating<strong>4.8</strong></li>
+						<li>Dishes offered<strong>5</strong></li>
+						<li class="nobrdr">Days Active<strong>127</strong></li>
+					</ul>
+				</div>
+			</div>
+			
+			<h1>About Me:</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<h1>Reviews of Dishes</h1>
+
+			
+		</section>
+		
+		<section id="right">
+			
+			
+			<div class="gcontent">
+				<div class="head"><h1>List of dishes</h1></div>
+				<div class="boxy">
+					<p>Total - 25 dishes</p>
+					
+					<div class="foodlist clearfix">
+						<div class="food">
+							<a href="#"><img src="@{'/public/images/meal1.png'}" width="30" height="30"/></a><span class="foodly"><a href="#">Curry</a></span>
+						</div>
+						
+						<div class="food">
+							<a href="#"><img src="@{'/public/images/meal1.png'}" width="30" height="30"/></a><span class="foodly"><a href="#">Pizza</a></span>
+						</div>
+						
+						<div class="food">
+							<a href="#"><img src="@{'/public/images/meal1.png'}" width="30" height="30" /></a><span class="foodly"><a href="#">Salad</a></span>
+						</div>
+						
+						<div class="food">
+							<a href="#"><img src="@{'/public/images/meal1.png'}" width="30" height="30" /></a><span class="foodly"><a href="#">Soup</a></span>
+						</div>
+						
+						<div class="food">
+							<a href="#"><img src="@{'/public/images/meal1.png'}" width="30" height="30" /></a><span class="foodly"><a href="#">Cake</a></span>
+						</div>
+						
+						<div class="food">
+							<a href="#"><img src="@{'/public/images/meal1.png'}" width="30" height="30" /></a><span class="foodly"><a href="#">Ragoult</a></span>
+						</div>
+					</div>
+					
+					<span><a href="#">See all...</a></span>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
