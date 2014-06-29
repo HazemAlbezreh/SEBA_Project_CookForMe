@@ -4,6 +4,7 @@ import groovy.json.JsonBuilder;
 
 import java.io.IOException;
 import java.text.Normalizer.Form;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +13,9 @@ import com.google.gson.JsonSerializationContext;
 
 import models.Basket;
 import models.BasketItem;
+import models.Category;
 import models.Item;
+import models.Meal;
 import models.Order;
 import models.User;
 import play.Logger;
@@ -44,8 +47,45 @@ public class Items extends Controller {
 		return session.get("email");
 	}
 	
+	@Before
+	static void loadItems() {
+		List<Meal> meals = Meal.findAll(); 
+		List<Item> items = new ArrayList<Item>(); 
+		for(Meal m: meals) 
+		{ 
+			double price = Double.parseDouble(m.priceCategory.name.replace('€', ' ')); 
+			Item item = new Item(m.name, m.ingredients, price);
+			item.create();
+			item.save();
+			items.add(item); 
+		}
+		
+		Basket basket = Basket.findByUserid(getUsername());
+		
+		if(basket!=null){
+			List<BasketItem> basketItems = basket.basketItems;
+
+			for (BasketItem basketItem : basketItems) {
+				Logger.debug("In index: + basketItem.item.name="+basketItem.item.name);
+			}
+			Logger.debug("Basketcount= "+basket.getTotalItemsInBasketCount());
+
+		}
+		renderArgs.put("basket", basket);
+		renderArgs.put("items", items);
+		renderArgs.put("meals", meals);
+	}
+	
 	public static void index() {		
-        List<Item> items = Item.findAll();
+		/*List<Meal> meals = Meal.findAll(); 
+		List<Item> items = new ArrayList<Item>(); 
+		for(Meal m: meals) 
+		{ 
+			double price = Double.parseDouble(m.priceCategory.name.replace('€', ' ')); 
+			Item item = new Item(m.name, m.ingredients, price); 
+			items.add(item); 
+		}*/
+		List<Item> items = Item.findAll();
 		
 		Logger.debug("In index()="+items.size());
 		
@@ -111,7 +151,7 @@ public class Items extends Controller {
 		Basket basket = Basket.findByUserid(getUsername());
 		
 		if(basket==null){
-			index();
+			Meals.browse( ((Category)Category.findById((long)1)).name );
 		}else{
 		
 			List<BasketItem> basketItems = basket.basketItems;
@@ -177,7 +217,7 @@ public class Items extends Controller {
 		} else if (params.get("_cancel") != null) {
 			Basket basket = Basket.findByUserid(getUsername());
 			basket.delete();
-			index();
+			Meals.browse( ((Category)Category.findById((long)1)).name );
 		}
 		
 		

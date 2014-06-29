@@ -17,16 +17,48 @@ import models.*;
 /**
  * 
  */
-//@With(Security.class)
 public class Meals extends Controller {
 
-	/*@Before
+	@Before
     static void setConnectedUser() {
         if (Security.isConnected()) {
             User user = Security.getConnectedUser();
             renderArgs.put("user", user);
         }
-    }*/
+    }
+	
+	private static String getUsername() {
+		return session.get("email");
+	}
+
+	@Before
+	static void loadItems() {
+		List<Meal> meals = Meal.findAll(); 
+		List<Item> items = new ArrayList<Item>(); 
+		for(Meal m: meals) 
+		{ 
+			double price = Double.parseDouble(m.priceCategory.name.replace('€', ' ')); 
+			Item item = new Item(m.name, m.ingredients, price);
+			item.create();
+			item.save();
+			items.add(item); 
+		}
+		
+		Basket basket = Basket.findByUserid(getUsername());
+		
+		if(basket!=null){
+			List<BasketItem> basketItems = basket.basketItems;
+
+			for (BasketItem basketItem : basketItems) {
+				Logger.debug("In index: + basketItem.item.name="+basketItem.item.name);
+			}
+			Logger.debug("Basketcount= "+basket.getTotalItemsInBasketCount());
+
+		}
+		renderArgs.put("basket", basket);
+		renderArgs.put("items", items);
+		renderArgs.put("meals", meals);
+	}
     
     public static void browse(String category) {
     	if (category == null) {
@@ -38,6 +70,7 @@ public class Meals extends Controller {
         //List<Meal> meals = Meal.findAll();
         List<Category> categories = Category.findAll();
         List<Meal> popularMeals = Meal.findAll();
+        loadItems(); //checking
         render(meals, categories, popularMeals);
     }
 

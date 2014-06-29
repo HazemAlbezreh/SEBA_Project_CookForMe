@@ -130,51 +130,45 @@
     <body onload="return getTotalItemCount();">
     	<!----//start-header--->
     	<div class="header2">
-			<div class="wrap">
+			<div class="row">
 				<!---start-logo---->
-				<div class="logo">
+				<div class="col-md-2 logo">
 					<a href="index.html"><img src="@{'/public/images/logo.png'}" title="CookForMe" /></a>
 				</div>
 				<!---//End-logo---->
+				
+				<div class="col-md-2 input-group">
+					#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
+						<div class="form-group">
+							<input name="searchToken" type="text" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">Go!</button>
+							</span>
+						</div>
+					#{/form}
+				</div>
+				
 				<!---start-top-nav---->
-				<div class="top-nav" id="menu-left">
+				<div class="top-nav col-md-6" id="menu-left">
 					<ul>
 						<li><a href="/">Home Page</a></li>
 						<li><a href="/Meals/offer">Offer Meal</a></li>
 						<li><a href="/Meals/browse">Browse Meals</a></li>
+						<li><a href="/items/checkout">Basket</a></li>
 						<li>
-						<a href="/items/checkout">Basket</a>
+							#{if user != null}
+								<h2>Meals for: ${user.email} &nbsp;<a href="/Users/logout" class="btn btn-warning " type="button">Logout</a> </h2>
+							#{/if}
+							#{else}
+								<a href="/Users/login">Login</a>
+							#{/else}			
 						</li>
-						<li><a href="#">ipsum</a></li>
-						<li><a href="#">Dorem</a></li>
-						<div class="clear"></div>
 					</ul>
+					<div class="clear"></div>
 				</div> 
+				
 				<!---//End-top-nav---->
 				
-				<div class='row'>
-					<div class="col-md-3 pull-right input-group">
-						#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
-							<div class="form-group">
-								<input name="searchToken" type="text" class="form-control">
-								<span class="input-group-btn">
-									<button class="btn btn-default" type="submit">Go!</button>
-								</span>
-							</div>
-						#{/form}
-					</div>  
-				</div>
-				<div class="clear"> </div>
-				
-				<div class='row pull-right' id="user-info">
-
-					#{if user != null}
-						<h2>Meals for: ${user.email} &nbsp;&nbsp;&nbsp;&nbsp;<a href="/Users/logout" class="btn btn-warning " type="button">Logout</a> </h2>
-					#{/if}
-					#{else}
-						<a href="/Users/login" class="btn btn-warning " type="button">Login</a>
-					#{/else}			
-				</div>
 			</div>
 		</div>
 		<!----//End-header--->

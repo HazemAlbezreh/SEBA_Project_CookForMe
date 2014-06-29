@@ -92,7 +92,7 @@
     border: 1px solid rgb(207, 207, 207);
     font: normal normal 600 14px/24px 'Open Sans', sans-serif;
     list-style: none outside none;
-    margin: -11px 11px 0px;
+    margin: 20px 11px 0px;
     outline: rgb(71, 71, 71) none 0px;
     padding: 0px 15px;
 }/*#basketCartDIV_1*/
@@ -167,6 +167,8 @@
 }/*#basketCartDIV_6*/
 
 #basketCartDIV_8 {
+	float:right;
+	background-color: white;
     box-sizing: border-box;
     color: rgb(71, 71, 71);
     display: inline-block;
