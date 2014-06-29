@@ -1,8 +1,16 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
-
+<head>
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/offerMeal.css'}">
+</head>
 <div class="container">
-	<div class="col-md-6">
+<br><br><br>
+	<div class="mealForm">
+	 <h1>Enter Meal Details:</h1>
+	 <br>
+	 <div class="container" width="90%" >
       #{createMeal categories: categories ,prices: prices /}
+      </div>
   	</div>
 </div>
+<br><br><br>1
