@@ -17,6 +17,7 @@ import models.*;
 /**
  * 
  */
+@With(Security.class)
 public class Meals extends Controller {
 
 	@Before

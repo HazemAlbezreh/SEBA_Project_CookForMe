@@ -26,6 +26,7 @@ public class Meal extends Model {
     @ManyToOne( cascade= CascadeType.ALL)
     public PriceCategory priceCategory;
     
+   
     
     public String comment;
     public Blob image;
