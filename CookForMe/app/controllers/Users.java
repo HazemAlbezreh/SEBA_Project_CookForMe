@@ -35,6 +35,27 @@ public class Users extends Controller {
             render();
         }
     }
+    
+    
+    
+    public static void signUp(String email, String passwd,String passwdConfirm) {
+    	validation.required(email);
+    	validation.required(passwd);
+    	validation.required(passwdConfirm);
+    	validation.equals(passwd, passwdConfirm);
+    	User found = User.findByEmail(email);
+    	if (found !=null){
+			validation.addError(email,"Email","Email is already used");
+    	}
+        if (validation.hasErrors()) {
+            params.flash(); // add http parameters to the flash scope
+            validation.keep(); // keep the errors for the next request
+            render();
+        }
+        User user = new User(email, passwd);
+        user.create();
+        user.save();       
+    }
 
     public static void logout() {
         Security.setConnected(null);
