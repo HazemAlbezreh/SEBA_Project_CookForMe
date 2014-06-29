@@ -8,11 +8,31 @@
 			<!----start-homepage-header--->
 			<div class="header">
 			<div class="wrap">
+				<div class='row'>
 					<!---start-logo---->
-					<div class="logo">
-						<a href="index.html"><img src="@{'/public/images/logo.png'}" title="CookForMe" /></a>
-					</div>
+				<div class="col-md-2">
+						<div class="logo">
+							<a href="index.html"><img src="@{'/public/images/logo.png'}" title="CookForMe" /></a>
+						</div>
+				</div>
+				<!---//End-logo---->
+				<div class="col-md-4">
+				 <div class="container">
+					<div class="input-group">
+								#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
+									<div class="form-group">
+										<input name="searchToken" type="text" class="form-control">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit">Go!</button>
+										</span>
+									</div>
+								#{/form}
+					</div> 
+					</div> 
+				</div>
+				
 					<!---start-top-nav---->
+				<div class="col-md-5">
 					<div class="top-nav" id="menu-left">
 						<ul>
 							<li class="active"><a href="#home">Home</a></li>
@@ -27,20 +47,9 @@
 					</div>
 					<!---//End-top-nav---->
 					
-					<div class='row'>
-						<div class="col-md-3 pull-right input-group">
-							#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
-								<div class="form-group">
-									<input name="searchToken" type="text" class="form-control">
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="submit">Go!</button>
-									</span>
-								</div>
-							#{/form}
-						</div>  
 					</div>
-					<div class="clear"> </div>
-					<div class='row pull-right' id="user-info">
+					</div>
+					<div class='row ' id="user-info">
 						#{if user !=null}
 							<h2>Meals for: ${user.email} &nbsp;&nbsp;&nbsp;&nbsp;<a href="/Users/logout" class="btn btn-warning " type="button">Logout</a> </h2>
 						#{/if}
@@ -48,6 +57,7 @@
 							<a href="/Users/login" class="btn btn-warning " type="button">Login</a>
 						#{/else}			
 					</div>
+				
 					<div class="clear"> </div>
 				</div>
 			</div>
