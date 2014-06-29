@@ -94,7 +94,11 @@
 	    <div id="browse-content">
 		    #{list items: meals, as:'m'}
 		    <div class="top-grid">
-		    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart(${m.id});"><img height="50" src="@{'/public/images/add-to-cart-icon.jpg'}"></a>
+		    	#{if user != null}
+		    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart(${m.id});">
+		    	<img height="50" src="@{'/public/images/add-to-cart-icon.jpg'}">
+		    	</a>
+				#{/if}
 				<a href="#"><img height="70" src="@{Meals.renderImage(m.id)}"></a>
 				<a href="#">${m.name}</a>
 				<p>${m.ingredients}</p>
