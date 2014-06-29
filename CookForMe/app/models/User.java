@@ -14,13 +14,13 @@ public class User extends Model {
     String email;
     public @NotEmpty
     String password;
-    public @NotEmpty
-    String name;
+//    public @NotEmpty
+//    String name;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
-        this.name = email.split("@")[0];
+        //this.name = email.split("@")[0];
     }
     
     public static User findByEmail(String email) {
