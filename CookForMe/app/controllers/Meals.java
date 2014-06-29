@@ -17,16 +17,16 @@ import models.*;
 /**
  * 
  */
-@With(Security.class)
+//@With(Security.class)
 public class Meals extends Controller {
 
-    @Before
-    static void setConnectedUser() {
-        if (Security.isConnected()) {
-            User user = Security.getConnectedUser();
-            renderArgs.put("user", user);
-        }
-    }
+//    @Before
+//    static void setConnectedUser() {
+//        if (Security.isConnected()) {
+//            User user = Security.getConnectedUser();
+//            renderArgs.put("user", user);
+//        }
+//    }
     
     public static void browse() {
         List<Meal> meals = Meal.findAll();
@@ -50,6 +50,19 @@ public class Meals extends Controller {
 
     public static void create(String name,String ingredients,String category,String price,String fromDate,String tillDate,File image)
          {
+    	validation.required(name);
+    	validation.required(ingredients);
+    	validation.required(category);
+    	validation.required(price);
+    	validation.required(fromDate);
+    	validation.required(tillDate);
+
+    	
+    	if(validation.hasErrors()) {
+            params.flash(); // add http parameters to the flash scope
+            validation.keep(); // keep the errors for the next request
+            Meals.offer();
+        }
     	
         Meal meal = new Meal(name,ingredients,Categories.find(category),Prices.find(price),fromDate,tillDate);
 

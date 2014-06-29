@@ -1,12 +1,15 @@
 User(akshit):
  email: akshit@cookforme.com
  password: akshit
+ name:akshit
 
 User(hazem):
  email: hazem@cookforme.com
  password: hazem
+ name: hazem
  
 User(aiham):
  email: aiham@cookforme.com
  password: aiham
+ name: aiham
  

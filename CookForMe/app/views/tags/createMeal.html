@@ -1,11 +1,22 @@
+
+<div class=container >
+<br>
+<br>
+<br>
+<br>
 #{form @Meals.create(), enctype:'multipart/form-data', role:'form'}
-    <div class="form-group">
+#{ifErrors}
+   <h1>Please fill the required Fields</h1>
+#{/ifErrors}
+    <div class="form-group" >
     <label for="name">Name:</label>
-    <input class="form-control"  type="text" name="name" value="" />
+    <input class="form-control"  type="text" name="name" value="${flash.name}" />
+    <span class="error">#{error 'name' /}</span>
   </div>
    <div class="form-group">
     <label for="ingredients">Ingredients:</label>
     <input class="form-control"  type="text" name="ingredients" value="" />
+    <span class="error">#{error 'name' /}</span>
   </div>
   <div class="form-group">
     <label for="category">Category:</label>
@@ -25,11 +36,14 @@
 	<label for="fromDate">From Date:</label>
         <div class="input-group date">
             <input name="fromDate" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+            <span class="error">#{error 'name' /}</span>
         </div>
+        
         
         <label for="tillDate">Till Date:</label>
         <div class="input-group date">
             <input name="tillDate" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+            <span class="error">#{error 'name' /}</span>
         </div>
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -52,3 +66,5 @@
   
   
 #{/form}
+
+</div>
