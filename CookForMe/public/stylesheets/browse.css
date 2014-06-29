@@ -1,0 +1,43 @@
+#accordion {
+	width: 250px;	
+}
+
+#browse-page {
+	margin-top: 80px;
+}
+
+#browse-content {
+	width: 800px;
+	border-right: 1px solid #CECECE;
+}
+
+#browse-content .top-grid {
+	border-right: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 0px;
+	font-size: 14px;
+}
+
+#recommendations .top-grid {
+	border-right: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 0px;
+	font-size: 14px;
+	width: 50%;
+}
+
+#recommendations {
+	width: 200px;
+}
+
+#browse-table td {
+	vertical-align: top;
+}
+
+#browse-page .category {
+	width: 200px;
+	margin-bottom: 5px;
+	font-size: 16px;
+}

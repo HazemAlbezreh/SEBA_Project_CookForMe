@@ -20,19 +20,25 @@ import models.*;
 //@With(Security.class)
 public class Meals extends Controller {
 
-//    @Before
-//    static void setConnectedUser() {
-//        if (Security.isConnected()) {
-//            User user = Security.getConnectedUser();
-//            renderArgs.put("user", user);
-//        }
-//    }
+	/*@Before
+    static void setConnectedUser() {
+        if (Security.isConnected()) {
+            User user = Security.getConnectedUser();
+            renderArgs.put("user", user);
+        }
+    }*/
     
-    public static void browse() {
-        List<Meal> meals = Meal.findAll();
+    public static void browse(String category) {
+    	if (category == null) {
+    		category = ((Category)Category.findById((long)1)).name;
+    	} else if (category.equals("")) {
+    		category = ((Category)Category.findById((long)1)).name;
+    	}
+    	List<Meal> meals = Meal.findMeals("", category, "");
+        //List<Meal> meals = Meal.findAll();
         List<Category> categories = Category.findAll();
-        List<PriceCategory> prices = PriceCategory.findAll();
-        render(meals,categories,prices);
+        List<Meal> popularMeals = Meal.findAll();
+        render(meals, categories, popularMeals);
     }
 
     public static void offer() {
@@ -45,7 +51,7 @@ public class Meals extends Controller {
     public static void delete(long MealId) {
         Meal meal = Meal.findById(MealId);
         meal.delete();
-        browse();
+        browse( ((Category)Category.findById(1)).name );
     }
 
     public static void create(String name,String ingredients,String category,String price,String fromDate,String tillDate,File image)
@@ -77,7 +83,7 @@ public class Meals extends Controller {
         }
         meal.create();
         meal.save();
-        browse();
+        browse( ((Category)Category.findById(1)).name );
     }
     
     

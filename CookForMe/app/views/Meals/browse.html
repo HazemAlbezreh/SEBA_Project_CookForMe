@@ -1,8 +1,52 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
+<script type="text/javascript">
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+</script>
+
 <div class="container">
-    <div>
-       #{listMeals meals: meals /}
-    </div>
+	<div id="browse-page">
+	<table id="browse-table">
+	<tr>
+		<td>
+		<div>
+			#{list items: categories, as:'c'}
+ 				<a id="categoryID" class="btn btn-default category" onclick="activate(${c.id});" href="@{Meals.browse(c.name)}">${c.name}</a> 
+				<div class="clear"></div>
+			#{/list}
+		</div>
+	    </td>
+	    
+	    <td>
+	    <div id="browse-content">
+		    #{list items: meals, as:'m'}
+		    <div class="top-grid">
+		    	<a href="#"><img height="50" src="@{'/public/images/add-to-cart-icon.jpg'}"></a>
+				<a href="#"><img height="70" src="@{Meals.renderImage(m.id)}"></a>
+				<a href="#">${m.name}</a>
+				<p>${m.ingredients}</p>
+				<p>${m.priceCategory.name}</p>
+			</div>
+		    #{/list}
+	    </div>
+	    </td>
+	    
+	    <td>
+	    <div id="recommendations">
+			#{list items: popularMeals, as:'m'}
+		    <div class="top-grid">
+				<a href="#"><img src="@{Meals.renderImage(m.id)}"></a>
+				<a href="#">${m.name}</a>
+				<p>${m.ingredients}</p>
+				<p>${m.priceCategory.name}</p>
+			</div>
+		    #{/list}
+		</div>
+		</td>
+	</tr>
+	</table>
+	</div>
 </div>
