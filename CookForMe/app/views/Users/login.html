@@ -1,23 +1,26 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
-
+<head>
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/offerMeal.css'}">
+</head>
 <div class="container">
 
-	<div class="col-md-4 col-md-offset-4">
-		<h2>Login</h2>
-	
+	<div class="mealForm">
+	<h1>Login</h1>
+	<div   class="container" align="center">
 		#{form @Users.login(), method: 'POST', role:'form'}
-			<div class="form-group">
-				<label for="email">Email:</label>
+			<div class="form-group" align="left">
+				<label for="email" >Email:</label>
 				<input class="form-control"  type="text" name="user.email" value="" />
 			</div>
-			<div class="form-group">
-				<label for="password">Password:</label>
+			<div class="form-group" align="left">
+				<label for="password" >Password:</label>
 				<input class="form-control"  type="password" name="user.password" value="" />
 			</div>
 		 	<div class="form-group">
 				<input type="submit" class="btn btn-default" value="Login" />
 			</div>
 		#{/form}
+
 	</div>
 </div>

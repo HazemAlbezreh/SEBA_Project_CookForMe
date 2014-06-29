@@ -17,6 +17,7 @@ import models.*;
 /**
  * 
  */
+@With(Security.class)
 public class Meals extends Controller {
 
 	@Before
@@ -116,7 +117,7 @@ public class Meals extends Controller {
         }
         meal.create();
         meal.save();
-        browse( ((Category)Category.findById(1)).name );
+        browse( ((Category)Category.findById((long)1)).name );
     }
     
     
