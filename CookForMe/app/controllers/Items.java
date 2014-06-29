@@ -111,6 +111,7 @@ public class Items extends Controller {
 		System.out.println("user="+getUsername());
 		if(getUsername()==null){
 			//render(Users.login());
+			//TODO: make it only if the user is logged in.
 			return;			
 		}
 		
