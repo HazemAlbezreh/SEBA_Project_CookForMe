@@ -22,6 +22,10 @@ public class User extends Model {
         this.password = password;
         this.name = email.split("@")[0];
     }
+    
+    public static User findByEmail(String email) {
+        return find("byEmail", email).first();
+    }
 
     public static User findByEmailAndPassword(String email, String password) {
         return find("byEmailAndPassword", email, password).first();
