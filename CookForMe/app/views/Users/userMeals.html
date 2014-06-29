@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Meals Details' /}
+<head>
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/offerMeal.css'}">
+</head>
+<div class="container">
+	<div class="mealForm">
+	<h1>Offered Meals</h1>
+    <div>
+       #{listMeals meals: offeredMeals /}
+    </div>
+    </div>
+    
+    <div class="mealForm">
+	<h1>Ordered Meals</h1>
+    <div>
+       #{listMeals meals: orderedMeals /}
+    </div>
+    </div>
+</div>

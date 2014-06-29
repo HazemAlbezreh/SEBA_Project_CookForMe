@@ -26,23 +26,18 @@ public class Meal extends Model {
     @ManyToOne( cascade= CascadeType.ALL)
     public PriceCategory priceCategory;
     
-   
+    @ManyToOne( cascade= CascadeType.ALL)
+    public User user;
     
     public String comment;
     public Blob image;
     public String imagePath;
     public Date fromDate;
     public Date tillDate;
-
-    public Meal(String name, String ingredients,Category category,String comment, Blob image) {
-        this.name = name;
-        this.ingredients = ingredients;
-        this.category = category;
-        this.comment = comment;
-        this.image = image;
-    }
+    public int numOrderedtimes;
     
-    public Meal(String name, String ingredients,Category category,PriceCategory price,String fromDate,String tillDate) {
+    
+    public Meal(String name, String ingredients,Category category,PriceCategory price,String fromDate,String tillDate, User user) {
     	SimpleDateFormat temp = new SimpleDateFormat("yyyy/MM/dd");
     	try {
 			this.fromDate=temp.parse(fromDate);
@@ -54,18 +49,11 @@ public class Meal extends Model {
         this.ingredients = ingredients;
         this.category = category;
         this.priceCategory = price;
+        this.user = user;
+        this.numOrderedtimes = 0;
     }
     
-    public Meal(String name, String ingredients) {
-        this.name = name;
-        this.ingredients = ingredients;
-    }
-    
-    public Meal(String name) {
-        this.name = name;
-    }
 
-    
     public static List<Meal> findByName(String name) {
         return find("byNameLike", "%" + name + "%").fetch();
     }
@@ -74,9 +62,10 @@ public class Meal extends Model {
         return find("byIngredientsLike", "%" + ing + "%").fetch();
     }
     
-    public static List<Meal> findMeals(String name, String category, String ing) {
+    public static List<Meal> findMeals(String name, String category, String ing, String user) {
         return find("SELECT m FROM Meal m "+
-        		    "WHERE m.name LIKE ? AND m.category.name LIKE ? AND m.ingredients LIKE ?",
-        		    "%"+name+"%", "%"+category+"%", "%"+ing+"%").fetch();
+        		    "WHERE m.name LIKE ? AND m.category.name LIKE ? AND m.ingredients LIKE ? AND m.user.name LIKE ?",
+        		    "%"+name+"%", "%"+category+"%", "%"+ing+"%", "%"+user+"%").fetch();
     }
+    
 }

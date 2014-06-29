@@ -59,8 +59,8 @@ public class BasicTest extends UnitTest {
     	String price = "15€";
     	String fromDate ="2014/06/10" ;
     	String tillDate = "2014/06/18" ;
-
-       Meal meal = new Meal(name,ingredients,Categories.find(category),Prices.find(price),fromDate,tillDate);
+    	User user=new User("hazem@cookforme.com", "hazem","hazem");
+       Meal meal = new Meal(name,ingredients,Categories.find(category),Prices.find(price),fromDate,tillDate,user);
        meal.create();
        meal.save();
        long newMealCount = Meal.count();
@@ -76,11 +76,12 @@ public class BasicTest extends UnitTest {
         //adding two meals with Spanish category and retrieve them.
         String category = "Spanish";
         	//First meal
-        Meal meal1 = new Meal("Paella","Chicken,spices,Olive Oil,chorizo,onion",Categories.find(category),Prices.find("15€"),"2014/06/10","2014/06/18");
+        User user=new User("hazem@cookforme.com", "hazem","hazem");
+        Meal meal1 = new Meal("Paella","Chicken,spices,Olive Oil,chorizo,onion",Categories.find(category),Prices.find("15€"),"2014/06/10","2014/06/18",user);
         meal1.create();
         meal1.save();
         	//Second meal
-        Meal meal2 = new Meal("Potato Omelet","Potato,Eggs,Olive Oil",Categories.find(category),Prices.find("10€"),"2014/06/11","2014/06/20");
+        Meal meal2 = new Meal("Potato Omelet","Potato,Eggs,Olive Oil",Categories.find(category),Prices.find("10€"),"2014/06/11","2014/06/20",user);
         meal2.create();
         meal2.save();
        

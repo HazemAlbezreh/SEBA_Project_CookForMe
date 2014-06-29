@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -14,13 +17,14 @@ public class User extends Model {
     String email;
     public @NotEmpty
     String password;
-//    public @NotEmpty
-//    String name;
-
-    public User(String email, String password) {
+    public @NotEmpty
+    String name;
+    
+    
+    public User(String email,String password,String name) {
         this.email = email;
         this.password = password;
-        //this.name = email.split("@")[0];
+        this.name = name;
     }
     
     public static User findByEmail(String email) {

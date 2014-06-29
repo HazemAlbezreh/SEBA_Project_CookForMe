@@ -54,7 +54,7 @@ public class Items extends Controller {
 		for(Meal m: meals) 
 		{ 
 			double price = Double.parseDouble(m.priceCategory.name.replace('€', ' ')); 
-			Item item = new Item(m.name, m.ingredients, price);
+			Item item = new Item(m.name, m.ingredients, price,m.id);
 			item.create();
 			item.save();
 			items.add(item); 
@@ -172,13 +172,22 @@ public class Items extends Controller {
 		Basket basket = Basket.findByUserid(getUsername());
 
 		Logger.debug("basket = "+basket.basketItems);
+		User connectedUser = Security.getConnectedUser();
 		
 		List<BasketItem> basketItems = basket.basketItems;
-
-		Order order = new Order(basketItems, basket.getTotalBasketPrice(), "");
+		List<Meal> meals = new ArrayList<Meal>();
+		for (BasketItem bItem :basketItems){
+			Meal meal=Meal.findById(bItem.item.mealID);
+			meal.numOrderedtimes +=bItem.quantity;
+			System.out.println("name =" + meal.name );
+			meals.add(meal);
+		}
+		
+		Order order = new Order();
 		
 		order.processOrder();
 		
+		//connectedUser.orders.add(order);
 					
 		String user = getUsername();
 		render(user, basketItems);

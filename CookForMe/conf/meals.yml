@@ -6,6 +6,7 @@ Meal(Pizza):
  priceCategory: 7€
  fromDate: 2014-5-1
  tillDate: 2014-6-30
+ user: aiham
  
 Meal(Doner):
  name: Durum
@@ -15,5 +16,6 @@ Meal(Doner):
  priceCategory: 7€
  fromDate: 2014-4-1
  tillDate: 2014-12-31
+ user: hazem
 
  

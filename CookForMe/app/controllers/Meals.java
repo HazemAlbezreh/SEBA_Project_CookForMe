@@ -39,7 +39,7 @@ public class Meals extends Controller {
 		for(Meal m: meals) 
 		{ 
 			double price = Double.parseDouble(m.priceCategory.name.replace('€', ' ')); 
-			Item item = new Item(m.name, m.ingredients, price);
+			Item item = new Item(m.name, m.ingredients, price,m.id);
 			item.create();
 			item.save();
 			items.add(item); 
@@ -67,7 +67,7 @@ public class Meals extends Controller {
     	} else if (category.equals("")) {
     		category = ((Category)Category.findById((long)1)).name;
     	}
-    	List<Meal> meals = Meal.findMeals("", category, "");
+    	List<Meal> meals = Meal.findMeals("", category, "","");
         //List<Meal> meals = Meal.findAll();
         List<Category> categories = Category.findAll();
         List<Meal> popularMeals = Meal.findAll();
@@ -103,8 +103,8 @@ public class Meals extends Controller {
             validation.keep(); // keep the errors for the next request
             Meals.offer();
         }
-    	
-        Meal meal = new Meal(name,ingredients,Categories.find(category),Prices.find(price),fromDate,tillDate);
+    	User connectedUser=Security.getConnectedUser();
+        Meal meal = new Meal(name,ingredients,Categories.find(category),Prices.find(price),fromDate,tillDate,connectedUser);
 
         if (image != null) {
             meal.image = new Blob();
@@ -147,7 +147,7 @@ public class Meals extends Controller {
     	if (category == null)  category = "";
     	if (ingredients == null)  ingredients = "";
     	
-    	List<Meal> meals = Meal.findMeals(searchToken, category, ingredients);
+    	List<Meal> meals = Meal.findMeals(searchToken, category, ingredients,"");
     	List<Category> categories = Category.findAll();
     	categories.add(0, new Category(""));
         render(searchToken, meals, categories, category, ingredients);

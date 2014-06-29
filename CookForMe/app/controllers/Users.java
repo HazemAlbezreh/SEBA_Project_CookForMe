@@ -36,9 +36,25 @@ public class Users extends Controller {
         }
     }
     
+    public static void userMeals(){
+    	User currentUser = Security.getConnectedUser();
+        List<Meal> offeredMeals = Meal.findMeals("", "", "", currentUser.name);
+        
+        Basket basket = Basket.findByUserid(currentUser.email);
+        
+        List<BasketItem> basketItems = basket.basketItems;
+		List<Meal> orderedMeals = new ArrayList<Meal>();
+		for (BasketItem bItem :basketItems){
+			Meal meal=Meal.findById(bItem.item.mealID);
+			orderedMeals.add(meal);
+		}
+        //List<Meal> orderedMeals = ((Order)currentUser.orders.get(0)).getMeals();
+        render(offeredMeals,orderedMeals);
+    }
     
     
-    public static void signUp(String email, String passwd,String passwdConfirm) {
+    
+    public static void signUp(String email,String name, String passwd,String passwdConfirm) {
     	validation.required(email);
     	validation.required(passwd);
     	validation.required(passwdConfirm);
@@ -52,7 +68,7 @@ public class Users extends Controller {
             validation.keep(); // keep the errors for the next request
             render();
         }
-        User user = new User(email, passwd);
+        User user = new User(email,passwd,name);
         user.create();
         user.save();       
     }

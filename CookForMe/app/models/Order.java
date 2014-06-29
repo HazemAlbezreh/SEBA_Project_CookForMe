@@ -1,6 +1,5 @@
 package models;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 
@@ -8,9 +7,11 @@ import play.db.jpa.Model;
 
 @Entity
 public class Order extends Model{
+
 	
 	
-	public Order(List<BasketItem> items, double totalPrice, String address) {
+	public Order() {
+		
 	}
 	
 	public void processOrder(){
