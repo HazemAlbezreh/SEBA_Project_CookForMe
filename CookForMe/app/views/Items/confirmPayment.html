@@ -1,5 +1,5 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'confirmPayment' /}
 <div id="MyBasketDIV_135">
 	<div id="MyBasketDIV_1">
 		<div id="MyBasketDIV_2">
@@ -98,9 +98,9 @@
 							</div>
 						</div>
 					</div>
-					#{form @restartShopping()}
+					<!-- #{form @restartShopping()}
 					<input id ="orderSummaryINPUT_18" type="submit" value="&{'btn_continue'}" />
-					#{/form}
+					#{/form} -->
 				</div>
 			</div>
 		</div>
@@ -108,7 +108,7 @@
 </div>
 			
 			#{form @restartShopping()}
-				<input type="submit" value="&{'btn_continue'}" />
+				<input type="submit" value="&{'Return To Home Page'}" />
 			#{/form}
 			
 		</div>

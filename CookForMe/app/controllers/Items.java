@@ -26,6 +26,8 @@ import sun.swing.BakedArrayList;
 
 /**
  * @author Akshit
+ * This class is controller for Order a Meal Use Case, having logic 
+ * starting from add to basket feature till confirmpayment.
  */
 public class Items extends Controller {
 
@@ -48,7 +50,7 @@ public class Items extends Controller {
 		return session.get("email");
 	}
 	
-	//@Before
+	@Before
 	static void loadItems() {
 		List<Meal> meals = Meal.findAll(); 
 		List<Item> items = new ArrayList<Item>(); 
@@ -78,14 +80,7 @@ public class Items extends Controller {
 	}
 	
 	public static void index() {		
-		/*List<Meal> meals = Meal.findAll(); 
-		List<Item> items = new ArrayList<Item>(); 
-		for(Meal m: meals) 
-		{ 
-			double price = Double.parseDouble(m.priceCategory.name.replace('€', ' ')); 
-			Item item = new Item(m.name, m.ingredients, price); 
-			items.add(item); 
-		}*/
+
 		List<Item> items = Item.findAll();
 		
 		Logger.debug("In index()="+items.size());
@@ -207,18 +202,12 @@ public class Items extends Controller {
 	}
 
 	public static void restartShopping() {
-		Logger.debug("In restartShopping");
-//		Basket basket = Basket.findByUserid(getUsername());
-//		basket.delete();
-		//index();
-		
+		Logger.debug("In restartShopping");		
 		Application.index();
-		//Meals.browse( ((Category)Category.findById((long)1)).name );
 	}
 	
 	public static void reviewShipping(){
 		Logger.debug("In restartShopping");
-		//render(reviewOrder);
 	}
 	
 	
@@ -249,15 +238,11 @@ public class Items extends Controller {
 	
 	public static void reviewBilling(){
 		
-		//renderJSON();
-		//request.get().
+
 		System.out.println("In reviewBilling:"+params.get("body").toString());
 		
 		String shippingDetails = params.get("body");
-		
-		
-		//Map<String, String> shippingDetailsMap = params.get("body").;
-		
+				
 		
 		System.out.println("In reviewBilling:"+shippingDetails);
 	}

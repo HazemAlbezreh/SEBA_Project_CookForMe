@@ -26,12 +26,12 @@ public class Order extends Model{
 		this.orderedBasket = orderedBasket;
 	}
 	
-	public Order(String userid) {
-		//this.userid = userid;
+	public Order(String email) {
+		this.email = email;
 	}
 	
 	public void addBasket(Basket orderedBasket){
-		//this.orderedBasket = orderedBasket;
+		this.orderedBasket = orderedBasket;
 	}
 	
 	public void processOrder(){
