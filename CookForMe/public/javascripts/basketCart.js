@@ -4,6 +4,9 @@ function openBasketCart(){
 	
 	basketCartOpenCloseCheck();
 		
+	
+	
+	
 	return false;
 }
 
@@ -11,8 +14,15 @@ function basketCartOpenCloseCheck(){
 	var e = document.getElementById('basketCartDIV_12');
    	if(e.style.display == 'block')
    		e.style.display = 'none';
-   	else
+   	else{
+   		
+   		loadItemsInCart();
+   		
    		e.style.display = 'block';
+   		
+   		
+   	}
+   		
    	
    	return false;
 	 		 
@@ -36,6 +46,9 @@ function getTotalItemCount(){
 		}
 	});
 }
+
+
+
 
 function showCart(cartCount){
 	
@@ -80,9 +93,62 @@ function showCart(cartCount){
 	
 }
 
-function addItemToBasketCart(item){
+
+
+function loadItemsInCart()
+{
 	
-	var currentRowID = item;	
+	var totalPrice = 0;
+	
+	$.ajax({
+	        url: "/items/getAll",
+	        type: 'POST',
+	        contentType: 'application/xml',
+	        dataType: 'xml',
+	        data: {},
+	        async: false,
+	        success: function (bItems)
+	        {
+	        	
+	        	console.log("CHECK=="+new XMLSerializer().serializeToString(bItems.documentElement));
+	        	
+	        	//console.log('qty='+$(bItems).find('quantity').text());
+	        	$("#basketCartDIV_14 ul").empty();
+	        	
+	        	$(bItems).find('item').each(function(){
+	        		
+	        		var name = $(this).find('name').text();
+	        		var itemId = $(this).find('id').text();
+	        		var qty = $(this).parent().find('quantity').text();
+	        		console.log('qty='+qty);
+	        		console.log('name='+name);
+	        		var price = $(this).parent().find('basketItemPrice').text();
+	        		console.log('price='+price);
+	        		console.log('itemId='+itemId);
+	        		totalPrice = parseInt(totalPrice) + parseInt(price);
+
+	        		//var imageSrc = @{Meals.renderImage('+itemId+')};
+	        		//<img src="@{Meals.renderImage('+itemId+')}"'+'>
+	        		$("#basketCartDIV_14 ul").append('<li id="basketCartLI_22"> <div id="basketCartDIV_23"> <span id="basketCartSPAN_24">'+'$'+price+'</span><span id="basketCartSPAN_26">'+name+'</span> <span id="basketCartSPAN_27">QTY:'+ qty +' Plates</span> <span id="basketCartSPAN_28"> <a href="#" id="basketCartA_29">remove</a></span> </div> </li>');
+	        		
+
+	            });
+	        	
+	        }
+	   });
+	totalPrice = parseInt(totalPrice);
+	console.log('totalPrice='+parseInt(totalPrice));
+	$("#basketCartSPAN_42").text("Subtotal"+ "  $"+totalPrice);
+			
+}
+
+
+
+
+
+function addItemToBasketCart(){
+	
+	//var currentRowID = item;	
 	
 	$.ajax({
         url: "/items/count",
@@ -98,10 +164,9 @@ function addItemToBasketCart(item){
         }
    });
 	
-	var itemID = "#itemname" + item;
 	
-	console.log(itemID);
-	console.log('here='+ $("#basketRow").find(itemID).html());
+	loadItemsInCart();
+	
 	
 	return false;
 	

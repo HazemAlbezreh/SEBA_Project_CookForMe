@@ -10,48 +10,18 @@
 	</div>
 	<div id="basketCartDIV_12">
 		<div id="basketCartDIV_13">
+			
 			<div id="basketCartDIV_14">
-				<a href="#" id="basketCartA_15">��</a>
+				<a href="#" onClick="return openBasketCart();" id="basketCartA_15">X</a>
 				<h3 id="basketCartH3_16">My Basket</h3>
+			
 				<ul id="basketCartUL_17">
-					<li id="basketCartLI_18">
-						<div id="basketCartDIV_19">
-							<i id="basketCartI_20"></i>
-							<p id="basketCartP_21">You need a minimum of 4 plates for
-								each delivery date to continue.</p>
-						</div>
-					</li>
-					<!-- Placeholder for delivery on date: 2013-11-11 -->
-
-					<li id="basketCartLI_22">
-						<div id="basketCartDIV_23">
-							<span id="basketCartSPAN_24">$30.00</span><img
-								src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3614/small_square__Pizza_with_Vodka_Sauce_and_Grilled_Vegetables_hero.jpg"
-								alt="Pizza with Vodka Sauce" id="basketCartIMG_25" /> <span
-								id="basketCartSPAN_26">Pizza with Vodka Sauce</span> <span
-								id="basketCartSPAN_27">QTY: 2 Plates</span> <span
-								id="basketCartSPAN_28"> <a href="#" id="basketCartA_29">remove</a></span>
-						</div>
-					</li>
-					<!-- Placeholder for delivery on date: 2013-11-11 -->
-
-					<li id="basketCartLI_30">
-						<div id="basketCartDIV_31">
-							<span id="basketCartSPAN_32">$60.00</span><img
-								src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3706/small_square__Spaghetti_with_Beet_Greens_hero.jpg"
-								alt="Spaghetti with Beet Greens" id="basketCartIMG_33" /> <span
-								id="basketCartSPAN_34">Spaghetti with Beet Greens</span> <span
-								id="basketCartSPAN_35">QTY: 4 Plates</span> <span
-								id="basketCartSPAN_36"> <a href="#" id="basketCartA_37">remove</a></span>
-						</div>
-					</li>
+						
 				</ul>
+				
 			</div>
+			
 			<div id="basketCartDIV_38">
-				<div id="basketCartDIV_39">
-					<a id="basketCartA_40"><i id="basketCartI_41"></i> Add
-						Membership to Cart</a>
-				</div>
 				<span id="basketCartSPAN_42">Subtotal $90.00</span> <a
 					href="/items/checkout" id="basketCartA_43">Checkout</a>
 			</div>
@@ -90,8 +60,15 @@
 				#{/if}
 				<a href="#"><img class="image-under" height="70" src="@{Meals.renderImage(m.id)}"></a>
 				<a href="#">${m.name}</a>
+
+		    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart();">
+		    	<img height="50" src="@{'/public/images/add-to-cart-icon.jpg'}">
+		    	</a>
+				#{/if}
+				<a href="#"><img height="70" src="@{Meals.renderImage(m.id)}"></a>
+				<a id ="mealName" href="#">${m.name}</a>
 				<p>${m.ingredients}</p>
-				<p>${m.priceCategory.name}</p>
+				<p id = "mealPrice" >${m.priceCategory.name}</p>
 			</div>
 		    #{/list}
 	    </div>

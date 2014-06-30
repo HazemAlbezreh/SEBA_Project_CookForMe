@@ -43,7 +43,7 @@
     vertical-align: middle;
     white-space: nowrap;
     width: 55px;
-    background: rgba(0, 0, 0, 0) url(https://dusyefwqqyfwe.cloudfront.net/assets/logos/plated@2x-fae781cca4956ac76ed81256636e2209.png) repeat scroll 0% 0% / contain padding-box border-box;
+    background: rgba(0, 0, 0, 0) url(../images/logo.png);
     border: 0px none rgb(71, 71, 71);
     font: normal normal normal 13px/24px 'Open Sans', sans-serif;
     outline: rgb(71, 71, 71) none 0px;
@@ -58,6 +58,7 @@
     border: 0px none rgb(138, 138, 138);
     font: normal normal 200 31px/24px 'Open Sans', sans-serif;
     margin: 0px 0px 0px 15px;
+    margin-left: 40%;
     outline: rgb(138, 138, 138) none 0px;
 }/*#reviewSPAN_4*/
 
@@ -234,13 +235,13 @@
     min-height: 600px;
     position: relative;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 426.328125px;
+    width: 33.33%;
     background: rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
     list-style: none outside none;
     outline: rgb(71, 71, 71) none 0px;
-    padding: 120px 10px 26px;
+    padding: 80px 10px 26px;
 }/*#reviewLI_21*/
 
 #reviewH3_22 {
@@ -1024,13 +1025,13 @@
     min-height: 600px;
     position: relative;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 426.328125px;
+    width: 33.33%;
     background: rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
     list-style: none outside none;
     outline: rgb(71, 71, 71) none 0px;
-    padding: 120px 10px 26px;
+    padding: 80px 10px 26px;
 }/*#reviewLI_78*/
 
 #reviewH3_79, #reviewH3_183 {
@@ -1878,13 +1879,13 @@
     min-height: 600px;
     position: relative;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 426.328125px;
+    width: 33%;
     background: rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
     list-style: none outside none;
     outline: rgb(71, 71, 71) none 0px;
-    padding: 120px 10px 26px;
+    padding: 80px 10px 26px;
 }/*#reviewLI_182*/
 
 #reviewDIV_185 {
@@ -2603,3 +2604,359 @@
 
 
 
+
+
+
+#reviewInPlaceOrderDIV_1 {
+    box-sizing: border-box;
+    color: rgb(71, 71, 71);
+    height: 317.5px;
+    max-width: 300px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 300px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    margin: 10px 53.171875px 10px 53.15625px;
+    outline: rgb(71, 71, 71) none 0px;
+    padding: 10px;
+}/*#reviewInPlaceOrderDIV_1*/
+
+#reviewInPlaceOrderLABEL_2 {
+    color: rgb(71, 71, 71);
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 11px/16.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    margin: 0px 0px 5px;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderLABEL_2*/
+
+#reviewInPlaceOrderUL_3 {
+    color: rgb(71, 71, 71);
+    height: 177.5px;
+    position: relative;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    margin: 0px;
+    outline: rgb(71, 71, 71) none 0px;
+    padding: 0px;
+}/*#reviewInPlaceOrderUL_3*/
+
+#reviewInPlaceOrderLI_4 {
+    color: rgb(71, 71, 71);
+    height: 48.5px;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderLI_4*/
+
+#reviewInPlaceOrderDIV_5 {
+    color: rgb(71, 71, 71);
+    height: 32px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+    padding: 6.5px 55px 10px 50px;
+}/*#reviewInPlaceOrderDIV_5*/
+
+#reviewInPlaceOrderSPAN_6, #reviewInPlaceOrderSPAN_12, #reviewInPlaceOrderSPAN_18 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 38px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_6, #reviewInPlaceOrderSPAN_12, #reviewInPlaceOrderSPAN_18*/
+
+#reviewInPlaceOrderIMG_7, #reviewInPlaceOrderIMG_13, #reviewInPlaceOrderIMG_19 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 40px;
+    left: 0px;
+    max-width: 100%;
+    position: absolute;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    vertical-align: middle;
+    width: 40px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderIMG_7, #reviewInPlaceOrderIMG_13, #reviewInPlaceOrderIMG_19*/
+
+#reviewInPlaceOrderSPAN_8 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 16px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal bold 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_8*/
+
+#reviewInPlaceOrderSPAN_9, #reviewInPlaceOrderSPAN_15, #reviewInPlaceOrderSPAN_21 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 16px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_9, #reviewInPlaceOrderSPAN_15, #reviewInPlaceOrderSPAN_21*/
+
+#reviewInPlaceOrderLI_10, #reviewInPlaceOrderLI_16 {
+    color: rgb(71, 71, 71);
+    height: 64.5px;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderLI_10, #reviewInPlaceOrderLI_16*/
+
+#reviewInPlaceOrderDIV_11, #reviewInPlaceOrderDIV_17 {
+    color: rgb(71, 71, 71);
+    height: 48px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+    padding: 6.5px 55px 10px 50px;
+}/*#reviewInPlaceOrderDIV_11, #reviewInPlaceOrderDIV_17*/
+
+#reviewInPlaceOrderSPAN_14, #reviewInPlaceOrderSPAN_20 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 32px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal bold 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_14, #reviewInPlaceOrderSPAN_20*/
+
+#reviewInPlaceOrderDIV_22 {
+    color: rgb(71, 71, 71);
+    height: 58px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border-top: 1px solid rgb(207, 207, 207);
+    border-right: 0px none rgb(71, 71, 71);
+    border-bottom: 1px solid rgb(207, 207, 207);
+    border-left: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    margin: 10px 0px 0px;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderDIV_22*/
+
+#reviewInPlaceOrderDIV_23, #reviewInPlaceOrderDIV_26 {
+    color: rgb(71, 71, 71);
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+    padding: 5px 0px;
+}/*#reviewInPlaceOrderDIV_23, #reviewInPlaceOrderDIV_26*/
+
+#reviewInPlaceOrderDIV_23:after, #reviewInPlaceOrderDIV_26:after {
+    clear: both;
+    color: rgb(71, 71, 71);
+    display: table;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 1px;
+    content: '';
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/0px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderDIV_23:after, #reviewInPlaceOrderDIV_26:after*/
+
+#reviewInPlaceOrderDIV_23:before, #reviewInPlaceOrderDIV_26:before {
+    color: rgb(71, 71, 71);
+    display: table;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 1px;
+    content: '';
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/0px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderDIV_23:before, #reviewInPlaceOrderDIV_26:before*/
+
+#reviewInPlaceOrderSPAN_24 {
+    color: rgb(71, 71, 71);
+    display: block;
+    float: left;
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 51px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_24*/
+
+#reviewInPlaceOrderSPAN_25 {
+    color: rgb(71, 71, 71);
+    display: block;
+    float: right;
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 45px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_25*/
+
+#reviewInPlaceOrderSPAN_27 {
+    color: rgb(71, 71, 71);
+    display: block;
+    float: left;
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 117px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_27*/
+
+#reviewInPlaceOrderSPAN_28 {
+    color: rgb(71, 71, 71);
+    display: block;
+    float: right;
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 26px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_28*/
+
+#reviewInPlaceOrderDIV_29 {
+    color: rgb(71, 71, 71);
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal 800 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+    padding: 5px 0px;
+}/*#reviewInPlaceOrderDIV_29*/
+
+#reviewInPlaceOrderDIV_29:after {
+    clear: both;
+    color: rgb(71, 71, 71);
+    display: table;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 1px;
+    content: '';
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal 800 13px/0px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderDIV_29:after*/
+
+#reviewInPlaceOrderDIV_29:before {
+    color: rgb(71, 71, 71);
+    display: table;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 1px;
+    content: '';
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal 800 13px/0px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderDIV_29:before*/
+
+#reviewInPlaceOrderSPAN_30 {
+    color: rgb(71, 71, 71);
+    display: block;
+    float: left;
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 34px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal 800 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_30*/
+
+#reviewInPlaceOrderSPAN_31 {
+    color: rgb(71, 71, 71);
+    display: block;
+    float: right;
+    height: 19px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 46px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal 800 13px/19.5px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewInPlaceOrderSPAN_31*/
+
+
+
+
+
+#reviewDIV_1{
+	background: rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box;
+}

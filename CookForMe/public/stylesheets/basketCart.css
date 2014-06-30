@@ -253,7 +253,7 @@
     text-decoration: none solid rgb(71, 71, 71);
     top: 47px;
     width: 321px;
-    z-index: 1030;
+    z-index: 1;
     background: rgba(0, 0, 0, 0) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAHCAQAAADD2ofxAAAAvUlEQVR4AaXMsUrDUBSA4S83q5MVn8Dd3cFRqyjVIt2ls/g4TnYSB5GOig9RIZMiQWjsHTNoHQSLsRTENmu/Hw6cM5wkVpYSLOcrVM/qvvUU6go9E4teHIXVw2RQmTNxpqtdezF0rOvcj39vOh6SqNEor6pmAnw41Qcbbm0CMidy0HFpBQy1ZATKcq0VLiC8pntpPzUrt+sO3NuRA24cKPBkXwbirPd0dD36HG+PzRfX4yA+TqeFmtPb1t/2C8rlTyuv2x30AAAAAElFTkSuQmCC) repeat-x scroll 50% 100% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal 600 14px/24px 'Open Sans', sans-serif;
@@ -268,7 +268,7 @@
     height: 428.453125px;
     text-align: left;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 321px;
+    width: 311px;
     background: rgb(231, 231, 231) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal 600 14px/24px 'Open Sans', sans-serif;
@@ -283,7 +283,7 @@
     height: 263.453125px;
     text-align: left;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 311px;
+    width: 300px;
     background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal 600 14px/24px 'Open Sans', sans-serif;
