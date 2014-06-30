@@ -18,6 +18,8 @@ POST    /checkout/review/shipping				Items.reviewShipping
 POST    /checkout/review/billing				Items.reviewBilling
 
 POST    /items/getAll	        	        	Items.getAddedItemsInBasket
+POST    /checkout/restartShopping				Items.restartShopping
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

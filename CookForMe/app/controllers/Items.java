@@ -194,14 +194,17 @@ public class Items extends Controller {
 
 		double total = basket.getTotalBasketPrice();
 
+		basket.delete();
+		
 		render(basketItems,total);
+		
 		
 	}
 
 	public static void restartShopping() {
 		Logger.debug("In restartShopping");
-		Basket basket = Basket.findByUserid(getUsername());
-		basket.delete();
+//		Basket basket = Basket.findByUserid(getUsername());
+//		basket.delete();
 		//index();
 		
 		Application.index();
