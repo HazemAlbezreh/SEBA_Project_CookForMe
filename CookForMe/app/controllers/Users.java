@@ -17,11 +17,19 @@ import models.*;
 
 public class Users extends Controller {
 	
+	@Before
+    static void setConnectedUser() {
+        if (Security.isConnected()) {
+            User user = Security.getConnectedUser();
+            renderArgs.put("user", user);
+        }
+    }
 	
     public static void login(@Valid User user) {
         if (user == null) {
             render();
         }
+        
 
         if (validation.hasErrors()) {
             params.flash(); // add http parameters to the flash scope
