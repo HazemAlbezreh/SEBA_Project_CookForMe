@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<div id="basketCartDIV_1">
+<div id="basketCartDIV_1" style="z-index: 10;">
 	<div id="basketCartDIV_2">
 		<div id="basketCartDIV_8">
 			<a href="" onClick="return openBasketCart();" id="basketCartA_9"><i id="basketCartI_10"></i>
@@ -54,18 +54,11 @@
 		    #{list items: meals, as:'m'}
 		    <div class="top-grid">
 		    	#{if user != null}
-			    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart(${m.id});">
+			    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart();">
 			    	<img class="image-over" height="50" src="@{'/public/images/add-to-cart-icon.png'}">
 			    	</a>
 				#{/if}
 				<a href="#"><img class="image-under" height="70" src="@{Meals.renderImage(m.id)}"></a>
-				<a href="#">${m.name}</a>
-
-		    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart();">
-		    	<img height="50" src="@{'/public/images/add-to-cart-icon.jpg'}">
-		    	</a>
-				#{/if}
-				<a href="#"><img height="70" src="@{Meals.renderImage(m.id)}"></a>
 				<a id ="mealName" href="#">${m.name}</a>
 				<p>${m.ingredients}</p>
 				<p id = "mealPrice" >${m.priceCategory.name}</p>
