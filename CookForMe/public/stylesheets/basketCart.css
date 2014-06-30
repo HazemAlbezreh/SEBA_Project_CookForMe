@@ -267,7 +267,7 @@
     height: 428.453125px;
     text-align: left;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 321px;
+    width: 311px;
     background: rgb(231, 231, 231) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal 600 14px/24px 'Open Sans', sans-serif;
@@ -282,7 +282,7 @@
     height: 263.453125px;
     text-align: left;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 311px;
+    width: 300px;
     background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 0px none rgb(71, 71, 71);
     font: normal normal 600 14px/24px 'Open Sans', sans-serif;
@@ -562,7 +562,7 @@
     color: rgb(71, 71, 71);
     display: block;
     height: 24px;
-    text-align: right;
+    text-align: center;
     text-decoration: none solid rgb(71, 71, 71);
     text-transform: uppercase;
     width: 291px;

@@ -273,6 +273,14 @@ public class Items extends Controller {
 		
 	}
 	
+	public static void getAddedItemsInBasket(){
+		
+		Basket basket = Basket.findByUserid(getUsername());
+		
+		List<BasketItem> basketItems = basket.basketItems;
+			
+		renderXml(basketItems);		
+	}
 	
 	
 }
