@@ -265,3 +265,13 @@ function removeItemFromCart(itemId){
 	//loadItemsInCart();
 }
 
+
+function addItemsInReviewOrder(){
+	
+	console.log('addItemsInReviewOrder');
+	
+	
+}
+
+
+
