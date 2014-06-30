@@ -65,6 +65,10 @@ public class Meal extends Model {
     }
     
     public static List<Meal> findMeals(String name, String category, String ing, String user) {
+    	if (name == null) name = "";
+    	if (category == null) category="";
+    	if (ing == null) ing="";
+    	if (user == null) user="";
         return find("SELECT m FROM Meal m "+
         		    "WHERE UPPER(m.name) LIKE ? AND UPPER(m.category.name) LIKE ? AND UPPER(m.ingredients) LIKE ? AND UPPER(m.user.name) LIKE ?",
         		    "%"+name.toUpperCase()+"%", "%"+category.toUpperCase()+"%", "%"+ing.toUpperCase()+"%", "%"+user.toUpperCase()+"%").fetch();
