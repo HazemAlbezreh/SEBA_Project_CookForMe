@@ -17,5 +17,24 @@ Meal(Doner):
  fromDate: 2014-4-1
  tillDate: 2014-12-31
  user: hazem
+ 
+Meal(Spaghetti):
+ name: Spaghetti
+ ingredients: Pork, Cheese
+ imagePath: 4.jpg
+ category: Italian
+ priceCategory: 10€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: liubou
 
+Meal(Curry):
+ name: Curry
+ ingredients: Butter Chicken curry with all Spices
+ imagePath: 5.jpg
+ category: Indian
+ priceCategory: 10€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: akshit
  

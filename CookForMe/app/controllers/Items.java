@@ -183,40 +183,13 @@ public class Items extends Controller {
 			meals.add(meal);
 		}
 		
-		//Order order = Order.findByUserid(getUsername());
-		
-		//if(order==null){
-		//Order order = new Order(getUsername());
-	//	}
-		
-		//connectedUser.delete();
-		
-//		User user = new User(connectedUser.email, connectedUser.password,
-//						connectedUser.name, 
-//						basket);
-		
 		connectedUser.addBasket(basket);
-		//user.create();
 		connectedUser.save();
-		
-		//order.addBasket(basket);
-		
-		
-		//order.addBasket(basket);
-		
-		//order.processOrder();
-		
-		//order.create();
-		//order.save();
-		
-		//connectedUser.orders.add(order);
-					
-		//String user = getUsername();
+
 		double total = basket.getTotalBasketPrice();
 
 		render(basketItems,total);
 		
-		//render();
 	}
 
 	public static void restartShopping() {
@@ -304,9 +277,14 @@ public class Items extends Controller {
 		
 		Basket basket = Basket.findByUserid(getUsername());
 		
-		List<BasketItem> basketItems = basket.basketItems;
+		if(basket!=null){
+			List<BasketItem> basketItems = basket.basketItems;
 			
-		renderXml(basketItems);		
+			if(basketItems!=null){
+				renderXml(basketItems);
+			}
+		}
+				
 	}
 	
 	

@@ -171,3 +171,56 @@ function addItemToBasketCart(){
 	return false;
 	
 }
+
+function addItem(itemid) {	
+	console.log('additem was clicked'+itemid);
+
+	
+	$.ajax({
+        type: "POST",
+        url: "/items/add/"+itemid,
+        //data: {newname: newname}, 
+		     data: {},
+		     contentType: "text/xml",
+		     dataType: 'xml', 
+		     async: false,
+		     success: function(json) {
+		    	console.log('result='+json);
+		    	//tmpl('basketItems_tmpl',  also put bracket at end
+	   			$('#BasketItemsTemplateOutput').html({basketItems: json});
+  	   		$('#basketTbl #priceCell').each(function() {
+  	   			$(this).formatCurrency({region: 'en-GB'});
+        	 });
+  	   			  	   		
+  	   		//addItemToBasketCart(itemid);
+  	   		
+		     },
+		     error: function(json) {
+	   		     alert('fail: ' + json);
+	   			
+		     } 
+		 });	 
+		 
+	 return false; 
+	}	
+
+function removeItem(basketItemId) {
+	$.ajax({
+        type: "POST",
+        url: "/items/remove/"+basketItemId,
+		     data: {},
+		     contentType: "text/xml",
+		     dataType: "xml", 
+		    success: function(json) {
+	   			$('#BasketItemsTemplateOutput').html(tmpl('basketItems_tmpl', {basketItems: json}));
+	   			$('#basketTbl #priceCell').each(function() {
+  	   			$(this).formatCurrency({region: 'en-GB'});
+    	 	});
+		     },
+		     
+		     error: function(json) {
+	   		     alert('fail: ' + json); 
+		     } 
+		 });
+	 return false; 
+	}	
