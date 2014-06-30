@@ -1,7 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'Search Meals' /}
-
-<div class="container">
+<head>
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/searchMeals.css'}">
+</head>
+<div class="container mealForm">
+	<h1 align="middle">Search For Meals</h1>
 	<div class='row' style="margin-top: 25px; margin-left: 10px;">
 		<div class="col-md-4 input-group">
 			#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
