@@ -77,3 +77,23 @@ Meal(Paella):
  fromDate: 2014-4-1
  tillDate: 2014-10-31
  user: liubou
+
+Meal(Kebbeh):
+ name: Kebbeh
+ ingredients: fine bulgur wheat, beef, chopped yellow onions
+ imagePath: Kebbeh.jpg
+ category: Syrian
+ priceCategory: 15€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: aiham
+
+Meal(CreamyBurritoCasserole):
+ name: Creamy Burrito Casserole
+ ingredients: ground beef or ground turkey, yellow onion, taco seasoning 
+ imagePath: CreamyBurritoCasserole.jpg
+ category: Mexican
+ priceCategory: 10€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: akshit
