@@ -1745,14 +1745,15 @@
 #orderSummaryDIV_1 {
     box-sizing: border-box;
     color: rgb(71, 71, 71);
-    float: left;
+    float: right;
     height: 373.3333435058594px;
     min-height: 1px;
     text-decoration: none solid rgb(71, 71, 71);
     width: 370px;
     border: 0px none rgb(71, 71, 71);
     font: normal normal normal 15.555556297302246px/23.999998092651367px 'Open Sans', sans-serif;
-    margin: 0px 0px 0px 30px;
+    /*margin: 0px 0px 0px 30px;*/
+    margin : -20px -60px 0px -20px;
     outline: rgb(71, 71, 71) none 0px;
 }/*#orderSummaryDIV_1*/
 
@@ -2021,7 +2022,7 @@
     text-decoration: none solid rgb(255, 255, 255);
     vertical-align: middle;
     white-space: nowrap;
-    width: 165.55555725097656px;
+    width: 100%;
     align-items: flex-start;
     background: rgb(128, 168, 39) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 1.1111111640930176px solid rgba(0, 0, 0, 0);
@@ -2043,7 +2044,7 @@
     text-decoration: none solid rgb(255, 255, 255);
     vertical-align: middle;
     white-space: nowrap;
-    width: 74.44444274902344px;
+    width: 100%;
     align-items: flex-start;
     background: rgb(204, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 1.1111111640930176px solid rgba(0, 0, 0, 0);

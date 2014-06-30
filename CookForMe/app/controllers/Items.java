@@ -176,7 +176,12 @@ public class Items extends Controller {
 		Logger.debug("In confirmPayment");
 		
 		Basket basket = Basket.findByUserid(getUsername());
-
+		
+		if(basket==null)
+		{
+			return;
+		}
+		
 		Logger.debug("basket = "+basket.basketItems);
 		User connectedUser = Security.getConnectedUser();
 		
