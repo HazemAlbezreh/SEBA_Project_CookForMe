@@ -190,13 +190,19 @@ body{
 	-o-text-shadow: 0.2px 0px 0.1px #B1B1B1;
 }
 .monitor{
-	background: url(../images/image-sprit.png) no-repeat 7px 6px;
+	background-image: url(../images/Menu-Icon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .target{
-	background: url(../images/image-sprit.png) no-repeat -75px 6px;
+	background-image: url(../images/CooksPadIcon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .photo{
-	background: url(../images/image-sprit.png) no-repeat -158px 6px;
+	background-image: url(../images/search-icon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .colors{
 	background: url(../images/image-sprit.png) no-repeat -243px 6px;

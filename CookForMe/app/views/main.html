@@ -155,7 +155,9 @@
 						<li><a href="/Meals/offer">Offer Meal</a></li>
 						<li><a href="/Meals/browse">Browse Meals</a></li>
 						<li><a href="/items/checkout">Basket</a></li>
-						<li><a href="/users/userMeals">My Meals</a></li>
+						#{if user != null}
+							<li><a href="/users/userMeals">My Meals</a></li>
+						#{/if}
 						<li>
 							#{if user != null}
 								<a href="/Users/logout">Welcome, ${user.name}! <strong id="logout-link">Logout</strong></a>

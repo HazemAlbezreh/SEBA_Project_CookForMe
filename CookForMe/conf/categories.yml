@@ -9,3 +9,6 @@ Category(Syrian):
  
 Category(Mexican):
  name: Mexican
+
+Category(Indian):
+ name: Indian

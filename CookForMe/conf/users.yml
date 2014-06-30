@@ -1,3 +1,8 @@
+User(aiham):
+ email: aiham@cookforme.com
+ password: aiham
+ name: aiham
+ 
 User(akshit):
  email: akshit@cookforme.com
  password: akshit
@@ -8,7 +13,7 @@ User(hazem):
  password: hazem
  name: hazem
  
-User(aiham):
- email: aiham@cookforme.com
- password: aiham
- name: aiham
+User(liubou):
+ email: liubou@cookforme.com
+ password: liubou
+ name: liubou
