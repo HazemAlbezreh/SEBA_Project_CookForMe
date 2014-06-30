@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import models.*;
@@ -96,7 +98,25 @@ public class Meals extends Controller {
     	validation.required(price);
     	validation.required(fromDate);
     	validation.required(tillDate);
-
+      	SimpleDateFormat temp = new SimpleDateFormat("yyyy/MM/dd");
+    	try {
+			Date date1=temp.parse(fromDate);
+			 Date today = new Date();
+			if (date1.compareTo(today)<0 ){
+				validation.addError("fromDate","from Date < today");
+			}
+			Date date2=temp.parse(tillDate);
+			if (date2.compareTo(today)<0 ){
+				validation.addError("tillDate","from Date < today");
+			}
+			if (date1.compareTo(date2)>0){
+				validation.addError("fromDate","from Date > till Date");
+				validation.addError("tillDate","till Date < from Date");
+			}
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+		}
     	
     	if(validation.hasErrors()) {
             params.flash(); // add http parameters to the flash scope

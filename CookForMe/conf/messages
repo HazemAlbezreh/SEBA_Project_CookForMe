@@ -6,6 +6,9 @@ title=CookForMe
 
 # -- validator errors --
 errors_invalid=Invalid.
+errors_date=Invalid.
+validation.required=%s is required
+validation.date=%s is invalid
 
 # -- general --
 btn_submit=submit

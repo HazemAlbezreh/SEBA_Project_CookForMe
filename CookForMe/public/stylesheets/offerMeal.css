@@ -30,3 +30,11 @@ line-height: 24px;
 font-weight: bold;
 color: 	#140A00;
 }
+span {
+font-family: Tahoma, Geneva, sans-serif;
+font-size: 14px;
+font-style: italic;
+line-height: 24px;
+font-weight: bold;
+color: red;
+}
