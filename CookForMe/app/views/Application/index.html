@@ -7,15 +7,73 @@
 	</style>
 			<!----start-homepage-header--->
 			<div class="header">
-			<div class="wrap">
+				<div class="row">
+				<!---start-logo---->
+				<div class="col-md-2 logo">
+					<a href="index.html"><img src="@{'/public/images/logo.png'}" title="CookForMe" /></a>
+				</div>
+				<!---//End-logo---->
+				
+				<div id="searchBar" class="col-md-2 input-group">
+					#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
+						<div class="form-group">
+							<input name="searchToken" type="text" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">Go!</button>
+							</span>
+						</div>
+					#{/form}
+				</div>
+				
+				<!---start-top-nav---->
+				<div class="top-nav col-md-9" id="menu-left">
+					<ul>
+						<li class="active"><a href="#home">Home</a></li>
+						<li><a href="#services">Our Services</a></li>
+						<li><a href="#process">What We Do & User Stories</a></li>
+						<li><a href="#portfolio">Popular Dishes</a></li>
+						<li><a href="#price">About us</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li>
+							#{if user != null}
+								<a href="/Users/logout">Welcome, ${user.name}! <strong id="logout-link">Logout</strong></a>
+							#{/if}
+							#{else}
+								<a href="/Users/login"><strong id="login-link">Login</strong></a>
+							#{/else}			
+						</li>
+						<li class="nav-icon"><a href="#"><span> </span></a></li>
+					</ul>
+				</div>
+				<!-- <div class="top-nav col-md-6" id="menu-left">
+					<ul>
+						<li><a href="/">Home Page</a></li>
+						<li><a href="/Meals/offer">Offer Meal</a></li>
+						<li><a href="/Meals/browse">Browse Meals</a></li>
+						<li><a href="/items/checkout">Basket</a></li>
+						<li>
+							#{if user != null}
+								<a href="/Users/logout">Welcome, ${user.name}! <strong id="logout-link">Logout</strong></a>
+							#{/if}
+							#{else}
+								<a href="/Users/login"><strong id="login-link">Login</strong></a>
+							#{/else}			
+						</li>
+					</ul>
+				</div> --> 
+				
+				<!---//End-top-nav---->
+				
+			</div>
+				<!-- <div class="wrap">
 				<div class='row'>
-					<!---start-logo---->
+					-start-logo--
 				<div class="col-md-2">
 						<div class="logo">
 							<a href="index.html"><img src="@{'/public/images/logo.png'}" title="CookForMe" /></a>
 						</div>
 				</div>
-				<!---//End-logo---->
+				-//End-logo--
 				<div class="col-md-4">
 				 <div class="container">
 					<div class="input-group">
@@ -31,7 +89,7 @@
 					</div> 
 				</div>
 				
-					<!---start-top-nav---->
+					-start-top-nav--
 				<div class="col-md-5">
 					<div class="top-nav" id="menu-left">
 						<ul>
@@ -45,7 +103,7 @@
 							<div class="clear"> </div>
 						</ul>
 					</div>
-					<!---//End-top-nav---->
+					-//End-top-nav--
 					
 					</div>
 					</div>
@@ -59,8 +117,8 @@
 					</div>
 				
 					<div class="clear"> </div>
-				</div>
-			</div>
+				</div> -->
+			</div> 
 			<!----//End-homepage-header--->
 			
 			<!---- start Image Slider --->
