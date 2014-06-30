@@ -9,6 +9,9 @@
       <th>fromDate</th>
       <th>tillDate</th>
   	  <th>cook</th>
+  	   #{if _displayQuantity == true}
+		<th># of active orders</th>
+	   #{/if}
     </tr>
   </thead>
   <tbody id="mealTable">
@@ -22,6 +25,9 @@
       <td>${m.fromDate}</td>
       <td>${m.tillDate}</td>
       <td>${m.user.name}</td>
+      #{if _displayQuantity == true}
+      	<td align="center">${m.numOrderedtimes}</td>
+      #{/if}
     </tr>
     #{/list}
   </tbody>
