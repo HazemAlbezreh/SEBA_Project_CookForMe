@@ -12,3 +12,9 @@ Category(Mexican):
 
 Category(Indian):
  name: Indian
+
+Category(Turkish):
+ name: Turkish
+ 
+Category(Chinese):
+ name: Chinese

@@ -1,27 +1,27 @@
 Meal(Pizza):
- name: Pizza Mushrooms
- ingredients: sd,df,a,dfa,aaa
- imagePath: 1.jpg
- category: Spanish
- priceCategory: 7€
+ name: Pizza Margherita
+ ingredients: Pizza dough, All-purpose flour, 3 cup Tomato Sauce
+ imagePath: slide4.jpg
+ category: Italian
+ priceCategory: 15€
  fromDate: 2014-5-1
  tillDate: 2014-6-30
  user: aiham
  
 Meal(Doner):
  name: Durum
- ingredients: afds, sdf, das,dsf 
+ ingredients: bread, meat, vegetables 
  imagePath: 2.jpg
- category: Spanish
- priceCategory: 7€
+ category: Turkish
+ priceCategory: 10€
  fromDate: 2014-4-1
  tillDate: 2014-12-31
  user: hazem
  
 Meal(Spaghetti):
  name: Spaghetti
- ingredients: Pork, Cheese
- imagePath: 4.jpg
+ ingredients: Pork, Cheese, noodles
+ imagePath: 1.jpg
  category: Italian
  priceCategory: 10€
  fromDate: 2014-4-1
@@ -37,4 +37,43 @@ Meal(Curry):
  fromDate: 2014-4-1
  tillDate: 2014-10-31
  user: akshit
+
+Meal(Bruschetta):
+ name: Bruschetta
+ ingredients: grilled bread rubbed with garlic and topped with tomatoes, olive oil, salt and pepper
+ imagePath: Bruschetta.jpg
+ category: Italian
+ priceCategory: 15€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: aiham
  
+Meal(AntsClimbingATree):
+ name: Ants Climbing A Tree
+ ingredients: beanthread noodles, Shaoxing wine, Salt, minced beef, Groundnut Oil
+ imagePath: AntsClimbingATree.jpg
+ category: Chinese
+ priceCategory: 7€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: hazem
+
+Meal(PapasArrugadas):
+ name: Papas Arrugadas
+ ingredients: small new potatoes, salt,
+ imagePath: PapasArrugadas.jpg
+ category: Spanish
+ priceCategory: 10€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: liubou
+
+Meal(Paella):
+ name: Paella
+ ingredients: rice, chicken, rabbit, sea food, white and green beans and other vegetables
+ imagePath: Paella.jpg
+ category: Spanish
+ priceCategory: 15€
+ fromDate: 2014-4-1
+ tillDate: 2014-10-31
+ user: liubou
