@@ -21,3 +21,13 @@
 	color: #929291;
 	padding-bottom: 10px;	
 }
+
+#logout-link {
+	color: #C00;
+	font-weight: bold;
+}
+
+#login-link {
+	color: #6B8F00;
+	font-weight: bold;
+}

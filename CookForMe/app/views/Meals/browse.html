@@ -1,26 +1,8 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<div id="basketCartDIV_1">
+<div id="basketCartDIV_1" style="z-index: 10;">
 	<div id="basketCartDIV_2">
-		<div id="basketCartDIV_3">
-			<div id="basketCartDIV_4">	 
-				#{if user != null}
-					<h4>Welcome,</h4>
-				#{/if}
-				#{else}
-					<a href="/Users/login" >Login</a>
-				#{/else}
-				
-				<a href="/account" id="basketCartA_5">
-				#{if user != null}
-					<h4>${user.email}</h4>
-				#{/if}</a>
-			</div>
-			<div id="basketCartDIV_6">
-				<a href="/account" id="basketCartA_7">Account</a>
-			</div>
-		</div>
 		<div id="basketCartDIV_8">
 			<a href="" onClick="return openBasketCart();" id="basketCartA_9"><i id="basketCartI_10"></i>
 				Basket <span id="basketCartSPAN_11"></span></a>
@@ -51,25 +33,32 @@
 	<div id="browse-page">
 	<table id="browse-table">
 	<tr>
-		<td>
-		<div>
+		<td align="center">
+		<h3 class="section-title">Food Categories</h3>
+		<div id="categories-box" class="list-group">
 			#{list items: categories, as:'c'}
- 				<a id="categoryID" class="btn btn-default category" onclick="activate(${c.id});" href="@{Meals.browse(c.name)}">${c.name}</a> 
-				<div class="clear"></div>
+				#{if c.name != category} 
+ 					<a id="categoryID" class="list-group-item category" href="@{Meals.browse(c.name)}">${c.name}</a>
+ 				#{/if}
+ 				#{else}
+ 					<a id="categoryID" class="list-group-item category active" href="@{Meals.browse(c.name)}">${c.name}</a>
+ 				#{/else} 
 			#{/list}
 		</div>
 	    </td>
 	    
-	    <td>
+	    
+	    <td align="center">
+	    <h3 class="section-title">${category} Dishes</h3>
 	    <div id="browse-content">
 		    #{list items: meals, as:'m'}
 		    <div class="top-grid">
 		    	#{if user != null}
-		    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart();">
-		    	<img height="50" src="@{'/public/images/add-to-cart-icon.jpg'}">
-		    	</a>
+			    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart();">
+			    	<img class="image-over" height="50" src="@{'/public/images/add-to-cart-icon.png'}">
+			    	</a>
 				#{/if}
-				<a href="#"><img height="70" src="@{Meals.renderImage(m.id)}"></a>
+				<a href="#"><img class="image-under" height="70" src="@{Meals.renderImage(m.id)}"></a>
 				<a id ="mealName" href="#">${m.name}</a>
 				<p>${m.ingredients}</p>
 				<p id = "mealPrice" >${m.priceCategory.name}</p>
@@ -78,11 +67,17 @@
 	    </div>
 	    </td>
 	    
-	    <td>
+	    <td align="center">
+	    <h3 class="section-title">Recommended Dishes</h3>
 	    <div id="recommendations">
 			#{list items: popularMeals, as:'m'}
 		    <div class="top-grid">
-				<a href="#"><img src="@{Meals.renderImage(m.id)}"></a>
+		    	#{if user != null}
+			    	<a href="" onclick="addItem(${m.id}); return addItemToBasketCart(${m.id});">
+			    	<img class="image-over" height="40" src="@{'/public/images/add-to-cart-icon.png'}">
+			    	</a>
+				#{/if}
+				<a href="#"><img class="image-under" src="@{Meals.renderImage(m.id)}"></a>
 				<a href="#">${m.name}</a>
 				<p>${m.ingredients}</p>
 				<p>${m.priceCategory.name}</p>

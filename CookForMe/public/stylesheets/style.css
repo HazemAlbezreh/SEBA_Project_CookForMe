@@ -74,6 +74,16 @@ body{
 }
 .logo{
 	float: left;
+	margin-top: 35px;
+}
+#searchBar {
+	margin-top: 35px;
+	padding: 0px;
+	height: 0px;
+}
+#searchBar .form-group {
+	margin:0px;
+	padding:0px;
 }
 .top-nav{
 	float:right;
@@ -87,7 +97,10 @@ body{
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
-	padding: 1.5em 1em 1.5em;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	display: block;
 	font-size: 0.9em;
 	font-weight: 600;
