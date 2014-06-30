@@ -13,6 +13,7 @@ import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cascade;
 
+import play.Logger;
 import play.db.jpa.Model;
 
 /** 
@@ -66,16 +67,50 @@ public class Basket extends Model {
 	}
 	
 	public void removeItem(Item item) {
-		for (Iterator<BasketItem> it = basketItems.iterator(); it.hasNext();) {
-			BasketItem basketItem = (BasketItem) it.next();
+		System.out.println("In removeItem="+basketItems.size());
+		
+		if(basketItems==null | basketItems.size() ==0){
+			return;
+		}
+		
+		for (int i =0; i< basketItems.size(); i++) {
+			BasketItem basketItem  = basketItems.get(i);			
+			System.out.println("In removeItemNAmesIterate");
 			if (basketItem.item.getId().equals(item.getId())) {
+				System.out.println("In removeItemNAmesIterate2="+basketItem.item.name);
+				//basketItems.remove(i);
 				if (basketItem.quantity > 1) {
 					basketItem.decreaseQuantity();
 				} else {
-					it.remove();
+					System.out.println("In removeItemNAmesREMOVE="+basketItem.item.name);
+					//basketItems.remove(i);
+					basketItems.remove(basketItem);
+					basketItem.delete();
+					//it.remove();
 				}
 			}
 		}
+		
+//		for (Iterator<BasketItem> it = basketItems.iterator(); it.hasNext();) {
+//			BasketItem basketItem = (BasketItem) it;
+//			if (basketItem.item.getId().equals(item.getId())) {
+//				if (basketItem.quantity > 1) {
+//					basketItem.decreaseQuantity();
+//				} else {
+//					System.out.println("In removeItemNAmes="+basketItem);
+//					basketItems.remove(i);
+//					basketItems.remove(basketItem);
+//					basketItem.delete();
+//					//it.remove();
+//				}
+//			}
+//			it = it.next();
+//			
+//			i++;
+//		}
+		
+		
+		
 	}
 
 	public void empty() {

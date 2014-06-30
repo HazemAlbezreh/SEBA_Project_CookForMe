@@ -129,7 +129,7 @@ function loadItemsInCart()
 
 	        		//var imageSrc = @{Meals.renderImage('+itemId+')};
 	        		//<img src="@{Meals.renderImage('+itemId+')}"'+'>
-	        		$("#basketCartDIV_14 ul").append('<li id="basketCartLI_22"> <div id="basketCartDIV_23"> <span id="basketCartSPAN_24">'+'$'+price+'</span><span id="basketCartSPAN_26">'+name+'</span> <span id="basketCartSPAN_27">QTY:'+ qty +' Plates</span> <span id="basketCartSPAN_28"> <a href="#" id="basketCartA_29">remove</a></span> </div> </li>');
+	        		$("#basketCartDIV_14 ul").append('<li id="basketCartLI_22"> <div id="basketCartDIV_23"> <span id="basketCartSPAN_24">'+'$'+price+'</span><span id="basketCartSPAN_26">'+name+'</span> <span id="basketCartSPAN_27">QTY:'+ qty +' Plates</span> <span id="basketCartSPAN_28"> <a href="#" onClick="return removeItemFromCart('+itemId+');" id="basketCartA_29">remove</a></span> </div> </li>');
 	        		
 
 	            });
@@ -187,10 +187,10 @@ function addItem(itemid) {
 		     success: function(json) {
 		    	console.log('result='+json);
 		    	//tmpl('basketItems_tmpl',  also put bracket at end
-	   			$('#BasketItemsTemplateOutput').html({basketItems: json});
-  	   		$('#basketTbl #priceCell').each(function() {
-  	   			$(this).formatCurrency({region: 'en-GB'});
-        	 });
+//	   			$('#BasketItemsTemplateOutput').html({basketItems: json});
+//  	   		$('#basketTbl #priceCell').each(function() {
+//  	   			$(this).formatCurrency({region: 'en-GB'});
+//        	 });
   	   			  	   		
   	   		//addItemToBasketCart(itemid);
   	   		
@@ -205,22 +205,63 @@ function addItem(itemid) {
 	}	
 
 function removeItem(basketItemId) {
+	
+	var totalPrice = 0;
+	
 	$.ajax({
         type: "POST",
         url: "/items/remove/"+basketItemId,
 		     data: {},
 		     contentType: "text/xml",
-		     dataType: "xml", 
-		    success: function(json) {
-	   			$('#BasketItemsTemplateOutput').html(tmpl('basketItems_tmpl', {basketItems: json}));
-	   			$('#basketTbl #priceCell').each(function() {
-  	   			$(this).formatCurrency({region: 'en-GB'});
-    	 	});
+		     dataType: "xml",
+		     async: false,
+		    success: function(bItems) {
+//	   			$('#BasketItemsTemplateOutput').html(tmpl('basketItems_tmpl', {basketItems: json}));
+//	   			$('#basketTbl #priceCell').each(function() {
+//  	   			$(this).formatCurrency({region: 'en-GB'});
+//    	 	});
+		    	
+		    	
+		    	
+		    	$("#basketCartDIV_14 ul").empty();
+	        	
+	        	$(bItems).find('item').each(function(){
+	        		
+	        		var name = $(this).find('name').text();
+	        		var itemId = $(this).find('id').text();
+	        		var qty = $(this).parent().find('quantity').text();
+	        		console.log('qty='+qty);
+	        		console.log('name='+name);
+	        		var price = $(this).parent().find('basketItemPrice').text();
+	        		console.log('price='+price);
+	        		console.log('itemId='+itemId);
+	        		totalPrice = parseInt(totalPrice) + parseInt(price);
+
+	        		//var imageSrc = @{Meals.renderImage('+itemId+')};
+	        		//<img src="@{Meals.renderImage('+itemId+')}"'+'>
+	        		$("#basketCartDIV_14 ul").append('<li id="basketCartLI_22"> <div id="basketCartDIV_23"> <span id="basketCartSPAN_24">'+'$'+price+'</span><span id="basketCartSPAN_26">'+name+'</span> <span id="basketCartSPAN_27">QTY:'+ qty +' Plates</span> <span id="basketCartSPAN_28"> <a href="#" onClick="return removeItemFromCart('+itemId+');" id="basketCartA_29">remove</a></span> </div> </li>');
+	        		
+	        		
+	            });
+	        	
+	        	$("#basketCartSPAN_42").text("Subtotal"+ "  $"+totalPrice);
+	        	
+	        	getTotalItemCount();
+		    	
+	        	$("#basketCartSPAN_11").text(cartCount);
+		    	
+		    	
 		     },
 		     
-		     error: function(json) {
-	   		     alert('fail: ' + json); 
-		     } 
 		 });
 	 return false; 
-	}	
+}
+
+function removeItemFromCart(itemId){
+	
+	console.log('removeItemFromCart='+itemId);
+	removeItem(itemId);
+	return false;
+	//loadItemsInCart();
+}
+

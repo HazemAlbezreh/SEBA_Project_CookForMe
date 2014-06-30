@@ -21,6 +21,7 @@ import models.User;
 import play.Logger;
 import play.mvc.Before;
 import play.mvc.Controller;
+import sun.swing.BakedArrayList;
 
 
 /**
@@ -47,7 +48,7 @@ public class Items extends Controller {
 		return session.get("email");
 	}
 	
-	@Before
+	//@Before
 	static void loadItems() {
 		List<Meal> meals = Meal.findAll(); 
 		List<Item> items = new ArrayList<Item>(); 
@@ -142,6 +143,11 @@ public class Items extends Controller {
 		notFoundIfNull(basket);
 		basket.removeItem(item);
 		basket.save();
+		
+		for(BasketItem bItem:basket.getBasketItem()){
+			Logger.debug("removeItemFromBasket"+bItem.item.name+",");
+		}
+
 		
 		renderXml(basket.basketItems);
 		
@@ -278,7 +284,12 @@ public class Items extends Controller {
 		Basket basket = Basket.findByUserid(getUsername());
 		
 		if(basket!=null){
-			List<BasketItem> basketItems = basket.basketItems;
+			List<BasketItem> basketItems = basket.getBasketItem();
+			
+			for(BasketItem bItem:basket.basketItems){
+				System.out.println("In getAddedItemsInBasket()+"+bItem.item.name);
+				//Logger.debug(bItem.item.name+",");
+			}
 			
 			if(basketItems!=null){
 				renderXml(basketItems);
