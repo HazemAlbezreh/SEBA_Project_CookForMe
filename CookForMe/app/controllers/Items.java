@@ -183,14 +183,38 @@ public class Items extends Controller {
 			meals.add(meal);
 		}
 		
-		Order order = new Order();
+		//Order order = Order.findByUserid(getUsername());
 		
-		order.processOrder();
+		//if(order==null){
+		//Order order = new Order(getUsername());
+	//	}
+		
+		//connectedUser.delete();
+		
+//		User user = new User(connectedUser.email, connectedUser.password,
+//						connectedUser.name, 
+//						basket);
+		
+		connectedUser.addBasket(basket);
+		//user.create();
+		connectedUser.save();
+		
+		//order.addBasket(basket);
+		
+		
+		//order.addBasket(basket);
+		
+		//order.processOrder();
+		
+		//order.create();
+		//order.save();
 		
 		//connectedUser.orders.add(order);
 					
-		String user = getUsername();
-		render(user, basketItems);
+		//String user = getUsername();
+		double total = basket.getTotalBasketPrice();
+
+		render(basketItems,total);
 		
 		//render();
 	}
@@ -199,7 +223,10 @@ public class Items extends Controller {
 		Logger.debug("In restartShopping");
 		Basket basket = Basket.findByUserid(getUsername());
 		basket.delete();
-		index();
+		//index();
+		
+		Application.index();
+		//Meals.browse( ((Category)Category.findById((long)1)).name );
 	}
 	
 	public static void reviewShipping(){

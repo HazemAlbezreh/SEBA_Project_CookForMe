@@ -1,20 +1,127 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+<div id="MyBasketDIV_135">
+	<div id="MyBasketDIV_1">
+		<div id="MyBasketDIV_2">
+			<div id="MyBasketDIV_3">
+				<div id="MyBasketDIV_4">
+					<div id="MyBasketDIV_5">
+						<h1 id="MyBasketH1_6" style="width:665px;font-style:italic;font-weight:normal;font-size: 24px;">
+							Thank you for Placing an Order with us.
+						</h1>
+						<h6 id="MyBasketH1_6" style="width:865px;font-style:italic;font-weight:normal;font-size: 14px; margin:6px">
+							You will receive a confirmation email shortly with your order Details.
+						</h6>
+					</div>
+					<div id="MyBasketDIV_29" style="margin-top:150px">
+						<div id="MyBasketDIV_30">
+							<div id="MyBasketDIV_31">
+								<div id="MyBasketDIV_32">
+									<h4 id="MyBasketH4_33">
+										<div id="MyBasketDIV_34" style="width:665.109375px">
+											You order is being processed.
+										</div>
+									</div>
+								
+								
+								<table id="MyBasketTABLE_49">
+									<thead id="MyBasketTHEAD_50">
+										<tr id="MyBasketTR_51">
+											<th  id="MyBasketTH_52">Item</th>
+											<th id="MyBasketTH_53">Unit Price</th>
+											<th id="MyBasketTH_54">Quantity</th>
+											<th id="MyBasketTH_55">Total</th>
+										</tr>
+									</thead>
+									<tbody id="MyBasketTBODY_56">
+										#{list items: basketItems, as:'basketItem'}
+										<tr id="MyBasketTR_57">
+											<td colspan="4" id="MyBasketTD_58">
+											<img
+												alt="item-image"
+												src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3422/small_square__Crispy_Vegetable_Fideos_hero.jpg"
+											/>
+												<div id="MyBasketDIV_59">${basketItem.item.name}</div>
+											</td>
+										</tr>
+										<!-- <tr id="MyBasketTR_60">
+											<td id="MyBasketTD_61">Michael Json</td>
+											<td>${basketItem.item.price}</td>
+											<td>${basketItem.quantity}</td>
+											<td>${basketItem.basketItemPrice}</td>
+										</tr> -->
+										
+										<tr id="MyBasketTR_60">
+											<td id="MyBasketTD_61">
+												<img alt="Haloumi Bell Pepper Kebabs" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3702/small_square__Haloumi_and_Bell_Pepper_Skewers_with_Pesto_and_Tomato_Rice_final.jpg" id="MyBasketIMG_62" />
+												<div id="MyBasketDIV_63">
+													${basketItem.item.name}
+												</div>
+											</td>
+											<td id="MyBasketTD_66">
+												${basketItem.item.price}
+											</td>
 
-
-<h2>Thank you, for ordering with CookForMe</h2>
-<div id="processPayment">
-
-<li class="cart-item" data-item-id="2426">
- 
-      <div class="cart-item-details">
-        <span class="cart-item-price">${total}</span>
-        <img src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3422/small_square__Crispy_Vegetable_Fideos_hero.jpg" alt="Crispy Vegetable Fideos" class="cart-item-img">
-        <span class="cart-item-title">${basketItems.item.name}</span>
-        <span class="cart-item-quantity">QTY: ${basketItems.quantity} plates</span>
-      </div>
-    </li>
-	
-
-	#{form @restartShopping()}
-		<input type="submit" value="&{'btn_continue'}" />
-	#{/form}
+											<td id="MyBasketTD_81">
+												${basketItem.quantity}
+											</td>
+											
+											<td id="MyBasketTD_81">
+												${basketItem.item.price}
+											</td>
+										</tr>
+										
+										
+										#{/list}
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+	<div id="orderSummaryDIV_20">
+	<div id="orderSummaryDIV_21">
+		<div id="orderSummaryDIV_22">
+			<div id="orderSummaryDIV_1">
+				<div id="orderSummaryDIV_2">
+					<ul id="orderSummaryUL_3">
+					</ul>
+					<div id="orderSummaryDIV_4" style="margin:100px">
+						<div id="orderSummaryDIV_5">
+							<h4 id="orderSummaryH4_6">
+								Order Summary
+							</h4>
+							<div id="orderSummaryDIV_7">
+								 <span id="orderSummarySPAN_8">Subtotal</span> 
+								 <span id="orderSummarySPAN_9">${total}</span>
+							</div>
+							<div id="orderSummaryDIV_10">
+								 <span id="orderSummarySPAN_11">Delivery &amp; Handling</span> 
+								 <span id="orderSummarySPAN_12">Free</span>
+							</div>
+							<div id="orderSummaryDIV_13">
+								 <span id="orderSummarySPAN_14">Total</span> 
+								 <span id="orderSummarySPAN_15">${total}</span>
+							</div>
+						</div>
+					</div>
+					#{form @restartShopping()}
+					<input type="submit" value="&{'btn_continue'}" />
+					#{/form}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			
+			#{form @restartShopping()}
+				<input type="submit" value="&{'btn_continue'}" />
+			#{/form}
+			
+		</div>
+	</div>
 </div>

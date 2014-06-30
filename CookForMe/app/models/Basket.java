@@ -25,7 +25,6 @@ public class Basket extends Model {
 	public String userid;
 	@OneToMany(mappedBy = "basket", cascade = CascadeType.ALL)
 	public List<BasketItem> basketItems = new ArrayList<BasketItem>(0);
-
 	
 	public double totalBasketPrice;
 	

@@ -16,7 +16,8 @@ import javax.validation.Valid;
 import models.*;
 
 public class Users extends Controller {
-
+	
+	
     public static void login(@Valid User user) {
         if (user == null) {
             render();
@@ -40,19 +41,29 @@ public class Users extends Controller {
     	User currentUser = Security.getConnectedUser();
         List<Meal> offeredMeals = Meal.findMeals("", "", "", currentUser.name);
         
-        Basket basket = Basket.findByUserid(currentUser.email);
+       // Basket basket = Basket.findByUserid(.email);
         
-        List<BasketItem> basketItems = basket.basketItems;
-		List<Meal> orderedMeals = new ArrayList<Meal>();
-		for (BasketItem bItem :basketItems){
-			Meal meal=Meal.findById(bItem.item.mealID);
-			orderedMeals.add(meal);
-		}
-        //List<Meal> orderedMeals = ((Order)currentUser.orders.get(0)).getMeals();
+        //Order order = Order.findByEmail(currentUser.email);
+        //List<Order> order = Order.findAll();
+        List<Meal> orderedMeals = new ArrayList<Meal>();
+        
+        if(currentUser !=null){
+        	//Basket basket = order.orderedBasket;
+        	System.out.println("USERSMEAL="+currentUser.basket);
+        	if(currentUser.basket!=null){
+        		List<BasketItem> basketItems = currentUser.basket.basketItems;
+        		System.out.println("USERSMEAL="+basketItems);
+        		for (BasketItem bItem :basketItems){
+        			Meal meal=Meal.findById(bItem.item.mealID);
+        			orderedMeals.add(meal);
+        		}
+        	}
+        }
+		
         render(offeredMeals,orderedMeals);
     }
     
-    
+   
     
     public static void signUp(String email,String name, String passwd,String passwdConfirm) {
     	validation.required(email);

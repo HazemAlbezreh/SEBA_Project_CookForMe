@@ -8,12 +8,14 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import play.db.jpa.Blob;
 import play.db.jpa.Model;
 import play.db.jpa.GenericModel.JPAQuery;
 
 @Entity
+@Table(name = "meal")
 public class Meal extends Model {
 
     public String name;
