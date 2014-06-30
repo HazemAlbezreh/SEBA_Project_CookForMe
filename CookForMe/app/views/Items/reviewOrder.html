@@ -245,13 +245,13 @@
 							value="BzqTD7T5SRLjZjDONEk9+e7+bwMIA2kGhWFaBQ8WIhE="
 							id="reviewINPUT_189" />
 					</div>
-					<div id="reviewDIV_190">
+					<div id="reviewDIV_190" style="overflow-y:auto;">
 
 						<label for="billing_Review your order" id="reviewLABEL_191">
 							Review your order </label>
 						
 						#{list items: basketItems, as:'basketItem'}
-						<ul id="reviewUL_192" style="width: 280px; height: 80px; overflow: auto">
+						<ul id="reviewUL_192" style= "width: 280px; height: 80px;">
 							<li id="reviewLI_193">
 								<div id="reviewDIV_194">
 									<span id="reviewSPAN_195">&dollar;${basketItem.item.price}</span>
