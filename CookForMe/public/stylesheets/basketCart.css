@@ -82,6 +82,7 @@
 
 #basketCartDIV_1 {
     box-sizing: border-box;
+    margin-right: 100px;
     color: rgb(71, 71, 71);
     float: right;
     height: 49px;
@@ -89,12 +90,12 @@
     position: relative;
     text-decoration: none solid rgb(71, 71, 71);
     width: 322px;
-    border: 1px solid rgb(207, 207, 207);
+/*     border: 1px solid rgb(207, 207, 207); */
     font: normal normal 600 14px/24px 'Open Sans', sans-serif;
     list-style: none outside none;
-    margin: 20px 11px 0px;
+/*     margin: 20px 11px 0px; */
     outline: rgb(71, 71, 71) none 0px;
-    padding: 0px 15px;
+/*     padding: 0px 15px; */
 }/*#basketCartDIV_1*/
 
 #basketCartDIV_2 {

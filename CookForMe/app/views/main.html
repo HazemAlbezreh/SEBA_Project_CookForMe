@@ -137,7 +137,7 @@
 				</div>
 				<!---//End-logo---->
 				
-				<div class="col-md-2 input-group">
+				<div id="searchBar" class="col-md-2 input-group">
 					#{form @Meals.search(), enctype:'multipart/form-data', role:'form'}
 						<div class="form-group">
 							<input name="searchToken" type="text" class="form-control">
@@ -157,14 +157,13 @@
 						<li><a href="/items/checkout">Basket</a></li>
 						<li>
 							#{if user != null}
-								<h2>Meals for: ${user.email} &nbsp;<a href="/Users/logout" class="btn btn-warning " type="button">Logout</a> </h2>
+								<a href="/Users/logout">Welcome, ${user.name}! <strong id="logout-link">Logout</strong></a>
 							#{/if}
 							#{else}
-								<a href="/Users/login">Login</a>
+								<a href="/Users/login"><strong id="login-link">Login</strong></a>
 							#{/else}			
 						</li>
 					</ul>
-					<div class="clear"></div>
 				</div> 
 				
 				<!---//End-top-nav---->

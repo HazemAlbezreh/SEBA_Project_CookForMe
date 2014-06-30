@@ -68,11 +68,10 @@ public class Meals extends Controller {
     		category = ((Category)Category.findById((long)1)).name;
     	}
     	List<Meal> meals = Meal.findMeals("", category, "","");
-        //List<Meal> meals = Meal.findAll();
         List<Category> categories = Category.findAll();
         List<Meal> popularMeals = Meal.findAll();
         loadItems(); //checking
-        render(meals, categories, popularMeals);
+        render(meals, categories, popularMeals, category);
     }
 
     public static void offer() {
