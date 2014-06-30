@@ -1919,7 +1919,7 @@
 #reviewDIV_190 {
     box-sizing: border-box;
     color: rgb(71, 71, 71);
-    height: 204.5px;
+    height: 300px;
     max-width: 300px;
     text-align: left;
     text-decoration: none solid rgb(71, 71, 71);
@@ -2121,7 +2121,7 @@
     height: 19px;
     text-align: left;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 117px;
+    width: 141px;
     border: 0px none rgb(71, 71, 71);
     font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
     list-style: none outside none;
@@ -2135,7 +2135,7 @@
     height: 19px;
     text-align: left;
     text-decoration: none solid rgb(71, 71, 71);
-    width: 26px;
+    width: 37px;
     border: 0px none rgb(71, 71, 71);
     font: normal normal normal 13px/19.5px 'Open Sans', sans-serif;
     list-style: none outside none;
@@ -2152,7 +2152,7 @@
     font: normal normal 800 13px/19.5px 'Open Sans', sans-serif;
     list-style: none outside none;
     outline: rgb(71, 71, 71) none 0px;
-    padding: 5px 0px;
+    padding: 10px 0px;
 }/*#reviewDIV_206*/
 
 #reviewDIV_206:after {
@@ -2960,3 +2960,95 @@
 #reviewDIV_1{
 	background: rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box;
 }
+
+
+
+
+
+
+
+
+
+
+#reviewOrderListItemsLI_1 {
+    color: rgb(71, 71, 71);
+    height: 48.5px;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 280px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewOrderListItemsLI_1*/
+
+#reviewOrderListItemsDIV_2 {
+    color: rgb(71, 71, 71);
+    height: 32px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+    padding: 6.5px 55px 10px 50px;
+}/*#reviewOrderListItemsDIV_2*/
+
+#reviewOrderListItemsSPAN_3 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 38px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewOrderListItemsSPAN_3*/
+
+#reviewOrderListItemsIMG_4 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 40px;
+    left: 0px;
+    max-width: 100%;
+    position: absolute;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    vertical-align: middle;
+    width: 40px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewOrderListItemsIMG_4*/
+
+#reviewOrderListItemsSPAN_5 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 16px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal bold 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewOrderListItemsSPAN_5*/
+
+#reviewOrderListItemsSPAN_6 {
+    color: rgb(71, 71, 71);
+    display: block;
+    height: 16px;
+    text-align: left;
+    text-decoration: none solid rgb(71, 71, 71);
+    width: 175px;
+    border: 0px none rgb(71, 71, 71);
+    font: normal normal normal 13px/16.25px 'Open Sans', sans-serif;
+    list-style: none outside none;
+    outline: rgb(71, 71, 71) none 0px;
+}/*#reviewOrderListItemsSPAN_6*/
+

@@ -110,7 +110,7 @@ function loadItemsInCart()
 	        success: function (bItems)
 	        {
 	        	
-	        	console.log("CHECK=="+new XMLSerializer().serializeToString(bItems.documentElement));
+	        	//console.log("CHECK=="+new XMLSerializer().serializeToString(bItems.documentElement));
 	        	
 	        	//console.log('qty='+$(bItems).find('quantity').text());
 	        	$("#basketCartDIV_14 ul").empty();
@@ -263,14 +263,6 @@ function removeItemFromCart(itemId){
 	removeItem(itemId);
 	return false;
 	//loadItemsInCart();
-}
-
-
-function addItemsInReviewOrder(){
-	
-	console.log('addItemsInReviewOrder');
-	
-	
 }
 
 

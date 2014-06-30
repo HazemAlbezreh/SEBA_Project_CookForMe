@@ -14,7 +14,7 @@
 <script src="@{'/public/javascripts/reviewOrderScript.js'}" type="text/javascript" 
 		charset="${_response_encoding}"></script>
 
-<div id="reviewDIV_1">
+<div id="reviewDIV_1" onload="return addItemsInReviewOrder();>
 	<header id="reviewHEADER_2">		
 		<div class="logo">
 			<a href="index.html"><img src="/public/images/logo.png"
@@ -249,21 +249,29 @@
 
 						<label for="billing_Review your order" id="reviewLABEL_191">
 							Review your order </label>
-						<ul id="reviewUL_192">
+						
+						#{list items: basketItems, as:'basketItem'}
+						<ul id="reviewUL_192" style="width: 280px; height: 80px; overflow: auto">
 							<li id="reviewLI_193">
 								<div id="reviewDIV_194">
-									<span id="reviewSPAN_195">${total}</span><img
-										src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3706/small_square__Spaghetti_with_Beet_Greens_hero.jpg"
-										alt="Spaghetti with Beet Greens and Heirloom Cherry Tomatoes"
-										id="reviewIMG_196" /> <span id="reviewSPAN_197">${basketItems.item.name}</span> 
-										<span id="reviewSPAN_198">QTY: ${basketItems.quantity} Plates</span>
+									<span id="reviewSPAN_195">&dollar;${basketItem.item.price}</span>
+									
+									<img id="reviewIMG_196"
+       							  	src="@{Meals.renderImage(basketItem.item.id)}"
+       							  	/>
+										
+									<span id="reviewSPAN_197">${basketItem.item.name}</span> 
+									<span id="reviewSPAN_198">QTY: ${basketItem.quantity} Plates</span>
 								</div>
 							</li>
+							
 						</ul>
+						#{/list}
+						
 						<div id="reviewDIV_199">
 							<div id="reviewDIV_200">
 								<span id="reviewSPAN_201">Subtotal</span> <span
-									id="reviewSPAN_202">${total}</span>
+									id="reviewSPAN_202">&dollar;${total}</span>
 							</div>
 							<div id="reviewDIV_203">
 								<span id="reviewSPAN_204">Delivery &amp; Handling</span> <span

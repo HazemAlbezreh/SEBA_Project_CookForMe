@@ -383,3 +383,58 @@
 			return (nCheck % 10) == 0;
 	}
 	
+	
+	
+	function addItemsInReviewOrder(){
+		
+		console.log('addItemsInReviewOrder');
+		var totalPrice = 0;
+		
+		$.ajax({
+	        url: "/items/getAll",
+	        type: 'POST',
+	        contentType: 'application/xml',
+	        dataType: 'xml',
+	        data: {},
+	        async: false,
+	        success: function (bItems)
+	        {
+	        	
+	        	//console.log("CHECK=="+new XMLSerializer().serializeToString(bItems.documentElement));
+	        	
+	        	//console.log('qty='+$(bItems).find('quantity').text());
+	        	$("#basketCartDIV_14 ul").empty();
+	        	
+	        	$(bItems).find('item').each(function(){
+	        		
+	        		var name = $(this).find('name').text();
+	        		var itemId = $(this).find('id').text();
+	        		var qty = $(this).parent().find('quantity').text();
+	        		console.log('qty='+qty);
+	        		console.log('name='+name);
+	        		var price = $(this).parent().find('basketItemPrice').text();
+	        		console.log('price='+price);
+	        		console.log('itemId='+itemId);
+	        		totalPrice = parseInt(totalPrice) + parseInt(price);
+
+	        		//var imageSrc = @{Meals.renderImage('+itemId+')};
+	        		//<img src="@{Meals.renderImage('+itemId+')}"'+'>
+	        		$("#reviewUL_192 ul").append(
+	 '<li id="reviewLI_193"> <div id="reviewDIV_194"> <span id="reviewSPAN_195">'+totalPrice+'</span><img src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/3706/small_square__Spaghetti_with_Beet_Greens_hero.jpg" alt="Spaghetti with Beet Greens and Heirloom Cherry Tomatoes" id="reviewIMG_196" /> <span id="reviewSPAN_197">'+name+'</span> <span id="reviewSPAN_198">QTY: '+qty+'Plates</span> </div> </li>'); 
+	        	
+	        	
+	        	});
+	        	
+	        }
+	   });
+		
+		totalPrice = parseInt(totalPrice);
+		console.log('totalPrice='+parseInt(totalPrice));
+		$("#basketCartSPAN_42").text("Subtotal"+ "  $"+totalPrice);
+		
+		
+		
+	}
+	
+	
+	
